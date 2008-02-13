@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!--
+  
+  Basic document type definition for transliteration tables, "translit".
+
+  Copyright 2007-2008 by Alex Linke <alinke@lingua-systems.com>
+
+  $Id: translit.dtd 36 2008-02-07 18:12:40Z alinke $
+
+-->
+
+
+<!ELEMENT translit  (name, desc, reverse, rules)>
+<!ELEMENT name	    (#PCDATA)>
+<!ELEMENT desc	    (#PCDATA)>
+<!ELEMENT reverse   (#PCDATA)>
+<!ELEMENT rules	    (rule+)>
+<!ELEMENT rule	    (from, to, context?)>
+<!ELEMENT from	    (#PCDATA)>
+<!ELEMENT to	    (#PCDATA)>
+<!ELEMENT context   (before|after)>
+<!ELEMENT before    (#PCDATA)>
+<!ELEMENT after	    (#PCDATA)>
+
+
+<!--
+  vim: sts=2 enc=utf-8
+-->

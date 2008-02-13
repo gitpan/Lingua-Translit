@@ -1,0 +1,252 @@
+#!/usr/bin/perl -w
+
+
+#
+# Copyright 2007-2008 by ...
+#   Alex Linke, <alinke@lingua-systems.com>
+#   Rona Linke, <rlinke@lingua-systems.com>
+#
+# $Id: translit 94 2008-02-13 13:45:42Z alinke $
+#
+
+
+use strict;
+use Getopt::Long;
+
+require 5.008;
+
+use utf8;
+no bytes;
+
+use Lingua::Translit;
+use Lingua::Translit::Tables qw/:all/;
+
+
+my $VERSION = '0.1';
+
+
+=pod
+
+=head1 NAME
+
+translit - transliterate text between various writing systems
+
+=head1 SYNOPSIS
+
+translit B<-t> I<name> B<-r> B<-i> I<file> B<-o> I<file>
+
+=head1 DESCRIPTION
+
+B<translit> transliterates B<UTF-8> encoded natural language text from one
+writing system to another.
+
+It utilizes the Perl module L<Lingua::Translit> to accomplish this task and
+follows the provided transliteration standards as strict as possible.
+
+B<translit> regards the following commandline switches:
+
+=over 4
+
+=item B<--trans>, B<-t> I<name>
+
+Use the transliteration standard named I<name>.
+
+=item B<--reverse>, B<-r>
+
+Transliterate in reverse direction.
+
+B<NOTE>: Not every transliteration is capable of being reversed.
+If unsure, have a look at the list of supported transliterations using the
+B<--list> switch.
+
+=item B<--infile>, B<-i> I<FILE>
+
+Read text from I<FILE>. Defaults to STDIN.
+
+=item B<--outfile>, B<-o> I<FILE>
+
+Write the transliterated text to I<FILE>. Defaults to STDOUT.
+
+=item B<--list>, B<-l>
+
+Print a list of supported transliterations showing their
+
+  * name
+  * reversibility
+  * description
+
+=item B<--verbose>, B<-v>
+
+Print verbose status messages to STDOUT.
+
+=item B<--help>, B<-h>
+
+Show a short help text introducing commandline switches only.
+
+=back
+
+=cut
+
+# Set defaults where possible
+my %opt = (
+    trans   => "",
+    infile  => "",
+    outfile => "",
+    reverse => 0,
+    list    => 0,
+    verbose => 0,   # off
+    help    => 0
+);
+
+show_help(1) unless GetOptions(
+    "trans|t=s"	    => \$opt{trans},
+    "infile|i=s"    => \$opt{infile},
+    "outfile|o=s"   => \$opt{outfile},
+    "reverse|r"	    => \$opt{reverse},
+    "list|l"	    => \$opt{list},
+    "verbose|v"	    => \$opt{verbose},
+    "help|h"	    => \$opt{help}
+);
+show_help(0)	if $opt{help};
+show_list()	if $opt{list};
+show_help(1)	unless $opt{trans};
+
+
+# Assure the requested transliteration is supported...
+die "$opt{trans} is not supported.\n" unless translit_supported($opt{trans});
+
+# ...and reverse transliteration is supported, too - if requested
+die "$opt{trans} cannot be reversed.\n"
+    if ($opt{reverse} && ! translit_reverse_supported($opt{trans}));
+
+
+# If no input file was specified, use STDIN as a fallback. This way, translit
+# may also be used in pipes!
+my $in;
+
+if ($opt{infile})
+{
+    print "Reading input from $opt{infile}...\n" if $opt{verbose};
+
+    open IN, "$opt{infile}" or die "$opt{infile}: $!\n";
+
+    $in = *IN;
+}
+else
+{
+    print "Reading input from STDIN...\n" if $opt{verbose};
+
+    $in = *STDIN;
+}
+
+
+# If no output file was specified, use STDOUT as a fallback.
+my $out;
+
+if ($opt{outfile})
+{
+    print "Writing output to $opt{outfile}...\n" if $opt{verbose};
+
+    open OUT, "> $opt{outfile}" or die "$opt{outfile}: $!\n";
+
+    $out = *OUT;
+}
+else
+{
+    print "Writing output to STDOUT...\n" if $opt{verbose};
+
+    $out = *STDOUT;
+}
+
+
+# Slurp in all the input and close filehandle
+local $/;
+my $text = <$in>;
+close($in);
+
+
+# Transliterate
+my $tr = new Lingua::Translit($opt{trans});
+my $text_tr;
+
+unless ($opt{reverse})
+{
+    print "Transliterating according to ", $tr->name(), "...\n"
+	if $opt{verbose};
+
+    $text_tr = $tr->translit($text);
+}
+else
+{
+    print "Transliterating according to ", $tr->name(), " (reverse)...\n"
+	if $opt{verbose};
+    
+    $text_tr = $tr->translit_reverse($text);
+}
+
+# Write the transliterated text to the filehandle and close it
+print $out $text_tr;
+close($out);
+
+
+sub show_help
+{
+    my $retval = shift();
+
+    print "translit v$VERSION by Alex Linke <alinke\@lingua-systems.com>\n\n",
+	"usage: $0 -i FILE -o FILE -t NAME -r -l -v -h\n\n",
+	"  --infile   -i  FILE       set input file to FILE\n",
+	"  --outfile  -o  FILE       set output file to FILE\n",
+	"  --trans    -t  NAME       use transliteration NAME\n",
+	"  --reverse  -r             transliterate in reverse direction\n",
+	"  --list     -l             list all supported transliterations\n\n",
+	"  --verbose  -v             be more verbose\n",
+	"  --help     -h             show this help\n\n",
+	"Read translit(1) for details.\n";
+
+    exit($retval);
+}
+
+
+sub show_list
+{
+    translit_list_supported();
+
+    exit(0);
+}
+
+=head1 RESTRICTIONS
+
+The input has to be UTF-8 encoded.
+
+=head1 BUGS
+
+None known.
+
+Please report bugs to perl@lingua-systems.com.
+
+=head1 SEE ALSO
+
+L<Lingua::Translit>, L<Lingua::Translit::Tables>
+
+C<http://www.lingua-systems.com/products/translit/> provides an online
+frontend for L<Lingua::Translit>.
+
+=head1 AUTHORS
+
+Alex Linke <alinke@lingua-systems.com>
+
+Rona Linke <rlinke@lingua-systems.com>
+
+=head1 LICENSE AND COPYRIGHT
+
+Copyright (c) 2008, Alex Linke and Rona Linke. All rights reserved.
+
+This program is free software. It may be used, redistributed
+and/or modified under the terms of either the GPL v2 or the
+Artistic license.
+
+=cut
+
+
+# vim: sts=4 enc=utf-8

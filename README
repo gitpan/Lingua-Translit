@@ -1,0 +1,41 @@
+Perl Module Lingua::Translit v0.01
+----------------------------------
+
+ABOUT
+
+Lingua::Translit can be used to convert text from one writing system to
+another, based on national or international transliteration tables.
+Where possible a reverse transliteration is supported.
+
+
+PREREQUISTES
+
+Perl 5.8.0 or above
+
+If you are going to work on the included XML definitions or even want to
+write your own, XML::Simple is needed as well.
+
+
+INSTALLATION
+
+To test and install Lingua::Translit, untar the archive and execute
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+
+CONTACT
+
+You are welcome to contact the authors at perl@lingua-systems.com
+if you have any suggestions and contributions.
+
+
+LICENSE
+
+Copyright (c) 2008, Alex Linke and Rona Linke. All rights reserved.
+
+This module is free software. It may be used, redistributed
+and/or modified under the terms of either the GPL v2 or the
+Artistic license.

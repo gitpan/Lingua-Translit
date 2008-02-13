@@ -1,0 +1,9 @@
+0.01 -- 2008-02-13
+
+    * Initial release
+    * Set of supported transliterations:
+	* ISO 9
+	* ISO 843
+	* DIN 5008
+
+# vim: sts=4 enc=utf-8
