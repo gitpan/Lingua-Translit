@@ -1,10 +1,10 @@
-## $Id: 02_Lingua-Translit.t 83 2008-02-12 14:34:38Z alinke $
+## $Id: 02_Lingua-Translit.t 108 2008-02-14 11:58:17Z alinke $
 
 use strict;
-use Test::More tests => (7 + (3*4));
+use Test::More tests => (7 + (4*4));
 
 my $truth;
-my @check_support = ("ISO 843", "DIN 5008", "ISO 9");
+my @check_support = ("ISO 843", "DIN 5008", "ISO 9", "Greeklish");
 
 my $num_str = "1234567890";
 

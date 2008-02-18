@@ -6,7 +6,7 @@ package Lingua::Translit;
 #   Alex Linke, <alinke@lingua-systems.com>
 #   Rona Linke, <rlinke@lingua-systems.com>
 #
-# $Id: Translit.pm 93 2008-02-13 13:39:27Z rlinke $
+# $Id: Translit.pm 109 2008-02-14 12:06:28Z alinke $
 #
 
 
@@ -24,7 +24,7 @@ use Encode;
 use Lingua::Translit::Tables;
 
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 =pod
@@ -300,6 +300,8 @@ sub desc
 =item B<ISO 843>, not reversible, C<ISO 843:1997, Greek to Latin>
 
 =item B<ISO 9>, reversible, C<ISO 9:1995, Cyrillic to Latin>
+
+=item B<Greeklish>, not reversible, C<Greeklish (Phonetic), Greek to Latin>
 
 =back
 

@@ -6,7 +6,7 @@ package Lingua::Translit::Tables;
 #   Alex Linke, <alinke@lingua-systems.com>
 #   Rona Linke, <rlinke@lingua-systems.com>
 #
-# $Id: Tables.pm 93 2008-02-13 13:39:27Z rlinke $
+# $Id: Tables.pm 109 2008-02-14 12:06:28Z alinke $
 #
 
 
@@ -14,6 +14,10 @@ use strict;
 use warnings;
 
 require 5.008;
+
+
+our $VERSION = '0.03';
+
 
 use utf8;
 no bytes;
@@ -88,9 +92,6 @@ our %EXPORT_TAGS = (
     list    => [qw/translit_list_supported/],
     all	    => [@EXPORT_OK]
 );
-
-
-our $VERSION = '0.02';
 
 
 # For convenience, the tables are initialized at the bottom of this file
@@ -177,6 +178,8 @@ sub translit_list_supported
 
 =item B<ISO 9>, reversible, C<ISO 9:1995, Cyrillic to Latin>
 
+=item B<Greeklish>, not reversible, C<Greeklish (Phonetic), Greek to Latin>
+
 =back
 
 =head1 EXTENDING
@@ -221,6 +224,379 @@ Artistic license.
 # The following data should never be edited directly. It was generated using
 # the xml2dump utility included in Lingua::Translit's distribution.
 %tables = (
+  "Greeklish" => {
+    "desc" => "Greeklish (Phonetic), Greek to Latin",
+    "name" => "Greeklish",
+    "rules" => [
+      {
+        "to" => "i",
+        "from" => "\x{3b5}\x{3b9}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3ad}\x{3b9}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3b5}\x{3af}"
+      },
+      {
+        "to" => "ef",
+        "from" => "\x{3b5}\x{3c5}"
+      },
+      {
+        "to" => "ef",
+        "from" => "\x{3ad}\x{3c5}"
+      },
+      {
+        "to" => "ef",
+        "from" => "\x{3b5}\x{3cd}"
+      },
+      {
+        "to" => "u",
+        "from" => "\x{3bf}\x{3c5}"
+      },
+      {
+        "to" => "u",
+        "from" => "\x{3bf}\x{3cd}"
+      },
+      {
+        "to" => "u",
+        "from" => "\x{3cc}\x{3c5}"
+      },
+      {
+        "to" => "A",
+        "from" => "\x{391}"
+      },
+      {
+        "to" => "a",
+        "from" => "\x{3b1}"
+      },
+      {
+        "to" => "A",
+        "from" => "\x{386}"
+      },
+      {
+        "to" => "a",
+        "from" => "\x{3ac}"
+      },
+      {
+        "to" => "V",
+        "from" => "\x{392}"
+      },
+      {
+        "to" => "v",
+        "from" => "\x{3b2}"
+      },
+      {
+        "to" => "Y",
+        "from" => "\x{393}"
+      },
+      {
+        "to" => "y",
+        "from" => "\x{3b3}"
+      },
+      {
+        "to" => "D",
+        "from" => "\x{394}"
+      },
+      {
+        "to" => "d",
+        "from" => "\x{3b4}"
+      },
+      {
+        "to" => "E",
+        "from" => "\x{395}"
+      },
+      {
+        "to" => "e",
+        "from" => "\x{3b5}"
+      },
+      {
+        "to" => "E",
+        "from" => "\x{388}"
+      },
+      {
+        "to" => "e",
+        "from" => "\x{3ad}"
+      },
+      {
+        "to" => "Z",
+        "from" => "\x{396}"
+      },
+      {
+        "to" => "z",
+        "from" => "\x{3b6}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{397}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3b7}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{389}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3ae}"
+      },
+      {
+        "to" => "Th",
+        "from" => "\x{398}"
+      },
+      {
+        "to" => "th",
+        "from" => "\x{3b8}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{399}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3b9}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{38a}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3af}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{3aa}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3ca}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{390}"
+      },
+      {
+        "to" => "K",
+        "from" => "\x{39a}"
+      },
+      {
+        "to" => "k",
+        "from" => "\x{3ba}"
+      },
+      {
+        "to" => "L",
+        "from" => "\x{39b}"
+      },
+      {
+        "to" => "l",
+        "from" => "\x{3bb}"
+      },
+      {
+        "to" => "M",
+        "from" => "\x{39c}"
+      },
+      {
+        "to" => "m",
+        "from" => "\x{3bc}"
+      },
+      {
+        "to" => "N",
+        "from" => "\x{39d}"
+      },
+      {
+        "to" => "n",
+        "from" => "\x{3bd}"
+      },
+      {
+        "to" => "X",
+        "from" => "\x{39e}"
+      },
+      {
+        "to" => "x",
+        "from" => "\x{3be}"
+      },
+      {
+        "to" => "O",
+        "from" => "\x{39f}"
+      },
+      {
+        "to" => "o",
+        "from" => "\x{3bf}"
+      },
+      {
+        "to" => "O",
+        "from" => "\x{38c}"
+      },
+      {
+        "to" => "o",
+        "from" => "\x{3cc}"
+      },
+      {
+        "to" => "P",
+        "from" => "\x{3a0}"
+      },
+      {
+        "to" => "p",
+        "from" => "\x{3c0}"
+      },
+      {
+        "to" => "R",
+        "from" => "\x{3a1}"
+      },
+      {
+        "to" => "r",
+        "from" => "\x{3c1}"
+      },
+      {
+        "to" => "S",
+        "from" => "\x{3a3}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{3c3}"
+      },
+      {
+        "to" => "T",
+        "from" => "\x{3a4}"
+      },
+      {
+        "to" => "t",
+        "from" => "\x{3c4}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{3a5}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3c5}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{38e}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3cd}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{ab}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3cb}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3b0}"
+      },
+      {
+        "to" => "F",
+        "from" => "\x{3a6}"
+      },
+      {
+        "to" => "f",
+        "from" => "\x{3c6}"
+      },
+      {
+        "to" => "H",
+        "from" => "\x{3a7}"
+      },
+      {
+        "to" => "h",
+        "from" => "\x{3c7}"
+      },
+      {
+        "to" => "Ps",
+        "from" => "\x{3a8}"
+      },
+      {
+        "to" => "ps",
+        "from" => "\x{3c8}"
+      },
+      {
+        "to" => "O",
+        "from" => "\x{3a9}"
+      },
+      {
+        "to" => "o",
+        "from" => "\x{3c9}"
+      },
+      {
+        "to" => "O",
+        "from" => "\x{38f}"
+      },
+      {
+        "to" => "o",
+        "from" => "\x{3ce}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{3c2}"
+      },
+      {
+        "to" => "?",
+        "from" => "\x{37e}",
+        "context" => {
+          "after" => "\\b"
+        }
+      },
+      {
+        "to" => "?",
+        "from" => ";",
+        "context" => {
+          "after" => "\\b"
+        }
+      },
+      {
+        "to" => ";",
+        "from" => "\x{b7}"
+      },
+      {
+        "to" => "-",
+        "from" => "\x{203f}"
+      },
+      {
+        "to" => {},
+        "from" => "\x{384}"
+      },
+      {
+        "to" => {},
+        "from" => "\x{385}"
+      },
+      {
+        "to" => {},
+        "from" => "\x{342}"
+      },
+      {
+        "to" => {},
+        "from" => "\x{343}"
+      },
+      {
+        "to" => {},
+        "from" => "\x{313}"
+      },
+      {
+        "to" => {},
+        "from" => "\x{314}"
+      },
+      {
+        "to" => {},
+        "from" => "\x{345}"
+      },
+      {
+        "to" => {},
+        "from" => "\x{345}"
+      }
+    ],
+    "reverse" => "false"
+  },
   "ISO 843" => {
     "desc" => "ISO 843:1997 TL (Type 1), Greek to Latin",
     "name" => "ISO 843",

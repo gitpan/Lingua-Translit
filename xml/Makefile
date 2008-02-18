@@ -1,4 +1,4 @@
-# $Id: Makefile 65 2008-02-11 16:53:22Z alinke $
+# $Id: Makefile 108 2008-02-14 11:58:17Z alinke $
 
 TARGET		:=	transtbl.dump
 DUMP		:=	perl xml2dump.pl -v 
@@ -6,7 +6,8 @@ CHECK		:=	xmllint --noout --postvalid
 
 # List of stable and supported transliteration tables
 TABLES_STABLE	:=	din_5008.xml \
-			iso_843.xml iso_9.xml
+			iso_843.xml iso_9.xml \
+			greeklish.xml
 
 
 all: clean $(TARGET)-stable $(TARGET)-unstable

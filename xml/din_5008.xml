@@ -9,7 +9,10 @@
 
   Copyright 2007-2008 by Alex Linke <alinke@lingua-systems.com> 
 
-  $Id: din_5008.xml 92 2008-02-13 13:19:38Z rlinke $
+  $Id: din_5008.xml 112 2008-02-18 08:04:03Z alinke $
+
+  See Duden - Band 1: "Die deutsche Rechtschreibung", Mannheim, 2001,
+    p. 105f., "Maschinenschreiben und E-Mails"
 
 -->
 
@@ -85,6 +88,7 @@
   </rules>
   
 </translit>
+
 
 <!--
   vim: sts=4 enc=utf-8

@@ -8,12 +8,14 @@ xml/xml2dump.pl
 xml/din_5008.xml
 xml/iso_843.xml
 xml/iso_9.xml
+xml/greeklish.xml
 t/01_Lingua-Translit-Tables.t
 t/02_Lingua-Translit.t
 t/03_translit.t
 t/10_tr_ISO_843.t
 t/11_tr_DIN_5008.t
 t/12_tr_ISO_9.t
+t/13_tr_Greeklish.t
 Changes
 README
 translit

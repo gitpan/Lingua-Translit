@@ -5,17 +5,24 @@
 
 <!--
   
-  Transliteration definitions for ISO 843: Greek to Latin.
+  Transliteration definitions for Greeklish: Greek to Latin.
+
+  This transliteration definitions follow the most common form of Greeklish,
+  which is basically a phonetic transcription. As there is no authoritive
+  standard, the transliteration is done based on the tables provided by
+  Wikipedia. See below.
+
 
   Copyright 2007-2008 by Alex Linke <alinke@lingua-systems.com> 
 
 
-  $Id: iso_843.xml 107 2008-02-14 11:57:06Z alinke $
+  $Id: greeklish.xml 108 2008-02-14 11:58:17Z alinke $
 
 
-  See http://en.wikipedia.org/wiki/ISO_843 as an introduction.
+  See http://en.wikipedia.org/wiki/Greeklish as an introduction.
 
-  See http://transliteration.eki.ee/pdf/Greek.pdf for details.
+  See http://de.wikipedia.org/wiki/Greeklish#Transkriptions-Schemata for
+  the transliteration table that is used as a base.
 
 -->
 
@@ -24,9 +31,9 @@
 
     <!-- meta data -->
 
-    <name>ISO 843</name>
+    <name>Greeklish</name>
 
-    <desc>ISO 843:1997 TL (Type 1), Greek to Latin</desc>
+    <desc>Greeklish (Phonetic), Greek to Latin</desc>
 
     <reverse>false</reverse>
 
@@ -36,7 +43,50 @@
 
     <rules>
 
-	<!-- Unaccented characters in (Greek) alphabetical order --> 
+
+	<!-- digraphs -->
+
+	<rule>
+	    <from>&#x03B5;&#x03B9;</from>   <!-- ει -->
+	    <to>i</to>
+	</rule>
+	<rule>
+	    <from>&#x03AD;&#x03B9;</from>   <!-- έι -->
+	    <to>i</to>
+	</rule>
+	<rule>
+	    <from>&#x03B5;&#x03AF;</from>   <!-- εί -->
+	    <to>i</to>
+	</rule>
+
+	<rule>
+	    <from>&#x03B5;&#x03C5;</from>   <!-- ευ -->
+	    <to>ef</to>			    <!-- or "ev" -->
+	</rule>
+	<rule>
+	    <from>&#x03AD;&#x03C5;</from>   <!-- έυ -->
+	    <to>ef</to>
+	</rule>
+	<rule>
+	    <from>&#x03B5;&#x03CD;</from>   <!-- εύ -->
+	    <to>ef</to>
+	</rule>
+
+	<rule>
+	    <from>&#x03BF;&#x03C5;</from>   <!-- ου -->
+	    <to>u</to>
+	</rule>
+	<rule>
+	    <from>&#x03BF;&#x03CD;</from>   <!-- ού -->
+	    <to>u</to>
+	</rule>
+	<rule>
+	    <from>&#x03CC;&#x03C5;</from>   <!-- όυ -->
+	    <to>u</to>
+	</rule>
+
+
+	<!-- characters in (Greek) alphabetical order --> 
 
 	<rule>
 	    <from>&#x0391;</from>   <!-- Α -->
@@ -44,6 +94,14 @@
 	</rule>
 	<rule>
 	    <from>&#x03B1;</from>   <!-- α -->
+	    <to>a</to>
+	</rule>
+	<rule>
+	    <from>&#x0386;</from>   <!-- Ά -->
+	    <to>A</to>
+	</rule>
+	<rule>
+	    <from>&#x03AC;</from>   <!-- ά -->
 	    <to>a</to>
 	</rule>
 
@@ -58,11 +116,11 @@
 
 	<rule>
 	    <from>&#x0393;</from>   <!-- Γ -->
-	    <to>G</to>
+	    <to>Y</to>		    <!-- or "Gh" -->
 	</rule>
 	<rule>
 	    <from>&#x03B3;</from>   <!-- γ -->
-	    <to>g</to>
+	    <to>y</to>		    <!-- or "gh" -->
 	</rule>
 
 	<rule>
@@ -82,6 +140,14 @@
 	    <from>&#x03B5;</from>   <!-- ε -->
 	    <to>e</to>
 	</rule>
+	<rule>
+	    <from>&#x0388;</from>   <!-- Έ -->
+	    <to>E</to>
+	</rule>
+	<rule>
+	    <from>&#x03AD;</from>   <!-- έ -->
+	    <to>e</to>
+	</rule>
 
 	<rule>
 	    <from>&#x0396;</from>   <!-- Ζ -->
@@ -94,13 +160,20 @@
 
 	<rule>
 	    <from>&#x0397;</from>   <!-- Η -->
-	    <to>&#x012A;</to>	    <!-- Ī -->
+	    <to>I</to>
 	</rule>
 	<rule>
 	    <from>&#x03B7;</from>   <!-- η -->
-	    <to>&#x012B;</to>	    <!-- ī -->
+	    <to>i</to>
 	</rule>
-	<!-- Alternation skipped -->
+	<rule>
+	    <from>&#x0389;</from>   <!-- Ή -->
+	    <to>I</to>
+	</rule>
+	<rule>
+	    <from>&#x03AE;</from>   <!-- ή -->
+	    <to>i</to>
+	</rule>
 
 	<rule>
 	    <from>&#x0398;</from>   <!-- Θ -->
@@ -117,6 +190,26 @@
 	</rule>
 	<rule>
 	    <from>&#x03B9;</from>   <!-- ι -->
+	    <to>i</to>
+	</rule>
+	<rule>
+	    <from>&#x038A;</from>   <!-- Ί -->
+	    <to>I</to>
+	</rule>
+	<rule>
+	    <from>&#x03AF;</from>   <!-- ί -->
+	    <to>i</to>
+	</rule>
+	<rule>
+	    <from>&#x03AA;</from>   <!-- Ϊ -->
+	    <to>I</to>
+	</rule>
+	<rule>
+	    <from>&#x03CA;</from>   <!-- ϊ -->
+	    <to>i</to>
+	</rule>
+	<rule>
+	    <from>&#x0390;</from>   <!-- ΐ -->
 	    <to>i</to>
 	</rule>
 
@@ -158,11 +251,11 @@
 
 	<rule>
 	    <from>&#x039E;</from>   <!-- Ξ -->
-	    <to>X</to>
+	    <to>X</to>		    <!-- or "Ks" -->
 	</rule>
 	<rule>
 	    <from>&#x03BE;</from>   <!-- ξ -->
-	    <to>x</to>
+	    <to>x</to>		    <!-- or "ks" -->
 	</rule>
 
 	<rule>
@@ -171,6 +264,14 @@
 	</rule>
 	<rule>
 	    <from>&#x03BF;</from>   <!-- ο -->
+	    <to>o</to>
+	</rule>
+	<rule>
+	    <from>&#x038C;</from>   <!-- Ό -->
+	    <to>O</to>
+	</rule>
+	<rule>
+	    <from>&#x03CC;</from>   <!-- ό -->
 	    <to>o</to>
 	</rule>
 
@@ -196,10 +297,6 @@
 	    <from>&#x03A3;</from>   <!-- Σ -->
 	    <to>S</to>
 	</rule>
-	<rule>			    <!-- Ambiguity, see below -->
-	    <from>&#x03C2;</from>   <!-- ς -->
-	    <to>s</to>
-	</rule>
 	<rule>
 	    <from>&#x03C3;</from>   <!-- σ -->
 	    <to>s</to>
@@ -216,11 +313,31 @@
 
 	<rule>
 	    <from>&#x03A5;</from>   <!-- Υ -->
-	    <to>Y</to>
+	    <to>I</to>
 	</rule>
 	<rule>
 	    <from>&#x03C5;</from>   <!-- υ -->
-	    <to>y</to>
+	    <to>i</to>
+	</rule>
+	<rule>
+	    <from>&#x038E;</from>   <!-- Ύ -->
+	    <to>I</to>
+	</rule>
+	<rule>
+	    <from>&#x03CD;</from>   <!-- ύ -->
+	    <to>i</to>
+	</rule>
+	<rule>
+	    <from>&#x0AB;</from>    <!-- Ϋ -->
+	    <to>I</to>
+	</rule>
+	<rule>
+	    <from>&#x03CB;</from>   <!-- ϋ -->
+	    <to>i</to>
+	</rule>
+	<rule>
+	    <from>&#x03B0;</from>   <!-- ΰ -->
+	    <to>i</to>
 	</rule>
 
 	<rule>
@@ -234,11 +351,11 @@
 
 	<rule>
 	    <from>&#x03A7;</from>   <!-- Χ -->
-	    <to>Ch</to>
+	    <to>H</to>		    <!-- or "Kh" -->
 	</rule>
 	<rule>
 	    <from>&#x03C7;</from>   <!-- χ -->
-	    <to>ch</to>
+	    <to>h</to>		    <!-- or "kh" -->
 	</rule>
 
 	<rule>
@@ -252,191 +369,34 @@
 
 	<rule>
 	    <from>&#x03A9;</from>   <!-- Ω -->
-	    <to>&#x014C;</to>	    <!-- Ō -->
+	    <to>O</to>
 	</rule>
 	<rule>
 	    <from>&#x03C9;</from>   <!-- ω -->
-	    <to>&#x014D;</to>	    <!-- ō -->
+	    <to>o</to>
 	</rule>
-	<!-- Alternation skipped -->
-
-
-	<!-- archaic characters -->
-
-
-	<rule>
-	    <from>&#x03DA;</from>   <!-- Ϛ -->
-	    <to>S</to>
-	</rule>
-	<rule>
-	    <from>&#x03DB;</from>   <!-- ϛ -->
-	    <to>s</to>
-	</rule>
-
-	<rule>
-	    <from>&#x03DC;</from>   <!-- Ϝ -->
-	    <to>W</to>
-	</rule>
-	<rule>
-	    <from>&#x03DD;</from>   <!-- ϝ -->
-	    <to>f</to>
-	</rule>
-
-	<rule>
-	    <from>&#x03F3;</from>   <!-- ϳ -->
-	    <to>j</to>
-	</rule>
-
-
-	<!-- Diacritic marks --> 
-
-
-	<rule>
-	    <from>&#x0384;</from>   <!-- GREEK TONOS (spacing) -->
-	    <to>&#x00B4;</to>	    <!-- ACUTE ACCENT -->
-	</rule>
-
-	<rule>
-	    <from>&#x0385;</from>   <!-- GREEK DIALYTIKA TONOS (spacing) -->
-	    <to>&#x00A8;&#x0301;</to> <!-- DIAERESIS & ACUTE -->
-	</rule>
-
-	<rule>
-	    <from>&#x0342;</from>   <!-- COMBINING GREEK PERISPOMENI -->
-	    <to>&#x0302;</to>	    <!-- COMBINING CIRCUMFLEX ACCENT -->
-	</rule>
-
-	<rule>
-	    <from>&#x0343;</from>   <!-- COMBINING GREEK KORONIS -->
-	    <to>&#x02BC;</to>	    <!-- MODIFIER LETTER APOSTROPHE -->
-	</rule>
-
-	<rule>			    <!-- Psili -->
-	    <from>&#x0313;</from>   <!-- COMBINING COMMA ABOVE -->
-	    <to>&#x02BC;</to>	    <!-- MODIFIER LETTER APOSTROPHE -->
-	</rule>
-
-	<rule>			    <!-- Dasia -->
-	    <from>&#x0314;</from>   <!-- COMBINING REVERSED COMMA ABOVE -->
-	    <to>h</to>
-	</rule>
-
-	<rule>
-	    <from>&#x0345;</from>   <!-- COMBINING GREEK YPOGEGRAMMENI -->
-	    <to>&#x0327;</to>	    <!-- COMBINING CEDILLA -->
-	</rule>
-
-	<rule>
-	    <from>&#x0345;</from>   <!-- GREEK YPOGEGRAMMENI -->
-	    <to>&#x0327;</to>	    <!-- COMBINING CEDILLA -->
-	</rule>
-
-
-
-	<!-- Accented characters in (Greek) alphabetical order --> 
-
-
-	<rule>
-	    <from>&#x0386;</from>   <!-- Ά -->	    <!-- ...tonos -->
-	    <to>&#x00C1;</to>	    <!-- Á -->
-	</rule>
-	<rule>
-	    <from>&#x03AC;</from>   <!-- ά -->
-	    <to>&#x00E1;</to>	    <!-- á -->
-	</rule>
-
-	<rule>
-	    <from>&#x0388;</from>   <!-- Έ -->
-	    <to>&#x00C9;</to>	    <!-- É -->
-	</rule>
-	<rule>
-	    <from>&#x03AD;</from>   <!-- έ -->
-	    <to>&#x00E9;</to>	    <!-- é -->
-	</rule>
-
-	<rule>
-	    <from>&#x0389;</from>	<!-- Ή -->
-	    <to>&#x012A;&#x0301;</to>	<!-- Ī & acute -->
-	</rule>
-	<rule>
-	    <from>&#x03AE;</from>	<!-- ή -->
-	    <to>&#x012B;&#x301;</to>    <!-- ī & acute -->
-	</rule>
-
-	<rule>
-	    <from>&#x038A;</from>   <!-- Ί -->
-	    <to>&#x00CD;</to>	    <!-- Í -->
-	</rule>
-	<rule>
-	    <from>&#x03AF;</from>   <!-- ί -->
-	    <to>&#x00ED;</to>	    <!-- í -->
-	</rule>
-
-	<rule>
-	    <from>&#x038C;</from>   <!-- Ό -->
-	    <to>&#x00D3;</to>	    <!-- Ó -->
-	</rule>
-	<rule>
-	    <from>&#x03CC;</from>   <!-- ό -->
-	    <to>&#x00F3;</to>	    <!-- ó -->
-	</rule>
-
-	<rule>
-	    <from>&#x038E;</from>   <!-- Ύ -->
-	    <to>&#x00DD;</to>	    <!-- Ý -->
-	</rule>
-	<rule>
-	    <from>&#x03CD;</from>   <!-- ύ -->
-	    <to>&#x00FD;</to>	    <!-- ý -->
-	</rule>
-
 	<rule>
 	    <from>&#x038F;</from>   <!-- Ώ -->
-	    <to>&#x1E52;</to>	    <!-- Ṓ -->
+	    <to>O</to>
 	</rule>
 	<rule>
 	    <from>&#x03CE;</from>   <!-- ώ -->
-	    <to>&#x1E53;</to>	    <!-- ṓ -->
-	</rule>
-
-
-	<rule>
-	    <from>&#x03AA;</from>   <!-- Ϊ -->	    <!-- ...dialytika -->
-	    <to>&#x00CF;</to>	    <!-- Ï -->
-	</rule>
-	<rule>
-	    <from>&#x03CA;</from>   <!-- ϊ -->
-	    <to>&#x00EF;</to>	    <!-- ï -->
+	    <to>o</to>
 	</rule>
 
 	<rule>
-	    <from>&#x0AB;</from>    <!-- Ϋ -->
-	    <to>&#x0178;</to>	    <!-- Ÿ -->
-	</rule>
-	<rule>
-	    <from>&#x03CB;</from>   <!-- ϋ -->
-	    <to>&#x00FF;</to>	    <!-- ÿ -->
-	</rule>
-
-	<rule>
-	    <from>&#x0390;</from>   <!-- ΐ -->	    <!-- ...dialytika... -->
-	    <to>&#x1E2F;</to>	    <!-- ḯ -->	    <!-- ...and acute    -->
-	</rule>
-
-	<rule>
-	    <from>&#x03B0;</from>	<!-- ΰ -->
-	    <to>&#x00FF;&#x0301;</to>	<!-- ÿ́ -->
+	    <from>&#x03C2;</from>   <!-- ς -->
+	    <to>s</to>
 	</rule>
 
 
 	<!-- Punctation marks -->
 
-
 	<rule>
 	    <from>&#x037E;</from>   <!-- GREEK QUESTION MARK, EROTIMATIKO -->
 	    <to>?</to>
 	    <context>
-		<after>\b</after>   <!-- always sentence-final! -->
+		<after>\b</after>
 	    </context>
 	</rule>
 
@@ -444,7 +404,7 @@
 	    <from>;</from>	    <!-- preferred for EROTIMATIKO -->
 	    <to>?</to>
 	    <context>
-		<after>\b</after>   <!-- always sentence-final! -->
+		<after>\b</after> 
 	    </context>
 	</rule>
 
@@ -458,8 +418,49 @@
 	    <to>-</to>
 	</rule>
 
-	<!-- TODO:          telia == "." ? -->
-	<!-- TODO: ano-kato telia == ":" ? -->
+
+	<!-- Diacritic marks --> 
+
+	<rule>
+	    <from>&#x0384;</from>   <!-- GREEK TONOS (spacing) -->
+	    <to></to>
+	</rule>
+
+	<rule>
+	    <from>&#x0385;</from>   <!-- GREEK DIALYTIKA TONOS (spacing) -->
+	    <to></to>
+	</rule>
+
+	<rule>
+	    <from>&#x0342;</from>   <!-- COMBINING GREEK PERISPOMENI -->
+	    <to></to>
+	</rule>
+
+	<rule>
+	    <from>&#x0343;</from>   <!-- COMBINING GREEK KORONIS -->
+	    <to></to>
+	</rule>
+
+	<rule>			    <!-- Psili -->
+	    <from>&#x0313;</from>   <!-- COMBINING COMMA ABOVE -->
+	    <to></to>
+	</rule>
+
+	<rule>			    <!-- Dasia -->
+	    <from>&#x0314;</from>   <!-- COMBINING REVERSED COMMA ABOVE -->
+	    <to></to>
+	</rule>
+
+	<rule>
+	    <from>&#x0345;</from>   <!-- COMBINING GREEK YPOGEGRAMMENI -->
+	    <to></to>
+	</rule>
+
+	<rule>
+	    <from>&#x0345;</from>   <!-- GREEK YPOGEGRAMMENI -->
+	    <to></to>
+	</rule>
+
 
   </rules>
   

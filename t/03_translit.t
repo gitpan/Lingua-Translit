@@ -1,11 +1,11 @@
-## $Id: 03_translit.t 30 2008-02-07 10:22:13Z alinke $
+## $Id: 03_translit.t 113 2008-02-18 08:29:02Z alinke $
 
 use strict;
 use Test::More tests => 5;
 
 my $truth;
 
-my $script = "$ENV{PWD}/blib/script/translit";
+my $script = "./blib/script/translit";
 
 
 $truth = -e $script;
