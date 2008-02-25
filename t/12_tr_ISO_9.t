@@ -1,6 +1,7 @@
-## $Id: 12_tr_ISO_9.t 83 2008-02-12 14:34:38Z alinke $
+## $Id: 12_tr_ISO_9.t 129 2008-02-25 08:51:28Z alinke $
 
 use strict;
+require 5.008;
 use utf8;
 
 use Test::More tests => 5;

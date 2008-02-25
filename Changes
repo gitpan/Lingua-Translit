@@ -1,3 +1,8 @@
+0.03 -- 2008-02-25
+
+    * Added DIN 31634 (1982)
+    * Test fixes (require Perl 5.8 if the "utf8" pragma is used)
+
 0.02 -- 2008-02-18
     
     * Added Greeklish

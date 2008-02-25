@@ -1,4 +1,4 @@
-## $Id: 10_tr_ISO_843.t 75 2008-02-12 09:05:15Z alinke $
+## $Id: 10_tr_ISO_843.t 126 2008-02-19 07:28:54Z alinke $
 
 use strict;
 use Test::More tests => 3;
@@ -19,8 +19,8 @@ my $latin_valid =   "Epeidī́ ī anagnṓrisī tīs axioprépeias, poy eínai "
 		    "toys apoteleí to themélio tīs eleytherías, tīs " .
 		    "dikaiosýnīs kai tīs eirī́nīs ston kósmo.";
 
-my $punct_greek =   ";;\n";
-my $punct_valid =   ";?\n";
+my $punct_greek =   "και;";
+my $punct_valid =   "kai?";
 
 use Lingua::Translit;
 

@@ -1,11 +1,13 @@
-## $Id: 01_Lingua-Translit-Tables.t 108 2008-02-14 11:58:17Z alinke $
+## $Id: 01_Lingua-Translit-Tables.t 126 2008-02-19 07:28:54Z alinke $
 
 use strict;
-use Test::More tests => (12 + 4);
+use Test::More tests => (12 + 5);
 
 my $truth;
 
-my @check_support = ("ISO 843", "DIN 5008", "ISO 9", "Greeklish");
+my @check_support = (
+    "ISO 843", "DIN 5008", "ISO 9", "Greeklish", "DIN 31634"
+);
 
 
 BEGIN
