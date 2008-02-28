@@ -6,7 +6,7 @@ package Lingua::Translit;
 #   Alex Linke, <alinke@lingua-systems.com>
 #   Rona Linke, <rlinke@lingua-systems.com>
 #
-# $Id: Translit.pm 126 2008-02-19 07:28:54Z alinke $
+# $Id: Translit.pm 154 2008-02-28 08:06:20Z alinke $
 #
 
 
@@ -24,7 +24,7 @@ use Encode;
 use Lingua::Translit::Tables;
 
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 
 =pod
@@ -305,6 +305,8 @@ sub desc
 
 =item B<DIN 31634>, not reversible, C<DIN 31634:1982, Greek to Latin>
 
+=item B<Common RON>, not reversible, C<Romanian without diacritics as commonly used>
+
 =back
 
 =head1 RESTRICTIONS
@@ -332,6 +334,11 @@ L<translit(1)>
 
 C<http://www.lingua-systems.com/products/translit/> provides an online
 frontend for L<Lingua::Translit>.
+
+=head1 CREDITS
+
+Thanks to Dr. Daniel Eiwen, Romanisches Seminar, Universitaet Koeln for his
+help on Romanian transliteration.
 
 =head1 AUTHORS
 

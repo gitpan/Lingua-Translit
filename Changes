@@ -1,3 +1,10 @@
+0.04 -- 2008-02-28
+
+    * Added common Romanian transliteration ("Common RON")
+    * Updated Makefile.PL to use tools/substitute_tables.pl to read a
+      transliteration table dump and substitute a placeholder line in
+      lib/Lingua/Translit/Tables.pm with it.
+
 0.03 -- 2008-02-25
 
     * Added DIN 31634 (1982)

@@ -1,37 +1,25 @@
-# $Id: Makefile 126 2008-02-19 07:28:54Z alinke $
+# $Id: Makefile 145 2008-02-27 13:37:51Z alinke $
 
-TARGET		:=	transtbl.dump
+TARGET		:=	tables.dump
 DUMP		:=	perl xml2dump.pl -v 
 CHECK		:=	xmllint --noout --postvalid
 
 # List of stable and supported transliteration tables
-TABLES_STABLE	:=	din_5008.xml din_31634.xml \
+TABLES		:=	din_5008.xml din_31634.xml \
 			iso_843.xml iso_9.xml \
-			greeklish.xml
+			greeklish.xml \
+			common_ron.xml
 
+all: clean tables
 
-all: clean $(TARGET)-stable $(TARGET)-unstable
+tables: check
+	$(DUMP) -o $(TARGET) $(TABLES)
 
-stable: clean $(TARGET)-stable 
-
-$(TARGET)-stable: check-stable
-	$(DUMP) -o $@ $(TABLES_STABLE)
-
-$(TARGET)-unstable: check-all
-	$(DUMP) -o $@ *.xml
-
-check-stable: $(TABLES_STABLE)
+check: $(TABLES)
 	@for xml in $^; do \
 		echo "Checking $$xml..."; \
 		$(CHECK) $$xml; \
 	done
 
-check-all: *.xml
-	@for xml in $<; do \
-		echo "Checking $$xml..."; \
-		$(CHECK) $$xml; \
-	done
-
 clean:
-	-rm -f $(TARGET)-stable $(TARGET)-unstable
-
+	-rm -f $(TARGET)

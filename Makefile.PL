@@ -1,13 +1,33 @@
-# $Id: Makefile.PL 27 2008-02-07 08:46:53Z alinke $
+# $Id: Makefile.PL 153 2008-02-28 08:06:06Z alinke $
 
+# Lingua::Translit heavily relies on Perl's UTF-8 implementation and
+# therefore needs at least Perl 5.8.0 to be installed.
+require 5.008;
+
+use strict;
 use ExtUtils::MakeMaker;
 
+
 WriteMakefile(
-  NAME		=>  "Lingua::Translit",
-  VERSION_FROM	=>  "lib/Lingua/Translit.pm",
-  ABSTRACT_FROM	=>  "lib/Lingua/Translit.pm",
-  AUTHOR	=>  'Alex Linke <alinke@lingua-systems.com>',
-  EXE_FILES	=>  [qw/translit/],
+    NAME	    =>  "Lingua::Translit",
+    VERSION_FROM    =>  "lib/Lingua/Translit.pm",
+    ABSTRACT_FROM   =>  "lib/Lingua/Translit.pm",
+    AUTHOR	    =>  'Alex Linke <alinke@lingua-systems.com>',
+    EXE_FILES	    =>  [qw/translit/],
+    PL_FILES	    =>	{
+	    'tools/substitute_tables.pl' =>
+		'blib/lib/Lingua/Translit/Tables.pm'
+	},
 );
 
-# vim: sts=2 enc=utf-8
+
+package MY;
+
+sub postamble
+{
+    # include target to rebuild tables
+    return "tables:\n\t\$(MAKE) -C xml tables\n";
+}
+
+
+# vim: sts=4 enc=utf-8

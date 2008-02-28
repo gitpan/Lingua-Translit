@@ -2,6 +2,7 @@ Makefile.PL
 MANIFEST
 lib/Lingua/Translit.pm
 lib/Lingua/Translit/Tables.pm
+xml/tables.dump
 xml/Makefile
 xml/translit.dtd
 xml/xml2dump.pl
@@ -10,6 +11,7 @@ xml/iso_843.xml
 xml/iso_9.xml
 xml/greeklish.xml
 xml/din_31634.xml
+xml/common_ron.xml
 t/01_Lingua-Translit-Tables.t
 t/02_Lingua-Translit.t
 t/03_translit.t
@@ -18,6 +20,8 @@ t/11_tr_DIN_5008.t
 t/12_tr_ISO_9.t
 t/13_tr_Greeklish.t
 t/14_tr_DIN_31634.t
+t/15_tr_Common_RON.t
+tools/substitute_tables.pl
 Changes
 README
 translit
