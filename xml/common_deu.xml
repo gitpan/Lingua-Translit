@@ -5,11 +5,12 @@
 
 <!--
   
-  Transliteration definitions for DIN 5008.
+  Transliteration definitions for the common transliteration of German
+  umlauts.
 
   Copyright 2007-2008 by Alex Linke <alinke@lingua-systems.com> 
 
-  $Id: din_5008.xml 112 2008-02-18 08:04:03Z alinke $
+  $Id: common_deu.xml 159 2008-03-10 09:33:18Z alinke $
 
   See Duden - Band 1: "Die deutsche Rechtschreibung", Mannheim, 2001,
     p. 105f., "Maschinenschreiben und E-Mails"
@@ -21,9 +22,9 @@
 
     <!-- meta data -->
 
-    <name>DIN 5008</name>
+    <name>Common DEU</name>
 
-    <desc>DIN 5008:2005, German umlauts</desc>
+    <desc>German umlauts</desc>
 
     <reverse>false</reverse>
 

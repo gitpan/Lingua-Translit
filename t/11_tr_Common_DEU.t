@@ -1,9 +1,9 @@
-## $Id: 11_tr_DIN_5008.t 93 2008-02-13 13:39:27Z rlinke $
+## $Id: 11_tr_Common_DEU.t 159 2008-03-10 09:33:18Z alinke $
 
 use strict;
 use Test::More tests => 4;
 
-my $name	=   "DIN 5008";
+my $name	=   "Common DEU";
 
 # Taken from http://www.unhchr.ch/udhr/lang/ger.htm
 my $input	=   "Alle Menschen sind frei und gleich an Würde und " .

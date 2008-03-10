@@ -1,11 +1,11 @@
-## $Id: 02_Lingua-Translit.t 134 2008-02-25 09:42:27Z rlinke $
+## $Id: 02_Lingua-Translit.t 159 2008-03-10 09:33:18Z alinke $
 
 use strict;
-use Test::More tests => (7 + (4*6));
+use Test::More tests => (8 + (4*6));
 
 my $truth;
 my @check_support = (
-    "ISO 843", "DIN 5008", "ISO 9", "Greeklish", "DIN 31634", "Common RON"
+    "ISO 843", "Common DEU", "ISO 9", "Greeklish", "DIN 31634", "Common RON"
 );
 
 my $num_str = "1234567890";
@@ -45,6 +45,13 @@ isnt($@, '', "create object from empty transliteration");
 
 undef($tr);
 
+eval { $tr = new Lingua::Translit("DIN 5008"); };
+
+# 8
+is ($@, '', "legacy 'DIN 5008' compatibility");
+
+undef($tr);
+
 foreach my $name (@check_support)
 {
     eval { $tr = new Lingua::Translit($name); };
@@ -60,3 +67,4 @@ foreach my $name (@check_support)
 
     is($num_str, $num_str_tr, "$name: number transliteration");
 }
+

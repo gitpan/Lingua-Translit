@@ -792,48 +792,6 @@
     ],
     "reverse" => "false"
   },
-  "DIN 5008" => {
-    "desc" => "DIN 5008:2005, German umlauts",
-    "name" => "DIN 5008",
-    "rules" => [
-      {
-        "to" => "Ae",
-        "from" => "\x{c4}"
-      },
-      {
-        "to" => "ae",
-        "from" => "\x{e4}"
-      },
-      {
-        "to" => "Oe",
-        "from" => "\x{d6}"
-      },
-      {
-        "to" => "oe",
-        "from" => "\x{f6}"
-      },
-      {
-        "to" => "Ue",
-        "from" => "\x{dc}"
-      },
-      {
-        "to" => "ue",
-        "from" => "\x{fc}"
-      },
-      {
-        "to" => "SS",
-        "from" => "\x{df}",
-        "context" => {
-          "after" => "\\p{IsUpper}"
-        }
-      },
-      {
-        "to" => "ss",
-        "from" => "\x{df}"
-      }
-    ],
-    "reverse" => "false"
-  },
   "ISO 9" => {
     "desc" => "ISO 9:1995, Cyrillic to Latin",
     "name" => "ISO 9",
@@ -2002,6 +1960,48 @@
       {
         "to" => {},
         "from" => "\x{345}"
+      }
+    ],
+    "reverse" => "false"
+  },
+  "Common DEU" => {
+    "desc" => "German umlauts",
+    "name" => "Common DEU",
+    "rules" => [
+      {
+        "to" => "Ae",
+        "from" => "\x{c4}"
+      },
+      {
+        "to" => "ae",
+        "from" => "\x{e4}"
+      },
+      {
+        "to" => "Oe",
+        "from" => "\x{d6}"
+      },
+      {
+        "to" => "oe",
+        "from" => "\x{f6}"
+      },
+      {
+        "to" => "Ue",
+        "from" => "\x{dc}"
+      },
+      {
+        "to" => "ue",
+        "from" => "\x{fc}"
+      },
+      {
+        "to" => "SS",
+        "from" => "\x{df}",
+        "context" => {
+          "after" => "\\p{IsUpper}"
+        }
+      },
+      {
+        "to" => "ss",
+        "from" => "\x{df}"
       }
     ],
     "reverse" => "false"

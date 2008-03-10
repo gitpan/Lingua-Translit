@@ -6,7 +6,7 @@ package Lingua::Translit::Tables;
 #   Alex Linke, <alinke@lingua-systems.com>
 #   Rona Linke, <rlinke@lingua-systems.com>
 #
-# $Id: Tables.pm 139 2008-02-25 13:21:17Z alinke $
+# $Id: Tables.pm 159 2008-03-10 09:33:18Z alinke $
 #
 
 
@@ -172,8 +172,6 @@ sub translit_list_supported
 
 =over 4
 
-=item B<DIN 5008>, not reversible, C<DIN 5008:2005, German umlauts>
-
 =item B<ISO 843>, not reversible, C<ISO 843:1997, Greek to Latin>
 
 =item B<ISO 9>, reversible, C<ISO 9:1995, Cyrillic to Latin>
@@ -183,6 +181,8 @@ sub translit_list_supported
 =item B<DIN 31634>, not reversible, C<DIN 31634:1982, Greek to Latin>
 
 =item B<Common RON>, not reversible, C<Romanian without diacritics as commonly used>
+
+=item B<Common DEU>, not reversible, C<German umlauts>
 
 =back
 

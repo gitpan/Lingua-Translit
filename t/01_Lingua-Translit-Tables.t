@@ -1,4 +1,4 @@
-## $Id: 01_Lingua-Translit-Tables.t 134 2008-02-25 09:42:27Z rlinke $
+## $Id: 01_Lingua-Translit-Tables.t 159 2008-03-10 09:33:18Z alinke $
 
 use strict;
 use Test::More tests => (12 + 6);
@@ -6,7 +6,7 @@ use Test::More tests => (12 + 6);
 my $truth;
 
 my @check_support = (
-    "ISO 843", "DIN 5008", "ISO 9", "Greeklish", "DIN 31634", "Common RON"
+    "ISO 843", "Common DEU", "ISO 9", "Greeklish", "DIN 31634", "Common RON"
 );
 
 

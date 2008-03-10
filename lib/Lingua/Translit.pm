@@ -6,7 +6,7 @@ package Lingua::Translit;
 #   Alex Linke, <alinke@lingua-systems.com>
 #   Rona Linke, <rlinke@lingua-systems.com>
 #
-# $Id: Translit.pm 154 2008-02-28 08:06:20Z alinke $
+# $Id: Translit.pm 159 2008-03-10 09:33:18Z alinke $
 #
 
 
@@ -24,7 +24,7 @@ use Encode;
 use Lingua::Translit::Tables;
 
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 
 =pod
@@ -96,6 +96,12 @@ sub new
 
     # Assure that a table name was set
     croak("No transliteration name given.") unless $name;
+
+    # Stay compatible with programs that use Lingua::Translit < 0.05
+    if ($name =~ /^DIN 5008$/i)
+    {
+	$name = "Common DEU";
+    }
 
     my $table = Lingua::Translit::Tables::_get_table_reference($name);
 
@@ -268,7 +274,7 @@ sub can_reverse
 
 =head2 name()
 
-Returns the name of the chosen transliteration table, e.g. "DIN 5008".
+Returns the name of the chosen transliteration table, e.g. "ISO 9".
 
 =cut
 
@@ -295,8 +301,6 @@ sub desc
 
 =over 4
 
-=item B<DIN 5008>, not reversible, C<DIN 5008:2005, German umlauts>
-
 =item B<ISO 843>, not reversible, C<ISO 843:1997, Greek to Latin>
 
 =item B<ISO 9>, reversible, C<ISO 9:1995, Cyrillic to Latin>
@@ -306,6 +310,8 @@ sub desc
 =item B<DIN 31634>, not reversible, C<DIN 31634:1982, Greek to Latin>
 
 =item B<Common RON>, not reversible, C<Romanian without diacritics as commonly used>
+
+=item B<Common DEU>, not reversible, C<German umlauts>
 
 =back
 

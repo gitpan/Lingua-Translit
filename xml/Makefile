@@ -1,14 +1,14 @@
-# $Id: Makefile 145 2008-02-27 13:37:51Z alinke $
+# $Id: Makefile 159 2008-03-10 09:33:18Z alinke $
 
 TARGET		:=	tables.dump
 DUMP		:=	perl xml2dump.pl -v 
 CHECK		:=	xmllint --noout --postvalid
 
 # List of stable and supported transliteration tables
-TABLES		:=	din_5008.xml din_31634.xml \
+TABLES		:=	din_31634.xml \
 			iso_843.xml iso_9.xml \
 			greeklish.xml \
-			common_ron.xml
+			common_deu.xml common_ron.xml
 
 all: clean tables
 
