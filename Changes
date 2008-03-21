@@ -1,3 +1,7 @@
+0.07 -- 2008-03-21
+    
+    * Fixed a wrong codepoint in an ISO 843 rule.
+
 0.06 -- 2008-03-21
 
     * Fixed a wrong codepoint in a DIN 31634 rule.

@@ -410,7 +410,7 @@
 	</rule>
 
 	<rule>
-	    <from>&#x0AB;</from>    <!-- Ϋ -->
+	    <from>&#x03AB;</from>   <!-- Ϋ -->
 	    <to>&#x0178;</to>	    <!-- Ÿ -->
 	</rule>
 	<rule>
