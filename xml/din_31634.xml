@@ -12,7 +12,7 @@
     All rights reserved.
 
 
-    $Id: din_31634.xml 128 2008-02-25 08:29:32Z alinke $
+    $Id: din_31634.xml 168 2008-03-21 06:44:11Z alinke $
 
 
     See DIN 31634:April 1982, "Umschrift des griechischen Alphabets"
@@ -491,7 +491,7 @@
 	    <to>y</to>
 	</rule>
 	<rule>
-	    <from>&#x0AB;</from>    <!-- Ϋ -->
+	    <from>&#x03AB;</from>   <!-- Ϋ -->
 	    <to>Y</to>
 	</rule>
 	<rule>

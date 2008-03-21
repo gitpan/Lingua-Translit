@@ -6,7 +6,7 @@ package Lingua::Translit;
 #   Alex Linke, <alinke@lingua-systems.com>
 #   Rona Linke, <rlinke@lingua-systems.com>
 #
-# $Id: Translit.pm 159 2008-03-10 09:33:18Z alinke $
+# $Id: Translit.pm 171 2008-03-21 06:45:10Z alinke $
 #
 
 
@@ -24,7 +24,7 @@ use Encode;
 use Lingua::Translit::Tables;
 
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 
 =pod

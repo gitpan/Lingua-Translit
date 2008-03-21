@@ -1,10 +1,10 @@
-## $Id: 14_tr_DIN_31634.t 129 2008-02-25 08:51:28Z alinke $
+## $Id: 14_tr_DIN_31634.t 170 2008-03-21 06:44:51Z alinke $
 
 use strict;
 require 5.008;
 use utf8;
 use Encode;
-use Test::More tests => 6;
+use Test::More tests => 7;
 
 my $name	=   "DIN 31634";
 
@@ -31,6 +31,9 @@ my $txt_3_ok	=   "Schetikes allages";
 
 my $txt_4	=   "Μπιλ Γκρεγκ -- Αυστραλιανό -- δημιουργήθηκε -- Ουσίες";
 my $txt_4_ok	=   "Mpil Gkrenk -- Australiano -- dēmiurgēthēke -- Usies";
+
+my $txt_5	=   "εξαϋλωμένο -- προϋπάρχουσα -- Κεϋλάνη";
+my $txt_5_ok	=   "exaÿlōmeno -- proÿparchusa -- Keylanē";
 
 
 use Lingua::Translit;
@@ -64,3 +67,8 @@ $o = $tr->translit($txt_4);
 
 # 6
 is($o, $txt_4_ok, "$name: Short text #4");
+
+$o = $tr->translit($txt_5);
+
+# 7
+is($o, $txt_5_ok, "$name: Short text #5");

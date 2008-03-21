@@ -1,3 +1,7 @@
+0.06 -- 2008-03-21
+
+    * Fixed a wrong codepoint in a DIN 31634 rule.
+
 0.05 -- 2008-03-10
     
     * Renamed "DIN 5008" to "Common DEU" as the DIN norm doesn't cover the
