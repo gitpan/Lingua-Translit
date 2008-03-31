@@ -6,7 +6,7 @@ package Lingua::Translit;
 #   Alex Linke, <alinke@lingua-systems.com>
 #   Rona Linke, <rlinke@lingua-systems.com>
 #
-# $Id: Translit.pm 171 2008-03-21 06:45:10Z alinke $
+# $Id: Translit.pm 187 2008-03-31 09:43:23Z rlinke $
 #
 
 
@@ -24,7 +24,7 @@ use Encode;
 use Lingua::Translit::Tables;
 
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 
 =pod
@@ -311,7 +311,9 @@ sub desc
 
 =item B<Common RON>, not reversible, C<Romanian without diacritics as commonly used>
 
-=item B<Common DEU>, not reversible, C<German umlauts>
+=item B<Common DEU>, not reversible, C<German without umlauts>
+
+=item B<Common CES>, not reversible, C<Czech without diacritics>
 
 =back
 

@@ -1,4 +1,4 @@
-# $Id: Makefile 159 2008-03-10 09:33:18Z alinke $
+# $Id: Makefile 185 2008-03-31 09:09:43Z rlinke $
 
 TARGET		:=	tables.dump
 DUMP		:=	perl xml2dump.pl -v 
@@ -8,7 +8,7 @@ CHECK		:=	xmllint --noout --postvalid
 TABLES		:=	din_31634.xml \
 			iso_843.xml iso_9.xml \
 			greeklish.xml \
-			common_deu.xml common_ron.xml
+			common_deu.xml common_ron.xml common_ces.xml
 
 all: clean tables
 
