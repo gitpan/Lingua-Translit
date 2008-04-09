@@ -1,4 +1,4 @@
-# $Id: Makefile.PL 153 2008-02-28 08:06:06Z alinke $
+# $Id: Makefile.PL 201 2008-04-07 10:08:12Z alinke $
 
 # Lingua::Translit heavily relies on Perl's UTF-8 implementation and
 # therefore needs at least Perl 5.8.0 to be installed.
@@ -6,6 +6,14 @@ require 5.008;
 
 use strict;
 use ExtUtils::MakeMaker;
+
+
+if ($^O eq "MSWin32" && not defined $ENV{FORCE_UNSUPPORTED})
+{
+    die "Running Linua::Translit on $^O is currently not supported.\n" .
+	"Define FORCE_UNSUPPORTED in your shell's environment to avoid " .
+	"this check.\n";
+}
 
 
 WriteMakefile(

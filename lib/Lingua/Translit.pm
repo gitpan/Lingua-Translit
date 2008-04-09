@@ -6,7 +6,7 @@ package Lingua::Translit;
 #   Alex Linke, <alinke@lingua-systems.com>
 #   Rona Linke, <rlinke@lingua-systems.com>
 #
-# $Id: Translit.pm 187 2008-03-31 09:43:23Z rlinke $
+# $Id: Translit.pm 206 2008-04-08 06:16:22Z alinke $
 #
 
 
@@ -24,7 +24,7 @@ use Encode;
 use Lingua::Translit::Tables;
 
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 
 =pod
@@ -163,11 +163,11 @@ sub translit
 
 	    if (defined $c->{before})
 	    {
-		$tr_text =~ s/$rule->{from}(?=$c->{before})/$rule->{to}/g;
+		$tr_text =~ s/\Q$rule->{from}\E(?=$c->{before})/$rule->{to}/g;
 	    }
 	    elsif (defined $c->{after})
 	    {
-		$tr_text =~ s/(?<=$c->{after})$rule->{from}/$rule->{to}/g;
+		$tr_text =~ s/(?<=$c->{after})\Q$rule->{from}\E/$rule->{to}/g;
 	    }
 	    else
 	    {
@@ -176,7 +176,7 @@ sub translit
 	}
 	else
 	{
-	    $tr_text =~ s/$rule->{from}/$rule->{to}/g;
+	    $tr_text =~ s/\Q$rule->{from}\E/$rule->{to}/g;
 	}
     }
 
@@ -231,11 +231,11 @@ sub translit_reverse
 
 	    if (defined $c->{before})
 	    {
-		$tr_text =~ s/$rule->{to}(?=$c->{before})/$rule->{from}/g;
+		$tr_text =~ s/\Q$rule->{to}\E(?=$c->{before})/$rule->{from}/g;
 	    }
 	    elsif (defined $c->{after})
 	    {
-		$tr_text =~ s/(?<=$c->{after})$rule->{to}/$rule->{from}/g;
+		$tr_text =~ s/(?<=$c->{after})\Q$rule->{to}\E/$rule->{from}/g;
 	    }
 	    else
 	    {
@@ -244,7 +244,7 @@ sub translit_reverse
 	}
 	else
 	{
-	    $tr_text =~ s/$rule->{to}/$rule->{from}/g;
+	    $tr_text =~ s/\Q$rule->{to}\E/$rule->{from}/g;
 	}
     }
 
@@ -315,6 +315,8 @@ sub desc
 
 =item B<Common CES>, not reversible, C<Czech without diacritics>
 
+=item B<Common Classical MON>, reversible=true, C<Classical Mongolian to Latin>
+
 =back
 
 =head1 RESTRICTIONS
@@ -347,6 +349,9 @@ frontend for L<Lingua::Translit>.
 
 Thanks to Dr. Daniel Eiwen, Romanisches Seminar, Universitaet Koeln for his
 help on Romanian transliteration.
+
+Thanks to Bayanzul Lodoysamba <baynaa@users.sourceforge.net> for contributing
+the "Common Classical Mongolian" transliteration table.
 
 =head1 AUTHORS
 

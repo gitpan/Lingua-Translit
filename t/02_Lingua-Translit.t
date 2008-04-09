@@ -1,12 +1,12 @@
-## $Id: 02_Lingua-Translit.t 186 2008-03-31 09:42:34Z rlinke $
+## $Id: 02_Lingua-Translit.t 200 2008-04-07 09:51:38Z alinke $
 
 use strict;
-use Test::More tests => (8 + (4*7));
+use Test::More tests => (8 + (4*8));
 
 my $truth;
 my @check_support = (
     "ISO 843", "Common DEU", "ISO 9", "Greeklish", "DIN 31634", "Common RON",
-    "Common CES"
+    "Common CES", "Common Classical MON"
 );
 
 my $num_str = "1234567890";

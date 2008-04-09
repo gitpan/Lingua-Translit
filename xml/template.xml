@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE translit SYSTEM "translit.dtd">
+
+
+<!--
+  
+  Transliteration definitions for XXX.
+
+  Copyright 200x by ... <...> 
+
+  $Id: template.xml 211 2008-04-09 09:59:04Z alinke $
+
+-->
+
+
+<translit>
+
+  <name></name>
+  <desc></desc>
+  <reverse></reverse>
+
+  <!-- set of transliteration rules -->
+
+  <rules>
+
+    <rule>
+      <from>X</from>
+      <to>Y</to>
+    </rule>
+
+  </rules>
+  
+</translit>
+
+<!--
+  vim: sts=2 enc=utf-8
+-->

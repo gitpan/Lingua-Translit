@@ -6,7 +6,7 @@ package Lingua::Translit::Tables;
 #   Alex Linke, <alinke@lingua-systems.com>
 #   Rona Linke, <rlinke@lingua-systems.com>
 #
-# $Id: Tables.pm 187 2008-03-31 09:43:23Z rlinke $
+# $Id: Tables.pm 206 2008-04-08 06:16:22Z alinke $
 #
 
 
@@ -16,7 +16,7 @@ use warnings;
 require 5.008;
 
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 
 use utf8;
@@ -158,8 +158,6 @@ The same information is provided in this document as well:
 
 sub translit_list_supported
 {
-    print "Transliterations supported by " . __PACKAGE__ . " v$VERSION:\n";
-
     foreach my $table (keys %tables)
     {
 	my $t = $tables{$table};
@@ -185,6 +183,9 @@ sub translit_list_supported
 =item B<Common DEU>, not reversible, C<German without umlauts>
 
 =item B<Common CES>, not reversible, C<Czech without diacritics>
+
+=item B<Common Classical MON>, reversible=true, C<Classical Mongolian to Latin>
+
 =back
 
 =head1 EXTENDING
@@ -207,6 +208,14 @@ Please report bugs to perl@lingua-systems.com.
 =head1 SEE ALSO
 
 L<Lingua::Translit>
+
+=head1 CREDITS
+
+Thanks to Dr. Daniel Eiwen, Romanisches Seminar, Universitaet Koeln for his
+help on Romanian transliteration.
+
+Thanks to Bayanzul Lodoysamba <baynaa@users.sourceforge.net> for contributing
+the "Common Classical Mongolian" transliteration table.
 
 =head1 AUTHORS
 

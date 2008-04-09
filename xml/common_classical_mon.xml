@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE translit SYSTEM "translit.dtd">
+
+
+<!--
+  
+  Transliteration definitions for the common transliteration of Classical Mongolian Script to Latin.
+
+  Copyright 2008 by Bayanzul Lodoysamba <baynaa@users.sourceforge.net>.
+
+  $Id: common_classical_mon.xml 203 2008-04-08 05:24:07Z alinke $
+
+-->
+
+
+<translit>
+
+    <!-- meta data -->
+
+    <name>Common Classical MON</name>
+
+    <desc>Classical Mongolian Script to Latin</desc>
+
+    <reverse>true</reverse>
+
+
+    <!-- set of transliteration rules -->
+
+    <rules>
+	<rule>
+	    <from>&#x1820;</from>   <!-- MONGOLIAN LETTER A (ᠠ) -->
+	    <to>a</to>
+	</rule>
+	<rule>
+	    <from>&#x1821;</from>   <!-- MONGOLIAN LETTER E (ᠡ) -->
+	    <to>e</to>
+	</rule>
+	<rule>
+	    <from>&#x1822;</from>   <!-- MONGOLIAN LETTER I (ᠢ) -->
+	    <to>i</to>
+	</rule>
+	<rule>
+	    <from>&#x1823;</from>   <!-- MONGOLIAN LETTER O (ᠣ) -->
+	    <to>o</to>
+	</rule>
+	<rule>
+	    <from>&#x1824;</from>   <!-- MONGOLIAN LETTER U (ᠤ) -->
+	    <to>u</to>
+	</rule>
+	<rule>
+	    <from>&#x1825;</from>   <!-- MONGOLIAN LETTER OE (ᠥ) -->
+	    <to>&#x00f6;</to>
+	</rule>
+	<rule>
+	    <from>&#x1826;</from>   <!-- MONGOLIAN LETTER UE (ᠦ) -->
+	    <to>&#x00fc;</to>
+	</rule>
+	<rule>
+	    <from>&#x1827;</from>   <!-- MONGOLIAN LETTER EE (ᠧ) -->
+	    <to>&#x0113;</to>
+	</rule>
+	<rule>
+	    <from>&#x1829;</from>   <!-- MONGOLIAN LETTER ANG (ᠩ) -->
+	    <to>ng</to>
+	</rule>
+        <rule>
+            <from>&#x1828;</from>   <!-- MONGOLIAN LETTER NA (ᠨ) -->
+            <to>n</to>
+        </rule>
+	<rule>
+	    <from>&#x182A;</from>   <!-- MONGOLIAN LETTER BA (ᠪ) -->
+	    <to>b</to>
+	</rule>
+	<rule>
+	    <from>&#x182B;</from>   <!-- MONGOLIAN LETTER PA (ᠫ) -->
+	    <to>p</to>
+	</rule>
+        <rule>
+            <from>&#x182C;</from>   <!-- MONGOLIAN LETTER QA (ᠬ) feminine form -->
+            <to>k</to>
+            <context><before>i</before></context>
+        </rule>
+	<rule>
+	    <from>&#x182C;</from>   <!-- MONGOLIAN LETTER QA (ᠬ) masculine form -->
+	    <to>q</to>
+            <context><before>&#x180E;?[aou]</before></context>
+	</rule>
+        <rule>
+            <from>&#x182C;</from>   <!-- MONGOLIAN LETTER QA (ᠬ) masculine form -->
+            <to>q</to>
+            <context><after>[aou]</after></context>
+        </rule>
+        <rule>
+            <from>&#x182C;</from>   <!-- MONGOLIAN LETTER QA (ᠬ) feminine form -->
+	    <to>k</to>
+	    <context><before>[&#xfc;e&#xf6;]</before></context>
+	</rule>
+        <rule>
+            <from>&#x182C;</from>   <!-- MONGOLIAN LETTER QA (ᠬ) feminine form -->
+            <to>k</to>
+            <context><after>[&#xfc;e&#xf6;]</after></context>
+        </rule>
+        <rule>
+            <from>&#x182C;</from>   <!-- MONGOLIAN LETTER QA (ᠬ) masculine form -->
+            <to>q</to>
+        </rule>
+        <rule>
+            <from>&#x182C;</from>   <!-- MONGOLIAN LETTER QA (ᠬ) feminine form -->
+            <to>k</to>
+        </rule>
+        <rule>
+            <from>&#x182D;</from>   <!-- MONGOLIAN LETTER GA (ᠭ) feminine form -->
+            <to>g</to>
+            <context><before>i\s</before></context>
+        </rule>
+        <rule>
+            <from>&#x182D;</from>   <!-- MONGOLIAN LETTER GA (ᠭ) masculine form -->
+            <to>&#x0263;</to>
+            <context><before>&#x180E;?[aou]</before></context>
+        </rule>
+        <rule>
+            <from>&#x182D;</from>   <!-- MONGOLIAN LETTER GA (ᠭ) masculine form -->
+            <to>&#x0263;</to>
+            <context><after>[aou]</after></context>
+        </rule>
+        <rule>
+            <from>&#x182D;</from>   <!-- MONGOLIAN LETTER GA (ᠭ) feminine form -->
+            <to>g</to>
+            <context><before>[&#xfc;e&#xf6;]</before></context>
+        </rule>
+        <rule>
+            <from>&#x182D;</from>   <!-- MONGOLIAN LETTER GA (ᠭ) feminine form() -->
+            <to>g</to>
+            <context><after>[&#xfc;e&#xf6;]</after></context>
+        </rule>
+        <rule>
+            <from>&#x182D;</from>   <!-- MONGOLIAN LETTER GA (ᠭ) masculine form() -->
+            <to>&#x0263;</to>
+            <context><after>[aou].</after></context>
+        </rule>
+        <rule>
+            <from>&#x182D;</from>   <!-- MONGOLIAN LETTER GA (ᠭ) masculine form() -->
+            <to>&#x0263;</to>
+            <context><after>[aou].i</after></context>
+        </rule>
+        <rule>
+            <from>&#x182D;</from>   <!-- MONGOLIAN LETTER GA (ᠭ) masculine form() -->
+            <to>&#x0263;</to>
+            <context><after>[aou]..i</after></context>
+        </rule>
+        <rule>
+            <from>&#x182D;</from>   <!-- MONGOLIAN LETTER GA (ᠭ) masculine form() -->
+            <to>&#x0263;</to>
+            <context><before>.[aou]</before></context>
+        </rule>
+        <rule>
+            <from>&#x182D;</from>   <!-- MONGOLIAN LETTER GA (ᠭ) masculine form() -->
+            <to>g</to>
+            <context><before>.[&#xfc;e&#xf6;]</before></context>
+        </rule>
+        <rule>
+            <from>&#x182D;</from>   <!-- MONGOLIAN LETTER GA (ᠭ) feminine form() -->
+            <to>g</to>
+        </rule>
+        <rule>
+            <from>&#x182D;</from>   <!-- MONGOLIAN LETTER GA (ᠭ) masculine form() -->
+            <to>&#x0263;</to>
+        </rule>
+	<rule>
+	    <from>&#x182E;</from>   <!-- MONGOLIAN LETTER MA (ᠮ) -->
+	    <to>m</to>
+	</rule>
+	<rule>
+	    <from>&#x1830;</from>   <!-- MONGOLIAN LETTER SA (ᠰ) -->
+	    <to>s</to>
+	</rule>
+	<rule>
+	    <from>&#x1831;</from>   <!-- MONGOLIAN LETTER SHA (ᠱ) -->
+	    <to>&#x0161;</to>
+	</rule>
+	<rule>
+	    <from>&#x1832;</from>   <!-- MONGOLIAN LETTER TA (ᠲ) -->
+	    <to>t</to>
+	</rule>
+	<rule>
+	    <from>&#x1833;</from>   <!-- MONGOLIAN LETTER DA (ᠳ) -->
+	    <to>d</to>
+	</rule>
+	<rule>
+	    <from>&#x1834;</from>   <!-- MONGOLIAN LETTER CHA (ᠴ) -->
+	    <to>&#x010d;</to>
+	</rule>
+	<rule>
+	    <from>&#x1835;</from>   <!-- MONGOLIAN LETTER JA (ᠵ) -->
+	    <to>j</to>
+	</rule>
+	<rule>
+	    <from>&#x1836;</from>   <!-- MONGOLIAN LETTER YA (ᠶ) -->
+	    <to>y</to>
+	</rule>
+	<rule>
+	    <from>&#x1837;</from>   <!-- MONGOLIAN LETTER RA (ᠷ) -->
+	    <to>r</to>
+	</rule>
+	<rule>
+	    <from>&#x1838;</from>   <!-- MONGOLIAN LETTER WA (ᠸ) -->
+	    <to>v</to>
+	</rule>
+	<rule>
+	    <from>&#x1838;</from>   <!-- MONGOLIAN LETTER WA (ᠸ) -->
+	    <to>w</to>
+	</rule>
+	<rule>
+	    <from>&#x1839;</from>   <!-- MONGOLIAN LETTER FA (ᠹ) -->
+	    <to>f</to>
+	</rule>
+	<rule>
+	    <from>&#x183A;</from>   <!-- MONGOLIAN LETTER KA (ᠺ) -->
+	    <to>&#x1e33;</to>
+	</rule>
+	<rule>
+	    <from>&#x183B;</from>   <!-- MONGOLIAN LETTER KHA (ᠻ) -->
+	    <to>&#x01e9;</to>
+	</rule>
+	<rule>
+	    <from>&#x183F;</from>   <!-- MONGOLIAN LETTER ZRA (ᠿ) -->
+	    <to>&#x017e;</to>
+	</rule>
+	<rule>
+	    <from>&#x1840;</from>   <!-- MONGOLIAN LETTER LHA (ᡀ) -->
+	    <to>lh</to>
+	</rule>
+        <rule>
+            <from>&#x182F;</from>   <!-- MONGOLIAN LETTER LA (ᠯ) -->
+            <to>l</to>
+        </rule>
+	<rule>
+	    <from>&#x1841;</from>   <!-- MONGOLIAN LETTER ZHI (ᡁ) -->
+	    <to>zh</to>
+	</rule>
+        <rule>
+            <from>&#x183D;</from>   <!-- MONGOLIAN LETTER ZA (ᠽ) -->
+            <to>z</to>
+        </rule>
+	<rule>
+	    <from>&#x1842;</from>   <!-- MONGOLIAN LETTER CHI (ᡂ) -->
+	    <to>ch</to>
+	</rule>
+        <rule>
+            <from>&#x183C;</from>   <!-- MONGOLIAN LETTER TSA (ᠼ) -->
+            <to>c</to>
+        </rule>
+        <rule>
+            <from>&#x183E;</from>   <!-- MONGOLIAN LETTER HAA (ᠾ) -->
+            <to>h</to>
+        </rule>
+        <rule>
+            <from>&#x1800;</from>   <!-- MONGOLIAN BIRGA (᠀) -->
+            <to>&#x00a7;</to>
+        </rule>
+        <rule>
+            <from>&#x1801;</from>   <!-- MONGOLIAN ELLIPSIS (᠁) -->
+            <to>&#x2026;</to>
+        </rule>
+        <rule>
+            <from>&#x1802;</from>   <!-- MONGOLIAN COMMA (᠂) -->
+            <to>,</to>
+        </rule>
+        <rule>
+            <from>&#x1803;</from>   <!-- MONGOLIAN FULL STOP (᠃) -->
+            <to>.</to>
+        </rule>
+        <rule>
+            <from>&#x1804;</from>   <!-- MONGOLIAN COLON (᠄) -->
+            <to>:</to>
+        </rule>
+        <rule>
+            <from>&#x1805;</from>   <!-- MONGOLIAN FOUR DOTS (᠅) -->
+            <to>&#x00b6;</to>
+        </rule>
+        <rule>
+            <from>&#x180E;</from>   <!-- MONGOLIAN VOWEL SEPARATOR (᠎) -->
+            <to>-</to>
+        </rule>
+	<rule>
+	    <from>&#x1810;</from>   <!-- MONGOLIAN DIGIT ZERO (᠐) -->
+	    <to>0</to>
+	</rule>
+	<rule>
+	    <from>&#x1811;</from>   <!-- MONGOLIAN DIGIT ONE (᠑) -->
+	    <to>1</to>
+	</rule>
+	<rule>
+	    <from>&#x1812;</from>   <!-- MONGOLIAN DIGIT TWO (᠒) -->
+	    <to>2</to>
+	</rule>
+	<rule>
+	    <from>&#x1813;</from>   <!-- MONGOLIAN DIGIT THREE (᠓) -->
+	    <to>3</to>
+	</rule>
+	<rule>
+	    <from>&#x1814;</from>   <!-- MONGOLIAN DIGIT FOUR (᠔) -->
+	    <to>4</to>
+	</rule>
+	<rule>
+	    <from>&#x1815;</from>   <!-- MONGOLIAN DIGIT FIVE (᠕) -->
+	    <to>5</to>
+	</rule>
+	<rule>
+	    <from>&#x1816;</from>   <!-- MONGOLIAN DIGIT SIX (᠖) -->
+	    <to>6</to>
+	</rule>
+	<rule>
+	    <from>&#x1817;</from>   <!-- MONGOLIAN DIGIT SEVEN (᠗) -->
+	    <to>7</to>
+	</rule>
+	<rule>
+	    <from>&#x1818;</from>   <!-- MONGOLIAN DIGIT EIGHT (᠘) -->
+	    <to>8</to>
+	</rule>
+	<rule>
+	    <from>&#x1819;</from>   <!-- MONGOLIAN DIGIT NINE (᠙) -->
+	    <to>9</to>
+	</rule>
+  </rules>
+  
+</translit>
+
+

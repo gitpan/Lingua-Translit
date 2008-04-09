@@ -1,3 +1,20 @@
+0.09 -- 2008-04-09
+
+    * Added Mongolian transliteration "Common Classical MON". Thanks to
+      Bayanzul Lodoysamba (baynaa@users.sourceforge.net) for contributing
+      this table!
+    * lib/Lingua/Translit.pm: "from" and "to" transliteration patterns are
+      now evaluated literally only (within \Q and \E).
+    * lib/Lingua/Translit/Tables.pm: Removed verbose package information from
+      translit_list_supported()
+    * translit: Display Lingua::Translit's version if show_list() is called
+    * translit: For convenience, every underscore in a transliteration's name
+      is substituted by a blank.
+    * Makefile.PL: Exit with a hint on MSWin32 rather than dying in
+      t/03_translit.t
+    * xml/xml2dump.pl: workaround for discarded U+180E character (see l.85)
+    * Added a transliteration table template (xml/template.xml)
+
 0.08 -- 2008-03-31
 
     * Added common Czech transliteration "Common CES"

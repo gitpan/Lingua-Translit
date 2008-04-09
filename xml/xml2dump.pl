@@ -3,7 +3,7 @@
 #
 # Copyright 2007-2008 by Alex Linke, <alinke@lingua-systems.com>
 #
-# $Id: xml2dump.pl 93 2008-02-13 13:39:27Z rlinke $
+# $Id: xml2dump.pl 204 2008-04-08 06:14:45Z alinke $
 #
 
 
@@ -21,7 +21,7 @@ use utf8;
 no bytes;
 
 
-my $VERSION = '0.2';
+my $VERSION = '0.3';
 
 
 my %tables;
@@ -68,11 +68,6 @@ foreach my $file (@ARGV) {
 	$counts{rules}++;
 	$counts{contexts}++ if defined $rule->{context};
 
-	# Convert "from"- and "to"-rules to octets (byte semantics)
-	#$rule->{from}	= Encode::encode_utf8($rule->{from});
-	#$rule->{to}	= Encode::encode_utf8($rule->{to});
-
-
 	croak($ds->{name} . ": 'from' and 'to' match: " . $rule->{from})
 	    if ($rule->{from} eq $rule->{to});
     }
@@ -83,8 +78,26 @@ foreach my $file (@ARGV) {
     print " ($ds->{name}: rules=$counts{rules}, contexts=$counts{contexts})\n"
 	if $opt{verbose};
 
-
     undef($ds); # free memory
+}
+
+# Workaround: The Mongolian vowel separator character U+180E is silently
+# discarded while the transliteration table's XML definition is processed by
+# XML::Simple. This workaround assures that the resulting tables are correct.
+# It will be removed as soon as the problem could be solved in an appropriate
+# manner.
+if (defined $tables{"Common Classical MON"})
+{
+    foreach my $rule (@{$tables{"Common Classical MON"}->{rules}})
+    {
+	if ($rule->{to} eq "-" && ref($rule->{from}) eq 'HASH')
+	{
+	    print "Mongolian vowel separator (U+180E) workaround applied.\n"
+		if $opt{verbose};
+	    $rule->{from} = "\x{180E}";
+	    last;
+	}
+    }
 }
 
 # Configure Data::Dumper

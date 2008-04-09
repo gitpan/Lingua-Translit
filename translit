@@ -6,7 +6,7 @@
 #   Alex Linke, <alinke@lingua-systems.com>
 #   Rona Linke, <rlinke@lingua-systems.com>
 #
-# $Id: translit 94 2008-02-13 13:45:42Z alinke $
+# $Id: translit 197 2008-04-07 09:19:09Z alinke $
 #
 
 
@@ -22,7 +22,7 @@ use Lingua::Translit;
 use Lingua::Translit::Tables qw/:all/;
 
 
-my $VERSION = '0.1';
+my $VERSION = '0.2';
 
 
 =pod
@@ -111,6 +111,10 @@ show_help(0)	if $opt{help};
 show_list()	if $opt{list};
 show_help(1)	unless $opt{trans};
 
+# For convenience, substitute every underscore in a transliteration's name
+# with a blank. As a result, the names don't have to be escaped on the
+# command line anymore...
+$opt{trans} =~ y/_/ /;
 
 # Assure the requested transliteration is supported...
 die "$opt{trans} is not supported.\n" unless translit_supported($opt{trans});
@@ -210,6 +214,9 @@ sub show_help
 
 sub show_list
 {
+    print "Transliterations supported by Lingua::Translit v" .
+	$Lingua::Translit::VERSION . ":\n";
+
     translit_list_supported();
 
     exit(0);
