@@ -16,7 +16,7 @@
   Copyright 2007-2008 by Alex Linke <alinke@lingua-systems.com> 
 
 
-  $Id: greeklish.xml 108 2008-02-14 11:58:17Z alinke $
+  $Id: greeklish.xml 220 2008-04-15 10:54:58Z alinke $
 
 
   See http://en.wikipedia.org/wiki/Greeklish as an introduction.
@@ -328,7 +328,7 @@
 	    <to>i</to>
 	</rule>
 	<rule>
-	    <from>&#x0AB;</from>    <!-- Ϋ -->
+	    <from>&#x03AB;</from>    <!-- Ϋ -->
 	    <to>I</to>
 	</rule>
 	<rule>

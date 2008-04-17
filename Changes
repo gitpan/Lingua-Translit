@@ -1,3 +1,17 @@
+0.10 -- 2008-04-17
+
+    * lib/Lingua/Translit.pm, xml/translit.dtd: Contexts can now contain two
+      patterns at a time (before and after). These are combined using AND
+      logics and therefore act as a logical "inbetween".
+    * xml/xml2dump.pl: Switched from XML::Simple to XML::LibXML in order to
+      prevent loss of whitespace charactes like U+180E.
+    * xml/greeklish.xml: GREEK CAPITAL LETTER UPSILON WITH DIALYTIKA (U+03AB)
+      bug fixed.
+    * t/13_tr_Greeklish.t: Added test for upsilon bugfix.
+    * Added two transliterations for Bulgarian:
+	*   DIN 1460
+	*   Streamlined System
+
 0.09 -- 2008-04-09
 
     * Added Mongolian transliteration "Common Classical MON". Thanks to

@@ -1,7 +1,7 @@
-## $Id: 13_tr_Greeklish.t 114 2008-02-18 08:29:55Z alinke $
+## $Id: 13_tr_Greeklish.t 221 2008-04-15 11:07:20Z alinke $
 
 use strict;
-use Test::More tests => 5;
+use Test::More tests => 6;
 
 my $name	=   "Greeklish";
 
@@ -26,6 +26,10 @@ my $wiki_2_ok	=   "Thita";
 # Check digraphs
 my $digraph	=   "ειέιείευέυεύουούόυ";
 my $digraph_ok	=   "iiiefefefuuu";
+
+# Upsilon bug fixed?  ("«" -> "I": "Iideoloyika»")
+my $bug_1	=   "«ιδεολογικά» -- Ϋ";
+my $bug_1_ok	=   "«ideoloyika» -- I";
 
 use Lingua::Translit;
 
@@ -54,3 +58,8 @@ $o = $tr->translit($digraph);
 
 # 5
 is($o, $digraph_ok, "$name: digraphs");
+
+$o = $tr->translit($bug_1);
+
+# 6
+is($o, $bug_1_ok, "$name: bugfix #1");

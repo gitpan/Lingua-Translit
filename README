@@ -13,7 +13,7 @@ PREREQUISTES
 Perl 5.8.0 or above
 
 If you are going to work on the included XML definitions or even want to
-write your own, XML::Simple is needed as well.
+write your own, XML::LibXML is needed as well.
 
 
 INSTALLATION

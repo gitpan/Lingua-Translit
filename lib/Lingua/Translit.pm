@@ -6,7 +6,7 @@ package Lingua::Translit;
 #   Alex Linke, <alinke@lingua-systems.com>
 #   Rona Linke, <rlinke@lingua-systems.com>
 #
-# $Id: Translit.pm 206 2008-04-08 06:16:22Z alinke $
+# $Id: Translit.pm 241 2008-04-17 09:11:29Z alinke $
 #
 
 
@@ -24,7 +24,7 @@ use Encode;
 use Lingua::Translit::Tables;
 
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 
 =pod
@@ -160,15 +160,26 @@ sub translit
 	if (defined $rule->{context})
 	{
 	    my $c = $rule->{context};
-
-	    if (defined $c->{before})
+	    
+	    # single context rules
+	    if (defined $c->{before}   && !defined $c->{after})
 	    {
 		$tr_text =~ s/\Q$rule->{from}\E(?=$c->{before})/$rule->{to}/g;
 	    }
-	    elsif (defined $c->{after})
+	    elsif (defined $c->{after} && !defined $c->{before})
 	    {
 		$tr_text =~ s/(?<=$c->{after})\Q$rule->{from}\E/$rule->{to}/g;
 	    }
+
+	    # double context rules: logical "inbetween"
+	    elsif (defined $c->{before} && defined $c->{after})
+	    {
+		$tr_text =~
+		    s/
+		    (?<=$c->{after})\Q$rule->{from}\E(?=$c->{before})
+		    /$rule->{to}/gx;
+	    }
+
 	    else
 	    {
 		croak("incomplete rule context");
@@ -229,14 +240,25 @@ sub translit_reverse
 	{
 	    my $c = $rule->{context};
 
-	    if (defined $c->{before})
+	    # single context rules
+	    if (defined $c->{before} && !defined $c->{after})
 	    {
 		$tr_text =~ s/\Q$rule->{to}\E(?=$c->{before})/$rule->{from}/g;
 	    }
-	    elsif (defined $c->{after})
+	    elsif (defined $c->{after} && !defined $c->{before})
 	    {
 		$tr_text =~ s/(?<=$c->{after})\Q$rule->{to}\E/$rule->{from}/g;
 	    }
+
+	    # double context rules: logical "inbetween"
+	    elsif (defined $c->{before} && defined $c->{after})
+	    {
+		$tr_text =~
+		    s/
+		    (?<=$c->{after})\Q$rule->{to}\E(?=$c->{before})
+		    /$rule->{from}/gx;
+	    }
+
 	    else
 	    {
 		croak("incomplete rule context");
@@ -309,13 +331,17 @@ sub desc
 
 =item B<DIN 31634>, not reversible, C<DIN 31634:1982, Greek to Latin>
 
+=item B<DIN 1460 BUL>, reversible, C<DIN 1460:1982, Cyrillic to Latin, Bulgarian>
+
 =item B<Common RON>, not reversible, C<Romanian without diacritics as commonly used>
 
 =item B<Common DEU>, not reversible, C<German without umlauts>
 
 =item B<Common CES>, not reversible, C<Czech without diacritics>
 
-=item B<Common Classical MON>, reversible=true, C<Classical Mongolian to Latin>
+=item B<Common Classical MON>, reversible, C<Classical Mongolian to Latin>
+
+=item B<Streamlined System BUL>, not reversible, C<The Streamlined System: 2006, Cyrillic to Latin, Bulgarian>
 
 =back
 

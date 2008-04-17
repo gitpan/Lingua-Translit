@@ -15,6 +15,8 @@ xml/common_ron.xml
 xml/common_deu.xml
 xml/common_ces.xml
 xml/common_classical_mon.xml
+xml/din_1460_bul.xml
+xml/streamlined_system_bul.xml
 t/01_Lingua-Translit-Tables.t
 t/02_Lingua-Translit.t
 t/03_translit.t
@@ -26,6 +28,8 @@ t/14_tr_DIN_31634.t
 t/15_tr_Common_RON.t
 t/16_tr_Common_CES.t
 t/17_tr_Common_Classical_MON.t
+t/18_tr_DIN_1460_BUL.t
+t/19_tr_Streamlined_System_BUL.t
 tools/substitute_tables.pl
 Changes
 README

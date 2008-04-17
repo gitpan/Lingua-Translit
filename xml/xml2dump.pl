@@ -3,7 +3,7 @@
 #
 # Copyright 2007-2008 by Alex Linke, <alinke@lingua-systems.com>
 #
-# $Id: xml2dump.pl 204 2008-04-08 06:14:45Z alinke $
+# $Id: xml2dump.pl 225 2008-04-15 14:35:51Z alinke $
 #
 
 
@@ -12,16 +12,12 @@ use warnings;
 
 require 5.008;
 
-use XML::Simple;
+use XML::LibXML;
 use Data::Dumper;
 use Getopt::Long;
 
-use Encode;
-use utf8;
-no bytes;
 
-
-my $VERSION = '0.3';
+my $VERSION = '0.4';
 
 
 my %tables;
@@ -44,33 +40,105 @@ show_help(1) if scalar(@ARGV) == 0;   # No XML file(s) given
 show_help(0) if $opt{help};
 
 
+my $xmlparser = new XML::LibXML();
+
+# Set parser options
+$xmlparser->pedantic_parser(1);
+$xmlparser->validation(1);
+$xmlparser->expand_entities(1);
+$xmlparser->keep_blanks(1);
+$xmlparser->line_numbers(1);
+
+
 # Treat everything else in @ARGV as a filename
 foreach my $file (@ARGV) {
     print "Parsing $file..." if $opt{verbose};
 
     my %counts = (rules => 0, contexts => 0);
 
-    my $ds = XMLin($file, GroupTags => { "rules" => "rule" })
-	or die "Error parsing $file: $!\n";
+    my $ds;
 
-    # Perform some additional basic checks
+    my $doc = $xmlparser->parse_file($file) or die "Error parsing $file: $!\n";
+
+    # Retrieve meta-documentation from XML document first
+    foreach my $meta (qw/name desc reverse/)
+    {
+	my @nodes = $doc->findnodes("/translit/$meta");
+
+	die "#/translit/$meta != 1" if (scalar(@nodes) != 1);
+
+	$ds->{$meta} = $nodes[0]->to_literal();
+    }
+
+
+    # Perform some basic meta data checks
     die "Name undefined.\n"		unless $ds->{name};
     die "Description undefined.\n"	unless $ds->{desc};
     die "Reversibility undefined.\n"	unless $ds->{reverse};
-    die "Table is not an array.\n"	unless ref($ds->{rules}) eq "ARRAY";
 
     # Check <reverse> tag contains valid data. TODO: move this to the DTD
     die "Reversibility: '$ds->{reverse}' -- Should be 'true' or 'false'.\n"
 	unless $ds->{reverse} =~ /^(true|false)$/;
 
-    foreach my $rule (@{$ds->{rules}}) {
-	# Count rules and contexts for statistical purposes
-	$counts{rules}++;
-	$counts{contexts}++ if defined $rule->{context};
 
-	croak($ds->{name} . ": 'from' and 'to' match: " . $rule->{from})
-	    if ($rule->{from} eq $rule->{to});
+    # Retrieve all rules, extract their data and store it to an appropriate
+    # data structure
+    foreach my $rule ($doc->findnodes("/translit/rules/rule"))
+    {
+	my @nodes;
+	my $rule_ds;
+
+
+	# Retrieve "from" and "to" literals
+	foreach my $n (qw/from to/)
+	{
+	    @nodes = $rule->findnodes("./$n");
+
+	    die "#/translit/rules/rules/$n != 1 " .
+		"(at line " . $rule->line_number() . ")\n"
+		if (scalar(@nodes) != 1);
+
+	    $rule_ds->{$n} = $nodes[0]->to_literal();
+	}
+
+
+	# Retrieve rule's "context"
+	@nodes = $rule->findnodes("./context");
+
+	die "#/translit/rules/rule/context > 1 " .
+	    "(at line " . $rule->line_number() . ")\n"
+	    if (scalar(@nodes) > 1);
+	
+	# Process rule's "context" if necessary
+	if (scalar(@nodes))
+	{
+	    foreach my $context (qw/before after/)
+	    {
+		@nodes = $rule->findnodes("./context/$context");
+
+		die "#/translit/rules/rule/context/$context > 1 " .
+		    "(at line " . $rule->line_number() . ")\n"
+		    if (scalar(@nodes) > 1);
+
+		# Copy the context to the rule's data structure
+		if (scalar(@nodes))
+		{
+		    $rule_ds->{context}->{$context} = $nodes[0]->to_literal();
+		}
+	    }
+	
+	    $counts{contexts}++;
+	}
+
+	$counts{rules}++;
+
+
+	die $rule_ds->{name} . ": from==to -> " . $rule_ds->{from} . "\n"
+	    if ($rule_ds->{from} eq $rule_ds->{to});
+	
+	push @{$ds->{rules}}, $rule_ds;
     }
+
 
     # Copy transliteration structure over to the final hash
     $tables{$ds->{name}} = $ds;
@@ -81,24 +149,6 @@ foreach my $file (@ARGV) {
     undef($ds); # free memory
 }
 
-# Workaround: The Mongolian vowel separator character U+180E is silently
-# discarded while the transliteration table's XML definition is processed by
-# XML::Simple. This workaround assures that the resulting tables are correct.
-# It will be removed as soon as the problem could be solved in an appropriate
-# manner.
-if (defined $tables{"Common Classical MON"})
-{
-    foreach my $rule (@{$tables{"Common Classical MON"}->{rules}})
-    {
-	if ($rule->{to} eq "-" && ref($rule->{from}) eq 'HASH')
-	{
-	    print "Mongolian vowel separator (U+180E) workaround applied.\n"
-		if $opt{verbose};
-	    $rule->{from} = "\x{180E}";
-	    last;
-	}
-    }
-}
 
 # Configure Data::Dumper
 my $dumper = new Data::Dumper([ \%tables ], [ qw/*tables/ ]);

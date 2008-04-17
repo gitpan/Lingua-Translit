@@ -9,7 +9,7 @@
 
   Copyright 200x by ... <...> 
 
-  $Id: template.xml 211 2008-04-09 09:59:04Z alinke $
+  $Id: template.xml 233 2008-04-17 08:17:16Z rlinke $
 
 -->
 
@@ -27,6 +27,16 @@
     <rule>
       <from>X</from>
       <to>Y</to>
+    </rule>
+
+  <!-- the context may be specified as 
+       'after' or 'before' or both (= bewtween) -->
+    <rule>
+      <from>A</from>
+      <to>B</to>
+      <context>
+	  <after>x</after>
+	  <before>y</before>
     </rule>
 
   </rules>

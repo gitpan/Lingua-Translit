@@ -7,7 +7,7 @@
 
   Copyright 2007-2008 by Alex Linke <alinke@lingua-systems.com>
 
-  $Id: translit.dtd 36 2008-02-07 18:12:40Z alinke $
+  $Id: translit.dtd 226 2008-04-15 14:42:49Z alinke $
 
 -->
 
@@ -20,7 +20,7 @@
 <!ELEMENT rule	    (from, to, context?)>
 <!ELEMENT from	    (#PCDATA)>
 <!ELEMENT to	    (#PCDATA)>
-<!ELEMENT context   (before|after)>
+<!ELEMENT context   ((before|after),(before|after)?)>
 <!ELEMENT before    (#PCDATA)>
 <!ELEMENT after	    (#PCDATA)>
 
