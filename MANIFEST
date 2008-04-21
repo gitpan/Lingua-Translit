@@ -14,6 +14,8 @@ xml/din_31634.xml
 xml/common_ron.xml
 xml/common_deu.xml
 xml/common_ces.xml
+xml/common_slv.xml
+xml/common_slk.xml
 xml/common_classical_mon.xml
 xml/din_1460_bul.xml
 xml/streamlined_system_bul.xml
@@ -30,6 +32,8 @@ t/16_tr_Common_CES.t
 t/17_tr_Common_Classical_MON.t
 t/18_tr_DIN_1460_BUL.t
 t/19_tr_Streamlined_System_BUL.t
+t/20_tr_Common_SLK.t
+t/21_tr_Common_SLV.t
 tools/substitute_tables.pl
 Changes
 README

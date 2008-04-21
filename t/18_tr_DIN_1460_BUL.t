@@ -1,4 +1,4 @@
-## $Id: 18_tr_DIN_1460_BUL.t 239 2008-04-17 08:59:44Z alinke $
+## $Id: 18_tr_DIN_1460_BUL.t 247 2008-04-21 09:41:42Z rlinke $
 
 use strict;
 require 5.008;
@@ -35,7 +35,7 @@ my $hyphen_cyr = "равнище, юрисдикция, задължиха, " . 
 
  my $hyphen_lat = "ravnište, jurisdikcija, zadălžicha, " .
 		  "Južnoslavjanski, Chărvatski, " .
-		  "j-a, J-AK, j-u, J-uno, peš-tʹ, Š-TAB, Š-tab";
+		  "j-a, J-AK, j-u, J-uno, peš-t', Š-TAB, Š-tab";
 
 # Test all caps, hard and soft signs
 my $context_cyr	= "ОБЩОТО , ВСЕОБЩА , ДЕКЛАРАЦЯ , ПРЕАМБЮЛ --- " . #allcaps
@@ -43,7 +43,7 @@ my $context_cyr	= "ОБЩОТО , ВСЕОБЩА , ДЕКЛАРАЦЯ , ПРЕА
 		  "актьор , СИНЬО" ;			        # soft sign
 my $context_lat	= "OBŠTOTO , VSEOBŠTA , DEKLARACJA , PREAMBJUL --- " .
 		  "vnukăt , Ăgăl , SĂBRAINE --- " .
-		  "aktʹor , SINʹO";
+		  "akt'or , SIN'O";
 
 use Lingua::Translit;
 

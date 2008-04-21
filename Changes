@@ -1,3 +1,11 @@
+0.11 -- 2008-04-21
+
+    * xml/din_1460_bul.xml: changed transliteration of SOFT SIGN to plain
+      ASCII apostrophe.
+    * New transliterations:
+	* Common SLK (Slovak)
+	* Common SLV (Slovenian)
+
 0.10 -- 2008-04-17
 
     * lib/Lingua/Translit.pm, xml/translit.dtd: Contexts can now contain two

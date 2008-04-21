@@ -1167,6 +1167,189 @@
     ],
     "reverse" => "false"
   },
+  "Common SLK" => {
+    "desc" => "Slovak without diacritics",
+    "name" => "Common SLK",
+    "rules" => [
+      {
+        "to" => "A",
+        "from" => "\x{c1}"
+      },
+      {
+        "to" => "a",
+        "from" => "\x{e1}"
+      },
+      {
+        "to" => "A",
+        "from" => "\x{c4}"
+      },
+      {
+        "to" => "a",
+        "from" => "\x{e4}"
+      },
+      {
+        "to" => "C",
+        "from" => "\x{10c}"
+      },
+      {
+        "to" => "c",
+        "from" => "\x{10d}"
+      },
+      {
+        "to" => "D",
+        "from" => "\x{10e}"
+      },
+      {
+        "to" => "d",
+        "from" => "\x{10f}"
+      },
+      {
+        "to" => "d",
+        "from" => "d\x{30c}"
+      },
+      {
+        "to" => "E",
+        "from" => "\x{c9}"
+      },
+      {
+        "to" => "e",
+        "from" => "\x{e9}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{cd}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{ed}"
+      },
+      {
+        "to" => "L",
+        "from" => "\x{139}"
+      },
+      {
+        "to" => "l",
+        "from" => "\x{13a}"
+      },
+      {
+        "to" => "L",
+        "from" => "\x{13d}"
+      },
+      {
+        "to" => "l",
+        "from" => "\x{13e}"
+      },
+      {
+        "to" => "L",
+        "from" => "L\x{30c}"
+      },
+      {
+        "to" => "l",
+        "from" => "l\x{30c}"
+      },
+      {
+        "to" => "N",
+        "from" => "\x{147}"
+      },
+      {
+        "to" => "n",
+        "from" => "\x{148}"
+      },
+      {
+        "to" => "O",
+        "from" => "\x{d3}"
+      },
+      {
+        "to" => "o",
+        "from" => "\x{f3}"
+      },
+      {
+        "to" => "R",
+        "from" => "\x{154}"
+      },
+      {
+        "to" => "r",
+        "from" => "\x{155}"
+      },
+      {
+        "to" => "S",
+        "from" => "\x{160}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{161}"
+      },
+      {
+        "to" => "T",
+        "from" => "\x{164}"
+      },
+      {
+        "to" => "t",
+        "from" => "\x{165}"
+      },
+      {
+        "to" => "t",
+        "from" => "t\x{30c}"
+      },
+      {
+        "to" => "U",
+        "from" => "\x{da}"
+      },
+      {
+        "to" => "u",
+        "from" => "\x{fa}"
+      },
+      {
+        "to" => "Y",
+        "from" => "\x{dd}"
+      },
+      {
+        "to" => "y",
+        "from" => "\x{fd}"
+      },
+      {
+        "to" => "Z",
+        "from" => "\x{17d}"
+      },
+      {
+        "to" => "z",
+        "from" => "\x{17e}"
+      },
+      {
+        "to" => "O",
+        "from" => "\x{d4}"
+      },
+      {
+        "to" => "o",
+        "from" => "\x{f4}"
+      },
+      {
+        "to" => "DZ",
+        "from" => "\x{1f1}"
+      },
+      {
+        "to" => "Dz",
+        "from" => "\x{1f2}"
+      },
+      {
+        "to" => "dz",
+        "from" => "\x{1f3}"
+      },
+      {
+        "to" => "DZ",
+        "from" => "\x{1c4}"
+      },
+      {
+        "to" => "Dz",
+        "from" => "\x{1c5}"
+      },
+      {
+        "to" => "dz",
+        "from" => "\x{1c6}"
+      }
+    ],
+    "reverse" => "false"
+  },
   "DIN 1460 BUL" => {
     "desc" => "DIN 1460:1982, Cyrillic to Latin, Bulgarian",
     "name" => "DIN 1460 BUL",
@@ -1464,14 +1647,14 @@
         "from" => "\x{44a}"
       },
       {
-        "to" => "\x{2b9}",
+        "to" => "'",
         "from" => "\x{42c}",
         "context" => {
           "after" => "[[:upper:]]"
         }
       },
       {
-        "to" => "\x{2b9}",
+        "to" => "'",
         "from" => "\x{44c}"
       }
     ],
@@ -1536,6 +1719,37 @@
       {
         "to" => "t",
         "from" => "\x{163}"
+      }
+    ],
+    "reverse" => "false"
+  },
+  "Common SLV" => {
+    "desc" => "Slovenian without diacritics",
+    "name" => "Common SLV",
+    "rules" => [
+      {
+        "to" => "C",
+        "from" => "\x{10c}"
+      },
+      {
+        "to" => "c",
+        "from" => "\x{10d}"
+      },
+      {
+        "to" => "S",
+        "from" => "\x{160}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{161}"
+      },
+      {
+        "to" => "Z",
+        "from" => "\x{17d}"
+      },
+      {
+        "to" => "z",
+        "from" => "\x{17e}"
       }
     ],
     "reverse" => "false"

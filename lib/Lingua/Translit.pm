@@ -6,7 +6,7 @@ package Lingua::Translit;
 #   Alex Linke, <alinke@lingua-systems.com>
 #   Rona Linke, <rlinke@lingua-systems.com>
 #
-# $Id: Translit.pm 241 2008-04-17 09:11:29Z alinke $
+# $Id: Translit.pm 250 2008-04-21 10:02:57Z alinke $
 #
 
 
@@ -24,7 +24,7 @@ use Encode;
 use Lingua::Translit::Tables;
 
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 
 =pod
@@ -342,6 +342,10 @@ sub desc
 =item B<Common Classical MON>, reversible, C<Classical Mongolian to Latin>
 
 =item B<Streamlined System BUL>, not reversible, C<The Streamlined System: 2006, Cyrillic to Latin, Bulgarian>
+
+=item B<Common SLV>, not reversible, C<Slovenian without diacritics>
+
+=item B<Common SLK>, not reversible, C<Slovak without diacritics>
 
 =back
 

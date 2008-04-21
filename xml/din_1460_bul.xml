@@ -9,7 +9,7 @@
 
   Copyright 2008 by Rona Linke <rlinke@lingua-systems.com> 
 
-  $Id: din_1460_bul.xml 234 2008-04-17 08:18:05Z rlinke $
+  $Id: din_1460_bul.xml 247 2008-04-21 09:41:42Z rlinke $
 
 
 -->
@@ -414,7 +414,7 @@
 	
 	<rule>
 	    <from>&#x042C;</from>   <!-- CCL SOFT SIGN  -->
-	    <to>&#x02B9;</to>	    <!-- MODIFIER LETTER PRIME  -->
+	    <to>&#x0027;</to>	    <!-- APOSTROPHE  -->
 	    <context> 
 		<after>[[:upper:]]</after>
 	    </context>
@@ -422,7 +422,7 @@
 	
 	<rule>
 	    <from>&#x044C;</from>   <!-- CSL SOFT SIGN -->
-	    <to>&#x02B9;</to>	    <!-- MODIFIER LETTER PRIME  -->
+	    <to>&#x0027;</to>	    <!-- APOSTROPHE  -->
 	</rule>
 	
     </rules>
