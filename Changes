@@ -1,3 +1,7 @@
+0.12 -- 2008-04-23
+
+    * Added common Polish transliteration ("Common POL")
+
 0.11 -- 2008-04-21
 
     * xml/din_1460_bul.xml: changed transliteration of SOFT SIGN to plain

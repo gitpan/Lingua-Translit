@@ -16,6 +16,7 @@ xml/common_deu.xml
 xml/common_ces.xml
 xml/common_slv.xml
 xml/common_slk.xml
+xml/common_pol.xml
 xml/common_classical_mon.xml
 xml/din_1460_bul.xml
 xml/streamlined_system_bul.xml
@@ -34,6 +35,7 @@ t/18_tr_DIN_1460_BUL.t
 t/19_tr_Streamlined_System_BUL.t
 t/20_tr_Common_SLK.t
 t/21_tr_Common_SLV.t
+t/22_tr_Common_POL.t
 tools/substitute_tables.pl
 Changes
 README

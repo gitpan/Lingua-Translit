@@ -1,13 +1,13 @@
-## $Id: 02_Lingua-Translit.t 248 2008-04-21 10:00:05Z alinke $
+## $Id: 02_Lingua-Translit.t 257 2008-04-22 14:54:06Z alinke $
 
 use strict;
-use Test::More tests => (8 + (4*12));
+use Test::More tests => (8 + (4*13));
 
 my $truth;
 my @check_support = (
     "ISO 843", "Common DEU", "ISO 9", "Greeklish", "DIN 31634", "Common RON",
     "Common CES", "Common Classical MON", "DIN 1460 BUL",
-    "Streamlined System BUL", "Common SLV", "Common SLK"
+    "Streamlined System BUL", "Common SLV", "Common SLK", "Common POL"
 );
 
 my $num_str = "1234567890";

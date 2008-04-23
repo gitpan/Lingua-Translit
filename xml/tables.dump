@@ -1754,6 +1754,85 @@
     ],
     "reverse" => "false"
   },
+  "Common POL" => {
+    "desc" => "Unaccented Polish",
+    "name" => "Common POL",
+    "rules" => [
+      {
+        "to" => "A",
+        "from" => "\x{104}"
+      },
+      {
+        "to" => "a",
+        "from" => "\x{105}"
+      },
+      {
+        "to" => "C",
+        "from" => "\x{106}"
+      },
+      {
+        "to" => "c",
+        "from" => "\x{107}"
+      },
+      {
+        "to" => "E",
+        "from" => "\x{118}"
+      },
+      {
+        "to" => "e",
+        "from" => "\x{119}"
+      },
+      {
+        "to" => "L",
+        "from" => "\x{141}"
+      },
+      {
+        "to" => "l",
+        "from" => "\x{142}"
+      },
+      {
+        "to" => "N",
+        "from" => "\x{143}"
+      },
+      {
+        "to" => "n",
+        "from" => "\x{144}"
+      },
+      {
+        "to" => "O",
+        "from" => "\x{d3}"
+      },
+      {
+        "to" => "o",
+        "from" => "\x{f3}"
+      },
+      {
+        "to" => "S",
+        "from" => "\x{15a}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{15b}"
+      },
+      {
+        "to" => "Z",
+        "from" => "\x{179}"
+      },
+      {
+        "to" => "z",
+        "from" => "\x{17a}"
+      },
+      {
+        "to" => "Z",
+        "from" => "\x{17b}"
+      },
+      {
+        "to" => "z",
+        "from" => "\x{17c}"
+      }
+    ],
+    "reverse" => "false"
+  },
   "ISO 9" => {
     "desc" => "ISO 9:1995, Cyrillic to Latin",
     "name" => "ISO 9",

@@ -1,4 +1,4 @@
-# $Id: Makefile 249 2008-04-21 10:02:31Z alinke $
+# $Id: Makefile 255 2008-04-22 14:35:05Z alinke $
 
 TARGET		:=	tables.dump
 DUMP		:=	perl xml2dump.pl -v 
@@ -11,7 +11,7 @@ TABLES		:=	din_31634.xml din_1460_bul.xml \
 			greeklish.xml \
 			common_deu.xml common_ron.xml common_ces.xml \
 				common_classical_mon.xml common_slk.xml \
-				common_slv.xml
+				common_slv.xml common_pol.xml
 
 all: clean tables
 

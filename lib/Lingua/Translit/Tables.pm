@@ -6,7 +6,7 @@ package Lingua::Translit::Tables;
 #   Alex Linke, <alinke@lingua-systems.com>
 #   Rona Linke, <rlinke@lingua-systems.com>
 #
-# $Id: Tables.pm 250 2008-04-21 10:02:57Z alinke $
+# $Id: Tables.pm 258 2008-04-22 14:54:18Z alinke $
 #
 
 
@@ -185,6 +185,8 @@ sub translit_list_supported
 =item B<Common DEU>, not reversible, C<German without umlauts>
 
 =item B<Common CES>, not reversible, C<Czech without diacritics>
+
+=item B<Common POL>, not reversible, C<Unaccented Polish>
 
 =item B<Common Classical MON>, reversible, C<Classical Mongolian to Latin>
 
