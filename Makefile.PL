@@ -1,4 +1,4 @@
-# $Id: Makefile.PL 201 2008-04-07 10:08:12Z alinke $
+# $Id: Makefile.PL 280 2008-04-29 08:47:36Z alinke $
 
 # Lingua::Translit heavily relies on Perl's UTF-8 implementation and
 # therefore needs at least Perl 5.8.0 to be installed.
@@ -8,12 +8,8 @@ use strict;
 use ExtUtils::MakeMaker;
 
 
-if ($^O eq "MSWin32" && not defined $ENV{FORCE_UNSUPPORTED})
-{
-    die "Running Linua::Translit on $^O is currently not supported.\n" .
-	"Define FORCE_UNSUPPORTED in your shell's environment to avoid " .
-	"this check.\n";
-}
+# As suggested by http://cpantest.grango.org/wiki/CPANAuthorNotes
+die "OS unsupported\n" if ($^O eq "MSWin32");
 
 
 WriteMakefile(
@@ -34,7 +30,8 @@ package MY;
 sub postamble
 {
     # include target to rebuild tables
-    return "tables:\n\t\$(MAKE) -C xml tables\n";
+    return  "tables:\n\t\$(MAKE) -C xml tables\n\n" .
+	    "manual:\n\t\$(MAKE) -C xml/manual\n";
 }
 
 

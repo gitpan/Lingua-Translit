@@ -20,6 +20,7 @@ xml/common_pol.xml
 xml/common_classical_mon.xml
 xml/din_1460_bul.xml
 xml/streamlined_system_bul.xml
+t/xx_tr_template.t.pl
 t/01_Lingua-Translit-Tables.t
 t/02_Lingua-Translit.t
 t/03_translit.t
@@ -40,4 +41,14 @@ tools/substitute_tables.pl
 Changes
 README
 translit
+xml/manual/Makefile
+xml/manual/manual.txt
+xml/manual/highlight.css
+xml/manual/11_tr_Common_DEU.t.html
+xml/manual/Common_DEU.xml.html
+xml/manual/template.xml.html
+xml/manual/xx_tr_template.t.html
+xml/manual/pod.css
+xml/manual/manual.pod
+xml/manual/manual.html
 META.yml                                 Module meta-data (added by MakeMaker)

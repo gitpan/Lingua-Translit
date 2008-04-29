@@ -1,3 +1,12 @@
+0.13  -- 2008-04-29
+
+    * Added developer manual covering the addition of own transliteration
+      tables (xml/manual/).
+    * Added test template (t/xx_tr_template.t.pl)
+    * Makefile.PL:
+	* Added "manual" target
+	* Suited MSWin32 check for CPAN Testers tools
+
 0.12 -- 2008-04-23
 
     * Added common Polish transliteration ("Common POL")

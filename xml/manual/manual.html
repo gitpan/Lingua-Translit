@@ -1,0 +1,323 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Lingua::Translit Developer Manual</title>
+<link rel="stylesheet" href="pod.css" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Lingua::Translit, Lingua::Translit::Tables, transliteration tables, transliteration, developer manual, xml2dump.pl, natural language transliteration, text transliteration, translit, Lingua-Systems"/>
+</head>
+<body><h1 id="title">Lingua::Translit Developer Manual</h1>
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+<ul>
+	<li><a href="#conventions_used_in_this_manual">Conventions used in this manual</a></li>
+	<li><a href="#adding_a_transliteration">Adding a transliteration</a></li>
+	<ul>
+		<li><a href="#writing_a_transliteration_table">Writing a transliteration table</a></li>
+		<ul>
+			<li><a href="#unicode_notation">Unicode notation</a></li>
+			<li><a href="#specifying_a_context">Specifying a context</a></li>
+			<li><a href="#multiple_characters">Multiple characters</a></li>
+		</ul>
+		<li><a href="#building_a_development_version">Building a development version</a></li>
+		<ul>
+			<li><a href="#using_xml2dump_pl">Using xml2dump.pl</a></li>
+			<li><a href="#building_a_temporary_lingua__translit">Building a temporary Lingua::Translit</a></li>
+		</ul>
+		<li><a href="#testing_the_transliteration_table">Testing the transliteration table</a></li>
+		<ul>
+			<li><a href="#hints_on_what_to_test">Hints on what to test</a></li>
+			<li><a href="#running_the_tests">Running the Tests</a></li>
+		</ul>
+		<li><a href="#integrating_the_new_table">Integrating the new table</a></li>
+		<li><a href="#contributing_your_table">Contributing your table</a></li>
+	</ul>
+</ul>
+<!-- INDEX END -->
+<hr />
+<p>
+</p>
+<hr />
+<a name="conventions_used_in_this_manual"></a>
+<h1>Conventions used in this manual</h1>
+<ul>
+<li>
+<p>Every non absolute path is relative to the source code's directory.</p>
+</li>
+</ul>
+<p>
+</p>
+<hr />
+<a name="adding_a_transliteration"></a>
+<h1>Adding a transliteration</h1>
+<p>If you want to add a new transliteration to
+<a href="http://search.cpan.org/dist/Lingua-Translit/lib/Lingua/Translit.pm">Lingua::Translit</a> just...</p>
+<ul>
+<li>
+<p>write an XML file (the "transliteration table'')</p>
+</li>
+<li>
+<p>build a development version containing your table</p>
+</li>
+<li>
+<p>write and run some tests to check if your transliteration is working as
+expected.</p>
+</li>
+<li>
+<p>integrate your table into the set of upstream tables and consider
+contributing it</p>
+</li>
+</ul>
+<p>
+</p>
+<a name="writing_a_transliteration_table"></a>
+<h2>Writing a transliteration table</h2>
+<p>Each XML-file consists of meta data and a set of transliteration rules.</p>
+<p>The <strong>meta data</strong> tags cover the name of the transliteration, a short
+description and the information whether the transliteration can be used
+in both directions. For example:</p>
+<pre>
+  &lt;name&gt;DIN 1460&lt;/name&gt;
+  &lt;desc&gt;DIN 1460: Cyrillic to Latin&lt;/desc&gt;
+  &lt;reverse&gt;true&lt;/reverse&gt;</pre>
+<p>The <strong>rules</strong> can be simple one to one mappings
+</p>
+<pre>
+ &lt;rule&gt;
+    &lt;from&gt;X&lt;/from&gt;
+    &lt;to&gt;Y&lt;/to&gt;
+  &lt;/rule&gt;</pre>
+<p>...but you can also specify a context in which the rule should be evaluated
+only:
+</p>
+<pre>
+  &lt;rule&gt;
+    &lt;from&gt;A&lt;/from&gt;
+    &lt;to&gt;B&lt;/to&gt;
+    &lt;context&gt;
+      &lt;after&gt;x&lt;/after&gt;
+      &lt;before&gt;y&lt;/before&gt;
+  &lt;/rule&gt;</pre>
+<p>To get an easy start, you can copy the file <em>xml/template.xml</em>, rename it
+to your needs and edit it right away.</p>
+Template:  <a href="template.xml.html">template.xml</a>
+  <br/>Complete example:  <a href="Common_DEU.xml.html">Common_DEU.xml</a><p>Although editing an XML-file is technically quite easy, some things
+have to be respected.
+The most important thing to keep in mind is that the rules are applied
+<em>in sequence</em> - one after another.
+Therefore the order of rules is important if you specify a context 
+or transliterate multiple characters.</p>
+<p>
+</p>
+<a name="unicode_notation"></a>
+<h3>Unicode notation</h3>
+<p>If you are determining characters that are non-ASCII characters, use an
+entity that represents the Unicode code point in hex-notation to specify
+them and leave a comment on the character.</p>
+<pre>
+  &lt;rule&gt;
+    &lt;from&gt;&amp;#x0410;&lt;/from&gt;         &lt;!-- CYRILLIC CAPITAL LETTER A --&gt; 
+    &lt;to&gt;A&lt;/to&gt;
+  &lt;/rule&gt;</pre>
+<p>This assures that the correct character is transformed and it can be
+exactly determined, if it is not represented correctly.</p>
+<p>
+</p>
+<a name="specifying_a_context"></a>
+<h3>Specifying a context</h3>
+<p>The context is evaluated as a Perl regular expression. So for
+specifying the context <em>literal ASCII characters</em>, <em>entities</em>
+or <em>meta characters</em> can be used.</p>
+<p>If a character has two mappings depending on the context,
+the context-sensitive rule must be applied first and then the 
+context-free rule. Otherwise every character is replaced at once through
+the context-free rule and the context-sensitive rule will never match.</p>
+<p>1. rule
+</p>
+<pre>
+  &lt;rule&gt;
+    &lt;from&gt;&amp;#x0393;&amp;#x03BA;&lt;/from&gt; &lt;!-- GREEK CAPITAL LETTER GAMMA &amp;
+                                       GREEK SMALL LETTER KAPPA --&gt;
+    &lt;to&gt;Gk&lt;/to&gt;
+    &lt;context&gt;
+      &lt;after&gt;\b&lt;/after&gt;           &lt;!-- word initial --&gt;
+    &lt;/context&gt;
+  &lt;/rule&gt;</pre>
+<p>2. rule</p>
+<pre>
+  &lt;rule&gt;
+    &lt;from&gt;&amp;#x0393;&amp;#x03BA;&lt;/from&gt; &lt;!-- GREEK CAPITAL LETTER GAMMA &amp;
+                                       GREEK SMALL LETTER KAPPA --&gt;
+    &lt;to&gt;Nk&lt;/to&gt;
+  &lt;/rule&gt;</pre>
+<p>The following pattern matching contexts are available:</p>
+<dl>
+<dt><code>&lt;after&gt;</code>
+<dd>
+<p>if the transliteration rule should only be applied after a certain 
+character (corresponds to Perl's <em>lookbehind</em>)</p>
+</dd>
+</li>
+<dt><code>&lt;before&gt;</code>
+<dd>
+<p>if the rule should only be applied before a certain character 
+(corresponds to Perl's <em>lookahead</em>)</p>
+</dd>
+</li>
+<dt><code>&lt;after&gt; &amp; &lt;before&gt;</code>
+<dd>
+<p>if the rule should only be applied if the character is in between 
+two characters</p>
+</dd>
+</li>
+</dl>
+<p>
+</p>
+<a name="multiple_characters"></a>
+<h3>Multiple characters</h3>
+<p>As all rules are applied in sequence, and hence the order of rules is
+important, all rules concerning multiple characters must precede
+all single character rules.</p>
+<p>1. rule</p>
+<pre>
+  &lt;rule&gt;
+    &lt;from&gt;&amp;#x03B1;&amp;#x03C5;&lt;/from&gt; &lt;!-- GREEK SMALL LETTER ALPHA &amp;
+                                       GREEK SMALL LETTER UPSILON --&gt;
+    &lt;to&gt;au&lt;/to&gt;
+  &lt;/rule&gt;</pre>
+<p>2. rule</p>
+<pre>
+  &lt;rule&gt;
+    &lt;from&gt;&amp;#x03B1;&lt;/from&gt;         &lt;!-- GREEK SMALL LETTER ALPHA --&gt;
+    &lt;to&gt;a&lt;/to&gt;
+  &lt;/rule&gt;</pre>
+<p>If you switch the order of the rules in the above example, every single
+alpha would be transliterated first and the digraph pattern will never
+match.</p>
+<p>
+</p>
+<a name="building_a_development_version"></a>
+<h2>Building a development version</h2>
+<p>Your new transliteration table has to be converted to a Perl data
+structure and stored in <em>xml/tables.dump</em> in order to be put to use and
+tested as a development version of <a href="http://search.cpan.org/dist/Lingua-Translit/lib/Lingua/Translit.pm">Lingua::Translit</a>.</p>
+<p><em>xml2dump.pl</em> is a tool that processes XML transliteration table
+definitions and converts them to Perl data structures. Normally, all
+stable transliteration tables are processed once and stored in
+<em>xml/tables.dump</em> and included in the <a href="http://search.cpan.org/dist/Lingua-Translit/lib/Lingua/Translit/Tables.pm">Lingua::Translit::Tables</a>
+module once at build time.</p>
+<p>
+</p>
+<a name="using_xml2dump_pl"></a>
+<h3>Using xml2dump.pl</h3>
+<p>To accomplish this task the <em>xml2dump.pl</em> tool comes in handy:</p>
+<pre>
+  alinke$ ./xml2dump.pl -v -o tables.dump mytable.xml 
+  Parsing mytable.xml... (MyTable: rules=2, contexts=1)
+  1 transliteration table(s) dumped to tables.dump.</pre>
+<p>It reads an XML definition, processes it and dumps the resulting data
+structure to a given file (<code>-o</code>&nbsp;switch).</p>
+<p>Your transliteration table is now ready to be included by
+<a href="http://search.cpan.org/dist/Lingua-Translit/lib/Lingua/Translit/Tables.pm">Lingua::Translit::Tables</a> so it can be tested and evaluated.</p>
+<p>
+</p>
+<a name="building_a_temporary_lingua__translit"></a>
+<h3>Building a temporary Lingua::Translit</h3>
+<p>Use the standard toolchain to build a temporary development version of
+<a href="http://search.cpan.org/dist/Lingua-Translit/lib/Lingua/Translit.pm">Lingua::Translit</a> which contains nothing but your new
+transliteration table.</p>
+<pre>
+  alinke$ perl Makefile.PL &amp;&amp; make</pre>
+<p>Given the resulting development version, it's time to test the
+transliteration table for completeness and correct functionality.</p>
+<p>
+</p>
+<a name="testing_the_transliteration_table"></a>
+<h2>Testing the transliteration table</h2>
+<p>To verify that your set of transliteration rules works correctly,
+you need to make some tests using your favorite Perl test framework.
+For an easy and complete example that utilizes the
+<a href="http://perldoc.perl.org/Test/More.html">Test::More</a>
+framework, have a look at the following example:</p>
+  <a href="11_tr_Common_DEU.t.html">t/11_tr_Common_DEU.t</a><p><a href="http://search.cpan.org/dist/Lingua-Translit/lib/Lingua/Translit.pm">Lingua::Translit</a> comes with a ready to use test template that you
+could use as a starting point and suite it to your transliterations
+specific needs. It is located at <em>t/xx_tr_template.t.pl</em> - to follow
+<a href="http://search.cpan.org/dist/Lingua-Translit/lib/Lingua/Translit.pm">Lingua::Translit</a>'s naming convention, rename it to <em>NN_tr_NAME.t</em>.</p>
+Online version of the template:  <a href="xx_tr_template.t.html">t/xx_tr_template.t.pl</a><p>
+</p>
+<a name="hints_on_what_to_test"></a>
+<h3>Hints on what to test</h3>
+<ul>
+<li>
+<p>If your transliteration is straight forward (only "1:1'' mappings), just
+test a small text and have a look at the result. At best, everything is
+correct an you are ready.</p>
+</li>
+<li>
+<p>If the transliteration is reversible, you should check, if both directions
+are transliterating correctly.</p>
+</li>
+<li>
+<p>All the context-sensitive and multi-character transliterations should
+be tested explicitly, to assure, that the error-prone mappings also
+work as expected.</p>
+</li>
+</ul>
+<p>
+</p>
+<a name="running_the_tests"></a>
+<h3>Running the Tests</h3>
+<p>While testing it is convenient to define the environment variable
+<em>PERL5LIB</em> (have a look at <em>perlrun</em>(1)) so that the Perl interpreter
+<code>knows</code> where your development version of
+<a href="http://search.cpan.org/dist/Lingua-Translit/lib/Lingua/Translit.pm">Lingua::Translit</a> is located. The following example
+session assumes that you are using <em>bash</em>(1) or a similar shell:</p>
+<pre>
+  alinke$ export PERL5LIB=&quot;blib/lib&quot;
+  alinke$ perl t/66_tr_mytest.t
+  1..2
+  ok 1 - MyTable: not reversible
+  ok 2 - MyTable: transliteration</pre>
+<p>If all tests work as expected and hence your transliteration table is
+ready for usage, clean up your shell's environment and prepare to
+integrate your table into the existing set of transliteration tables:</p>
+<pre>
+  alinke$ unset PERL5LIB</pre>
+<p>
+</p>
+<a name="integrating_the_new_table"></a>
+<h2>Integrating the new table</h2>
+<p>Change to the <em>xml/</em> directory and let <em>make</em>(1) call <em>xml2dump.pl</em>
+in order to build a data structure ("<em>tables.dump</em>'') from all
+available XML transliteration tables, including yours:</p>
+<pre>
+  alinke$ make all-tables</pre>
+<p>Now, clean up the old files from the development version you used to
+write your tests. Change into the source directory's root and run</p>
+<pre>
+  alinke$ make distclean &amp;&amp; perl Makefile.PL &amp;&amp; make</pre>
+<p>The result is a complete version of <a href="http://search.cpan.org/dist/Lingua-Translit/lib/Lingua/Translit.pm">Lingua::Translit</a> that contains
+all upstream tables, as well as your own addition.</p>
+<pre>
+  alinke$ make test</pre>
+<p>...assures everything is alright and ready for installation or
+packaging. Congratulations!</p>
+<p>
+</p>
+<a name="contributing_your_table"></a>
+<h2>Contributing your table</h2>
+<p>If you like to contribute your transliteration table under the terms of
+the GPL/Artistic License, it can be included in the official upstream
+version. To accomplish this, create a patch of your changes and send it
+along with a description and comments to <code>perl@lingua-systems.com</code> so
+it can be part of the next release.</p>
+  <div id="footer">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-xhtml10-blue"
+      alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+    <br/>
+    &copy; 2008 by Alex Linke &amp; Rona Linke
+  </div>
+</body>
+</html>

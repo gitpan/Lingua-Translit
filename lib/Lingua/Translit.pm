@@ -6,7 +6,7 @@ package Lingua::Translit;
 #   Alex Linke, <alinke@lingua-systems.com>
 #   Rona Linke, <rlinke@lingua-systems.com>
 #
-# $Id: Translit.pm 258 2008-04-22 14:54:18Z alinke $
+# $Id: Translit.pm 275 2008-04-29 07:57:47Z alinke $
 #
 
 
@@ -24,7 +24,7 @@ use Encode;
 use Lingua::Translit::Tables;
 
 
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 
 
 =pod
@@ -323,33 +323,52 @@ sub desc
 
 =over 4
 
-=item B<ISO 843>, not reversible, C<ISO 843:1997, Greek to Latin>
+=item Cyrillic
 
-=item B<ISO 9>, reversible, C<ISO 9:1995, Cyrillic to Latin>
+I<ISO 9>, reversible, ISO 9:1995, Cyrillic to Latin
 
-=item B<Greeklish>, not reversible, C<Greeklish (Phonetic), Greek to Latin>
+I<Streamlined System BUL>, not reversible, The Streamlined System: 2006,
+Cyrillic to Latin, Bulgarian
 
-=item B<DIN 31634>, not reversible, C<DIN 31634:1982, Greek to Latin>
+I<DIN 1460 BUL>, reversible, DIN 1460:1982, Cyrillic to Latin, Bulgarian
 
-=item B<DIN 1460 BUL>, reversible, C<DIN 1460:1982, Cyrillic to Latin, Bulgarian>
+=item Greek
 
-=item B<Common RON>, not reversible, C<Romanian without diacritics as commonly used>
+I<ISO 843>, not reversible, ISO 843:1997, Greek to Latin
 
-=item B<Common DEU>, not reversible, C<German without umlauts>
+I<DIN 31634>, not reversible, DIN 31634:1982, Greek to Latin
 
-=item B<Common CES>, not reversible, C<Czech without diacritics>
+I<Greeklish>, not reversible, Greeklish (Phonetic), Greek to Latin
 
-=item B<Common POL>, not reversible, C<Unaccented Polish>
+=item Latin
 
-=item B<Common Classical MON>, reversible, C<Classical Mongolian to Latin>
+I<Common CES>, not reversible, Czech without diacritics
 
-=item B<Streamlined System BUL>, not reversible, C<The Streamlined System: 2006, Cyrillic to Latin, Bulgarian>
+I<Common DEU>, not reversible, German without umlauts
 
-=item B<Common SLV>, not reversible, C<Slovenian without diacritics>
+I<Common POL>, not reversible, Unaccented Polish
 
-=item B<Common SLK>, not reversible, C<Slovak without diacritics>
+I<Common RON>, not reversible, Romanian without diacritics as commonly used
+
+I<Common SLK>, not reversible, Slovak without diacritics
+
+I<Common SLV>, not reversible, Slovenian without diacritics
+
+=item Mongolian
+
+I<Common Classical MON>, reversible, Classical Mongolian to Latin
 
 =back
+
+=head1 ADDING NEW TRANSLITERATIONS
+
+In case you want to add your own transliteration tables to L<Lingua::Translit>,
+a developer manual (F<xml/manual/>) is available in HTML and plain text format.
+An online version is available at
+L<http://www.lingua-systems.com/products/translit/manual/>.
+
+All necessary tools and templates to start with are provided as well.
+
 
 =head1 RESTRICTIONS
 

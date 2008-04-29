@@ -1,0 +1,62 @@
+/*
+ * $Id: pod.css 266 2008-04-28 17:00:10Z alinke $
+ */
+
+#title {
+    color: #390;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+body {
+    width: 760px;
+    margin: 20px auto;
+    text-align: justify;
+    font: 100.1% normal Verdana, Arial, sans-serif;
+}
+
+#footer {
+    text-align: center;
+    margin: 10px 5px;
+    color: #999;
+    font: 90% Arial, Verdana, sans-serif;
+}
+
+a, a:link, a:visited, a:active, a:hover {
+    text-decoration: underline;
+    color: #669;
+    padding: 1px 2px;
+}
+pre {
+    margin-left: 25px;
+    border-left: 4px solid #999;
+    padding: 10px;
+}
+h1 {
+    font-size: 130%;
+    color: #390;
+    border-bottom: 1px dashed #CC9;
+    margin: 20px 5px;
+}
+h2 {
+    font-size: 120%;
+    border-bottom: 1px dashed #CC9;
+}
+h3 {
+    font-size: 110%;
+    color: #390;
+}
+h4 {
+    font-size: 100%;
+}
+hr {
+    visibility: hidden;
+}
+img {
+    border: 0;
+}
+
+
+/*
+vim: sts=4 enc=utf-8
+*/
