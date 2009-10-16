@@ -1,5 +1,3 @@
-## $Id: manual.pod 272 2008-04-29 07:23:37Z alinke $ ##
-
 
 =pod
 
@@ -76,6 +74,7 @@ only:
     <context>
       <after>x</after>
       <before>y</before>
+    </context>
   </rule>
 
 To get an easy start, you can copy the file F<xml/template.xml>, rename it
@@ -347,7 +346,9 @@ it can be part of the next release.
       src="http://www.w3.org/Icons/valid-xhtml10-blue"
       alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
     <br/>
-    &copy; 2008 by Alex Linke &amp; Rona Linke
+    &copy; 2008 Alex Linke &amp; Rona Linke
+    <br/>
+    &copy; 2009 Lingua-Systems Software GmbH
   </div>
 
 =end html

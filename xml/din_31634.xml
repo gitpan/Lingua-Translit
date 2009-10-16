@@ -7,16 +7,10 @@
   
     Transliteration definitions for DIN 31634: Greek to Latin.
 
-
-    Copyright 2008 by Alex Linke <alinke@lingua-systems.com>
-    All rights reserved.
-
-
-    $Id: din_31634.xml 168 2008-03-21 06:44:11Z alinke $
-
+    Copyright (C) 2008 Alex Linke <alinke@lingua-systems.com>
+    Copyright (C) 2009 Lingua-Systems Software GmbH
 
     See DIN 31634:April 1982, "Umschrift des griechischen Alphabets"
-
     
     The transliteration table is almost complete, only support for 
     transliterating aspiration diacritics is left unimplemented for

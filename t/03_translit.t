@@ -1,5 +1,3 @@
-## $Id: 03_translit.t 113 2008-02-18 08:29:02Z alinke $
-
 use strict;
 use Test::More tests => 5;
 
@@ -14,25 +12,25 @@ $truth = -e $script;
 is($truth, 1, "translit found");
 
 
-$truth = system($script, "-h");
+$truth = system($^X, $script, "-h");
 
 # 2
 is($truth, 0, "translit supports -h switch");
 
 
-$truth = system($script, "--help");
+$truth = system($^X, $script, "--help");
 
 # 3
 is($truth, 0, "translit supports --help switch");
 
 
-$truth = system($script, "-l");
+$truth = system($^X, $script, "-l");
 
 # 4
 is($truth, 0, "translit supports -l switch");
 
 
-$truth = system($script, "--list");
+$truth = system($^X, $script, "--list");
 
 # 5
 is($truth, 0, "translit supports --list switch");

@@ -1,5 +1,3 @@
-## $Id: 15_tr_Common_RON.t 138 2008-02-25 13:15:55Z alinke $
-
 use strict;
 require 5.008;
 use utf8;

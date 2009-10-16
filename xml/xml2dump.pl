@@ -1,9 +1,8 @@
 #!/usr/bin/perl -w
 
 #
-# Copyright 2007-2008 by Alex Linke, <alinke@lingua-systems.com>
-#
-# $Id: xml2dump.pl 225 2008-04-15 14:35:51Z alinke $
+# Copyright (C) 2007-2008 Alex Linke <alinke@lingua-systems.com>
+# Copyright (C) 2009 Lingua-Systems Software GmbH
 #
 
 

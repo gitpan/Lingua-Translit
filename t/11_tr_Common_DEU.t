@@ -1,5 +1,3 @@
-## $Id: 11_tr_Common_DEU.t 159 2008-03-10 09:33:18Z alinke $
-
 use strict;
 use Test::More tests => 4;
 

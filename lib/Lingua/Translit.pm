@@ -2,11 +2,10 @@ package Lingua::Translit;
 
 
 #
-# Copyright 2007-2008 by ...
-#   Alex Linke, <alinke@lingua-systems.com>
-#   Rona Linke, <rlinke@lingua-systems.com>
-#
-# $Id: Translit.pm 275 2008-04-29 07:57:47Z alinke $
+# Copyright (C) 2007-2008 ...
+#   Alex Linke <alinke@lingua-systems.com>
+#   Rona Linke <rlinke@lingua-systems.com>
+# Copyright (C) 2009 Lingua-Systems Software GmbH
 #
 
 
@@ -24,7 +23,7 @@ use Encode;
 use Lingua::Translit::Tables;
 
 
-our $VERSION = '0.13';
+our $VERSION = '0.14';
 
 
 =pod
@@ -365,7 +364,7 @@ I<Common Classical MON>, reversible, Classical Mongolian to Latin
 In case you want to add your own transliteration tables to L<Lingua::Translit>,
 a developer manual (F<xml/manual/>) is available in HTML and plain text format.
 An online version is available at
-L<http://www.lingua-systems.com/products/translit/manual/>.
+L<http://www.lingua-systems.com/transliteration/Lingua-Translit-Perl-module/developer-manual/>.
 
 All necessary tools and templates to start with are provided as well.
 
@@ -393,8 +392,8 @@ L<Lingua::Translit::Tables>, L<utf8>, L<Encode>, L<perlunicode>, L<bytes>
 
 L<translit(1)>
 
-C<http://www.lingua-systems.com/products/translit/> provides an online
-frontend for L<Lingua::Translit>.
+L<http://www.lingua-systems.com/transliteration/Lingua-Translit-Perl-module/online-transliteration.html/>
+provides an online frontend for L<Lingua::Translit>.
 
 =head1 CREDITS
 
@@ -412,7 +411,9 @@ Rona Linke <rlinke@lingua-systems.com>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2008, Alex Linke and Rona Linke. All rights reserved.
+Copyright (C) 2007-2008 Alex Linke and Rona Linke
+
+Copyright (C) 2009 Lingua-Systems Software GmbH
 
 This module is free software. It may be used, redistributed
 and/or modified under the terms of either the GPL v2 or the

@@ -8,8 +8,9 @@
 <meta name="keywords" content="Lingua::Translit, Lingua::Translit::Tables, transliteration tables, transliteration, developer manual, xml2dump.pl, natural language transliteration, text transliteration, translit, Lingua-Systems"/>
 </head>
 <body><h1 id="title">Lingua::Translit Developer Manual</h1>
-<p><a name="__index__"></a></p>
 <!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
 <ul>
 	<li><a href="#conventions_used_in_this_manual">Conventions used in this manual</a></li>
 	<li><a href="#adding_a_transliteration">Adding a transliteration</a></li>
@@ -34,8 +35,9 @@
 		<li><a href="#contributing_your_table">Contributing your table</a></li>
 	</ul>
 </ul>
+<hr name="index" />
+</div>
 <!-- INDEX END -->
-<hr />
 <p>
 </p>
 <hr />
@@ -55,7 +57,7 @@
 <a href="http://search.cpan.org/dist/Lingua-Translit/lib/Lingua/Translit.pm">Lingua::Translit</a> just...</p>
 <ul>
 <li>
-<p>write an XML file (the "transliteration table'')</p>
+<p>write an XML file (the &quot;transliteration table&quot;)</p>
 </li>
 <li>
 <p>build a development version containing your table</p>
@@ -81,16 +83,14 @@ in both directions. For example:</p>
   &lt;name&gt;DIN 1460&lt;/name&gt;
   &lt;desc&gt;DIN 1460: Cyrillic to Latin&lt;/desc&gt;
   &lt;reverse&gt;true&lt;/reverse&gt;</pre>
-<p>The <strong>rules</strong> can be simple one to one mappings
-</p>
+<p>The <strong>rules</strong> can be simple one to one mappings</p>
 <pre>
  &lt;rule&gt;
     &lt;from&gt;X&lt;/from&gt;
     &lt;to&gt;Y&lt;/to&gt;
   &lt;/rule&gt;</pre>
 <p>...but you can also specify a context in which the rule should be evaluated
-only:
-</p>
+only:</p>
 <pre>
   &lt;rule&gt;
     &lt;from&gt;A&lt;/from&gt;
@@ -98,8 +98,9 @@ only:
     &lt;context&gt;
       &lt;after&gt;x&lt;/after&gt;
       &lt;before&gt;y&lt;/before&gt;
+    &lt;/context&gt;
   &lt;/rule&gt;</pre>
-<p>To get an easy start, you can copy the file <em>xml/template.xml</em>, rename it
+<p>To get an easy start, you can copy the file <em class="file">xml/template.xml</em>, rename it
 to your needs and edit it right away.</p>
 Template:  <a href="template.xml.html">template.xml</a>
   <br/>Complete example:  <a href="Common_DEU.xml.html">Common_DEU.xml</a><p>Although editing an XML-file is technically quite easy, some things
@@ -133,8 +134,7 @@ or <em>meta characters</em> can be used.</p>
 the context-sensitive rule must be applied first and then the 
 context-free rule. Otherwise every character is replaced at once through
 the context-free rule and the context-sensitive rule will never match.</p>
-<p>1. rule
-</p>
+<p>1. rule</p>
 <pre>
   &lt;rule&gt;
     &lt;from&gt;&amp;#x0393;&amp;#x03BA;&lt;/from&gt; &lt;!-- GREEK CAPITAL LETTER GAMMA &amp;
@@ -153,24 +153,21 @@ the context-free rule and the context-sensitive rule will never match.</p>
   &lt;/rule&gt;</pre>
 <p>The following pattern matching contexts are available:</p>
 <dl>
-<dt><code>&lt;after&gt;</code>
+<dt><strong><a name="after" class="item"><code>&lt;after&gt;</code></a></strong></dt>
 <dd>
 <p>if the transliteration rule should only be applied after a certain 
 character (corresponds to Perl's <em>lookbehind</em>)</p>
 </dd>
-</li>
-<dt><code>&lt;before&gt;</code>
+<dt><strong><a name="before" class="item"><code>&lt;before&gt;</code></a></strong></dt>
 <dd>
 <p>if the rule should only be applied before a certain character 
 (corresponds to Perl's <em>lookahead</em>)</p>
 </dd>
-</li>
-<dt><code>&lt;after&gt; &amp; &lt;before&gt;</code>
+<dt><strong><a name="after_before" class="item"><code>&lt;after&gt; &amp; &lt;before&gt;</code></a></strong></dt>
 <dd>
 <p>if the rule should only be applied if the character is in between 
 two characters</p>
 </dd>
-</li>
 </dl>
 <p>
 </p>
@@ -200,12 +197,12 @@ match.</p>
 <a name="building_a_development_version"></a>
 <h2>Building a development version</h2>
 <p>Your new transliteration table has to be converted to a Perl data
-structure and stored in <em>xml/tables.dump</em> in order to be put to use and
+structure and stored in <em class="file">xml/tables.dump</em> in order to be put to use and
 tested as a development version of <a href="http://search.cpan.org/dist/Lingua-Translit/lib/Lingua/Translit.pm">Lingua::Translit</a>.</p>
 <p><em>xml2dump.pl</em> is a tool that processes XML transliteration table
 definitions and converts them to Perl data structures. Normally, all
 stable transliteration tables are processed once and stored in
-<em>xml/tables.dump</em> and included in the <a href="http://search.cpan.org/dist/Lingua-Translit/lib/Lingua/Translit/Tables.pm">Lingua::Translit::Tables</a>
+<em class="file">xml/tables.dump</em> and included in the <a href="http://search.cpan.org/dist/Lingua-Translit/lib/Lingua/Translit/Tables.pm">Lingua::Translit::Tables</a>
 module once at build time.</p>
 <p>
 </p>
@@ -242,15 +239,15 @@ For an easy and complete example that utilizes the
 framework, have a look at the following example:</p>
   <a href="11_tr_Common_DEU.t.html">t/11_tr_Common_DEU.t</a><p><a href="http://search.cpan.org/dist/Lingua-Translit/lib/Lingua/Translit.pm">Lingua::Translit</a> comes with a ready to use test template that you
 could use as a starting point and suite it to your transliterations
-specific needs. It is located at <em>t/xx_tr_template.t.pl</em> - to follow
-<a href="http://search.cpan.org/dist/Lingua-Translit/lib/Lingua/Translit.pm">Lingua::Translit</a>'s naming convention, rename it to <em>NN_tr_NAME.t</em>.</p>
+specific needs. It is located at <em class="file">t/xx_tr_template.t.pl</em> - to follow
+<a href="http://search.cpan.org/dist/Lingua-Translit/lib/Lingua/Translit.pm">Lingua::Translit</a>'s naming convention, rename it to <em class="file">NN_tr_NAME.t</em>.</p>
 Online version of the template:  <a href="xx_tr_template.t.html">t/xx_tr_template.t.pl</a><p>
 </p>
 <a name="hints_on_what_to_test"></a>
 <h3>Hints on what to test</h3>
 <ul>
 <li>
-<p>If your transliteration is straight forward (only "1:1'' mappings), just
+<p>If your transliteration is straight forward (only &quot;1:1&quot; mappings), just
 test a small text and have a look at the result. At best, everything is
 correct an you are ready.</p>
 </li>
@@ -288,8 +285,8 @@ integrate your table into the existing set of transliteration tables:</p>
 </p>
 <a name="integrating_the_new_table"></a>
 <h2>Integrating the new table</h2>
-<p>Change to the <em>xml/</em> directory and let <em>make</em>(1) call <em>xml2dump.pl</em>
-in order to build a data structure ("<em>tables.dump</em>'') from all
+<p>Change to the <em class="file">xml/</em> directory and let <em>make</em>(1) call <em>xml2dump.pl</em>
+in order to build a data structure (&quot;<em class="file">tables.dump</em>&quot;) from all
 available XML transliteration tables, including yours:</p>
 <pre>
   alinke$ make all-tables</pre>
@@ -317,7 +314,9 @@ it can be part of the next release.</p>
       src="http://www.w3.org/Icons/valid-xhtml10-blue"
       alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
     <br/>
-    &copy; 2008 by Alex Linke &amp; Rona Linke
+    &copy; 2008 Alex Linke &amp; Rona Linke
+    <br/>
+    &copy; 2009 Lingua-Systems Software GmbH
   </div>
 </body>
 </html>

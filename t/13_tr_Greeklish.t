@@ -1,5 +1,3 @@
-## $Id: 13_tr_Greeklish.t 221 2008-04-15 11:07:20Z alinke $
-
 use strict;
 use Test::More tests => 6;
 

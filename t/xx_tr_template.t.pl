@@ -1,5 +1,3 @@
-## $Id: xx_tr_template.t.pl 273 2008-04-29 07:27:01Z alinke $ ##
-
 use strict;
 use Test::More tests => 3;  # number of tests
 

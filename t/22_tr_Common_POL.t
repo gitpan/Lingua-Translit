@@ -1,5 +1,3 @@
-## $Id: 22_tr_Common_POL.t 257 2008-04-22 14:54:06Z alinke $
-
 use strict;
 use Test::More tests => 3;
 

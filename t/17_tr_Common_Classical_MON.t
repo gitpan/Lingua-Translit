@@ -1,5 +1,3 @@
-## $Id: 17_tr_Common_Classical_MON.t 209 2008-04-08 06:19:40Z alinke $
-
 use strict;
 use Test::More tests => 13;
 

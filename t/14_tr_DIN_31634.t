@@ -1,5 +1,3 @@
-## $Id: 14_tr_DIN_31634.t 170 2008-03-21 06:44:51Z alinke $
-
 use strict;
 require 5.008;
 use utf8;

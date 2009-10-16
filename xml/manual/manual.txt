@@ -2,7 +2,6 @@
 | Lingua::Translit Developer Manual |
 +-----------------------------------+
 
-
 ==== Conventions used in this manual ====
 
 :   * Every non absolute path is relative to the source code's directory.
@@ -27,7 +26,7 @@
 
     Each XML-file consists of meta data and a set of transliteration rules.
 
-    The ``meta data'' tags cover the name of the transliteration, a short
+    The meta data tags cover the name of the transliteration, a short
     description and the information whether the transliteration can be used in
     both directions. For example:
 
@@ -35,7 +34,7 @@
       <desc>DIN 1460: Cyrillic to Latin</desc>
       <reverse>true</reverse>
 
-    The ``rules'' can be simple one to one mappings
+    The rules can be simple one to one mappings
 
      <rule>
         <from>X</from>
@@ -51,14 +50,14 @@
         <context>
           <after>x</after>
           <before>y</before>
+        </context>
       </rule>
 
-    To get an easy start, you can copy the file "xml/template.xml", rename it
-    to your needs and edit it right away.
+    To get an easy start, you can copy the file xml/template.xml, rename it to
+    your needs and edit it right away.
 
-      Template:         xml/template.xml
-      Complete example: xml/common_deu.xml
-
+  Template:         xml/template.xml
+  Complete example: xml/common_deu.xml
     Although editing an XML-file is technically quite easy, some things have
     to be respected. The most important thing to keep in mind is that the
     rules are applied *in sequence* - one after another. Therefore the order
@@ -155,13 +154,13 @@
 ==   Building a development version   ==
 
     Your new transliteration table has to be converted to a Perl data
-    structure and stored in "xml/tables.dump" in order to be put to use and
+    structure and stored in xml/tables.dump in order to be put to use and
     tested as a development version of Lingua::Translit.
 
     *xml2dump.pl* is a tool that processes XML transliteration table
     definitions and converts them to Perl data structures. Normally, all
     stable transliteration tables are processed once and stored in
-    "xml/tables.dump" and included in the Lingua::Translit::Tables module once
+    xml/tables.dump and included in the Lingua::Translit::Tables module once
     at build time.
 
 
@@ -201,11 +200,10 @@
 
     Lingua::Translit comes with a ready to use test template that you could
     use as a starting point and suite it to your transliterations specific
-    needs. It is located at "t/xx_tr_template.t.pl" - to follow
-    Lingua::Translit's naming convention, rename it to "NN_tr_NAME.t".
+    needs. It is located at t/xx_tr_template.t.pl - to follow
+    Lingua::Translit's naming convention, rename it to NN_tr_NAME.t.
 
-      t/11_tr_Common_DEU.t
-
+  t/11_tr_Common_DEU.t
 
 =    Hints on what to test    =
 
@@ -244,8 +242,8 @@
 
 ==   Integrating the new table   ==
 
-    Change to the "xml/" directory and let *make*(1) call *xml2dump.pl* in
-    order to build a data structure (""tables.dump"") from all available XML
+    Change to the xml/ directory and let *make*(1) call *xml2dump.pl* in order
+    to build a data structure ("tables.dump") from all available XML
     transliteration tables, including yours:
 
       alinke$ make all-tables

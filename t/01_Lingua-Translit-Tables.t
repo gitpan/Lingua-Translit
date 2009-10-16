@@ -1,5 +1,3 @@
-## $Id: 01_Lingua-Translit-Tables.t 257 2008-04-22 14:54:06Z alinke $
-
 use strict;
 use Test::More tests => (12 + 13);
 

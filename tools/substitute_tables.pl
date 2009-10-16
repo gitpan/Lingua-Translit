@@ -1,11 +1,8 @@
 #!/usr/bin/perl -w
 
 #
-# Alex Linke, <alinke@lingua-systems.com>
-#
-# Copyright 2007-2008 by Lingua-Systems. All rights reserved.
-#
-# $Id: substitute_tables.pl 148 2008-02-27 15:40:46Z alinke $
+# Copyright (C) 2007-2008 Alex Linke <alinke@lingua-systems.com>
+# Copyright (C) 2009 Lingua-Systems Software GmbH
 #
 
 use strict;

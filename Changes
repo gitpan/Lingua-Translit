@@ -1,11 +1,20 @@
+0.14  -- 2009-10-16
+
+    * Added Win32 support.
+      Please note that a Unix-like environment is still required to develop
+      transliteration tables using the provided set of tools.
+    * t/03_translit.t: Use $^X rather than relying on the shebang
+    * Various trivial fixes, code cleanups and hyperlink updates
+    * xml/manual/manual.pod: Added missing markup
+
 0.13  -- 2008-04-29
 
     * Added developer manual covering the addition of own transliteration
       tables (xml/manual/).
     * Added test template (t/xx_tr_template.t.pl)
     * Makefile.PL:
-	* Added "manual" target
-	* Suited MSWin32 check for CPAN Testers tools
+        * Added "manual" target
+        * Suited MSWin32 check for CPAN Testers tools
 
 0.12 -- 2008-04-23
 
@@ -16,8 +25,8 @@
     * xml/din_1460_bul.xml: changed transliteration of SOFT SIGN to plain
       ASCII apostrophe.
     * New transliterations:
-	* Common SLK (Slovak)
-	* Common SLV (Slovenian)
+        * Common SLK (Slovak)
+        * Common SLV (Slovenian)
 
 0.10 -- 2008-04-17
 
@@ -30,8 +39,8 @@
       bug fixed.
     * t/13_tr_Greeklish.t: Added test for upsilon bugfix.
     * Added two transliterations for Bulgarian:
-	*   DIN 1460
-	*   Streamlined System
+        * DIN 1460
+        * Streamlined System
 
 0.09 -- 2008-04-09
 
@@ -88,8 +97,8 @@
 
     * Initial release
     * Set of supported transliterations:
-	* ISO 9
-	* ISO 843
-	* DIN 5008
+        * ISO 9
+        * ISO 843
+        * DIN 5008
 
-# vim: sts=4 enc=utf-8
+# vim: sw=4 sts=4 enc=utf-8 ai et ft=changelog

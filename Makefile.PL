@@ -1,15 +1,9 @@
-# $Id: Makefile.PL 280 2008-04-29 08:47:36Z alinke $
-
 # Lingua::Translit heavily relies on Perl's UTF-8 implementation and
 # therefore needs at least Perl 5.8.0 to be installed.
 require 5.008;
 
 use strict;
 use ExtUtils::MakeMaker;
-
-
-# As suggested by http://cpantest.grango.org/wiki/CPANAuthorNotes
-die "OS unsupported\n" if ($^O eq "MSWin32");
 
 
 WriteMakefile(

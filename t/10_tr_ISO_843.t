@@ -1,5 +1,3 @@
-## $Id: 10_tr_ISO_843.t 126 2008-02-19 07:28:54Z alinke $
-
 use strict;
 use Test::More tests => 3;
 

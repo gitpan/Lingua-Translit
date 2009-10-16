@@ -1,5 +1,3 @@
-## $Id: 19_tr_Streamlined_System_BUL.t 236 2008-04-17 08:49:32Z alinke $
-
 use strict;
 require 5.008;
 use utf8;

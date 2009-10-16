@@ -1,5 +1,3 @@
-# $Id: Makefile 255 2008-04-22 14:35:05Z alinke $
-
 TARGET		:=	tables.dump
 DUMP		:=	perl xml2dump.pl -v 
 CHECK		:=	xmllint --noout --postvalid

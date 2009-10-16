@@ -8,9 +8,8 @@
   Transliteration definitions for the common transliteration of German
   umlauts.
 
-  Copyright 2007-2008 by Alex Linke <alinke@lingua-systems.com> 
-
-  $Id: common_deu.xml 159 2008-03-10 09:33:18Z alinke $
+  Copyright (C) 2007-2008 Alex Linke <alinke@lingua-systems.com>
+  Copyright (C) 2009 Lingua-Systems Software GmbH
 
   See Duden - Band 1: "Die deutsche Rechtschreibung", Mannheim, 2001,
     p. 105f., "Maschinenschreiben und E-Mails"

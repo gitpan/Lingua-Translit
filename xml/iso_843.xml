@@ -7,11 +7,8 @@
   
   Transliteration definitions for ISO 843: Greek to Latin.
 
-  Copyright 2007-2008 by Alex Linke <alinke@lingua-systems.com> 
-
-
-  $Id: iso_843.xml 175 2008-03-21 09:24:01Z alinke $
-
+  Copyright (C) 2007-2008 Alex Linke <alinke@lingua-systems.com>
+  Copyright (C) 2009 Lingua-Systems Software GmbH
 
   See http://en.wikipedia.org/wiki/ISO_843 as an introduction.
 

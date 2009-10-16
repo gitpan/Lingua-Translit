@@ -1,5 +1,3 @@
-## $Id: 18_tr_DIN_1460_BUL.t 247 2008-04-21 09:41:42Z rlinke $
-
 use strict;
 require 5.008;
 

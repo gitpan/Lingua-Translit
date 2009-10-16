@@ -1,5 +1,3 @@
-## $Id: 16_tr_Common_CES.t 186 2008-03-31 09:42:34Z rlinke $
-
 use strict;
 use Test::More tests => 3;
 

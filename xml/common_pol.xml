@@ -7,9 +7,8 @@
   
   Transliteration definitions for Polish.
 
-  Copyright 2008 by Alex Linke <alinke@lingua-systems.com> 
-
-  $Id: common_pol.xml 259 2008-04-22 14:55:29Z alinke $
+  Copyright (C) 2008 Alex Linke <alinke@lingua-systems.com>
+  Copyright (C) 2009 Lingua-Systems Software GmbH
 
   This transliteration simply maps all special characters of the Polish
   alphabet to their unaccented counterparts as commonly used in electronical

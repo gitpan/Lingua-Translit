@@ -5,9 +5,8 @@
   
   Basic document type definition for transliteration tables, "translit".
 
-  Copyright 2007-2008 by Alex Linke <alinke@lingua-systems.com>
-
-  $Id: translit.dtd 226 2008-04-15 14:42:49Z alinke $
+  Copyright (C) 2007-2008 Alex Linke <alinke@lingua-systems.com>
+  Copyright (C) 2009 Lingua-Systems Software GmbH
 
 -->
 

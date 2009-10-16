@@ -32,9 +32,10 @@ You are welcome to contact the authors at perl@lingua-systems.com
 if you have any suggestions and contributions.
 
 
-LICENSE
+COPYRIGHT AND LICENSE
 
-Copyright (c) 2008, Alex Linke and Rona Linke. All rights reserved.
+Copyright (C) 2008 Alex Linke and Rona Linke
+Copyright (C) 2009 Lingua-Systems Software GmbH
 
 This module is free software. It may be used, redistributed
 and/or modified under the terms of either the GPL v2 or the

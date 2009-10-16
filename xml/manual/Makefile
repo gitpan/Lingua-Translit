@@ -1,5 +1,3 @@
-## $Id: Makefile 279 2008-04-29 08:21:52Z alinke $ ##
-
 TITLE	:=	Lingua::Translit Developer Manual
 TITLE_H :=	"<h1 id=\"title\">$(TITLE)<\/h1>"
 KEYWORDS:=	"Lingua::Translit, Lingua::Translit::Tables, \

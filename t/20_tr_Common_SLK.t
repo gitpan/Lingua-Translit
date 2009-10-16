@@ -1,5 +1,3 @@
-## $Id: 20_tr_Common_SLK.t 247 2008-04-21 09:41:42Z rlinke $
-
 use strict;
 use Test::More tests => 4;
 
