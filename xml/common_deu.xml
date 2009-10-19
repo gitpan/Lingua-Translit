@@ -4,7 +4,7 @@
 
 
 <!--
-  
+
   Transliteration definitions for the common transliteration of German
   umlauts.
 
@@ -32,37 +32,37 @@
 
     <rules>
 
-	<rule>
-	    <from>&#x00C4;</from>   <!-- Ä -->
-	    <to>Ae</to>
-	</rule>
+        <rule>
+            <from>&#x00C4;</from>   <!-- Ä -->
+            <to>Ae</to>
+        </rule>
 
-	<rule>
-	    <from>&#x00E4;</from>   <!-- ä -->
-	    <to>ae</to>
-	</rule>
+        <rule>
+            <from>&#x00E4;</from>   <!-- ä -->
+            <to>ae</to>
+        </rule>
 
-	<rule>
-	    <from>&#x00D6;</from>   <!-- Ö -->
-	    <to>Oe</to>
-	</rule>
+        <rule>
+            <from>&#x00D6;</from>   <!-- Ö -->
+            <to>Oe</to>
+        </rule>
 
-	<rule>
-	    <from>&#x00F6;</from>   <!-- ö -->
-	    <to>oe</to>
-	</rule>
+        <rule>
+            <from>&#x00F6;</from>   <!-- ö -->
+            <to>oe</to>
+        </rule>
 
-	<rule>
-	    <from>&#x00DC;</from>   <!-- Ü -->
-	    <to>Ue</to>
-	</rule>
+        <rule>
+            <from>&#x00DC;</from>   <!-- Ü -->
+            <to>Ue</to>
+        </rule>
 
-	<rule>
-	    <from>&#x00FC;</from>   <!-- ü -->
-	    <to>ue</to>
-	</rule>
+        <rule>
+            <from>&#x00FC;</from>   <!-- ü -->
+            <to>ue</to>
+        </rule>
 
-	<!--
+        <!--
 	    An 'ß' in a word in all caps is transliterated in
 	    all caps, too.
 
@@ -72,24 +72,24 @@
 	    is a capital one.
 	-->
 
-	<rule>			    
-	    <from>&#x00DF;</from>   <!-- ß -->
-	    <to>SS</to>
-	    <context>
-		<after>\p{IsUpper}</after>
-	    </context>
-	</rule>
+        <rule>
+            <from>&#x00DF;</from>   <!-- ß -->
+            <to>SS</to>
+            <context>
+                <after>\p{IsUpper}</after>
+            </context>
+        </rule>
 
-	<rule>
-	    <from>&#x00DF;</from>   <!-- ß -->
-	    <to>ss</to>
-	</rule>
+        <rule>
+            <from>&#x00DF;</from>   <!-- ß -->
+            <to>ss</to>
+        </rule>
 
-  </rules>
-  
+    </rules>
+
 </translit>
 
 
 <!--
-  vim: sts=4 enc=utf-8
+  vim: sts=4 sw=4 enc=utf-8 ai et
 -->

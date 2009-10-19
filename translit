@@ -14,14 +14,11 @@ use Getopt::Long;
 
 require 5.008;
 
-use utf8;
-no bytes;
-
 use Lingua::Translit;
 use Lingua::Translit::Tables qw/:all/;
 
 
-my $VERSION = '0.2';
+my $VERSION = '0.3';
 
 
 =pod
@@ -109,11 +106,6 @@ show_help(1) unless GetOptions(
 show_help(0)    if $opt{help};
 show_list()     if $opt{list};
 show_help(1)    unless $opt{trans};
-
-# For convenience, substitute every underscore in a transliteration's name
-# with a blank. As a result, the names don't have to be escaped on the
-# command line anymore...
-$opt{trans} =~ y/_/ /;
 
 # Assure the requested transliteration is supported...
 die "$opt{trans} is not supported.\n" unless translit_supported($opt{trans});

@@ -1,6 +1,23 @@
+0.15  -- 2009-10-19
+
+    * Added support for the current development version of Perl (5.11) by
+      using named Unicode properties instead of POSIX character classes
+      within any context dependent transliteration rule.
+      The following transliteration tables are affected:
+        * xml/din_1460_bul.xml
+        * xml/iso_9.xml
+        * xml/streamlined_system_bul.xml
+      Closes #50613. Thanks to Andreas Koenig for reporting this issue.
+    * xml/template.xml: Added some more examples, added missing closing tag.
+    * lib/Lingua/Translit/Tables.pm, xml/xml2dump.pl: To increase robustness
+      and ease of use, tables are now associated with an identifier instead
+      of their names.
+    * Removed "utf8" and "bytes" pragmas.
+    * Updated indent of all transliteration tables.
+
 0.14  -- 2009-10-16
 
-    * Added Win32 support.
+    * Added Win32 support. (Closes #49544)
       Please note that a Unix-like environment is still required to develop
       transliteration tables using the provided set of tools.
     * t/03_translit.t: Use $^X rather than relying on the shebang
@@ -64,7 +81,7 @@
     * Added common Czech transliteration "Common CES"
 
 0.07 -- 2008-03-21
-    
+
     * Fixed a wrong codepoint in an ISO 843 rule.
 
 0.06 -- 2008-03-21
@@ -72,7 +89,7 @@
     * Fixed a wrong codepoint in a DIN 31634 rule.
 
 0.05 -- 2008-03-10
-    
+
     * Renamed "DIN 5008" to "Common DEU" as the DIN norm doesn't cover the
       transliteration explicitly.
 
@@ -89,7 +106,7 @@
     * Test fixes (require Perl 5.8 if the "utf8" pragma is used)
 
 0.02 -- 2008-02-18
-    
+
     * Added Greeklish
     * Code cleanup
 

@@ -1,737 +1,8 @@
 %tables = (
-  "Greeklish" => {
-    "desc" => "Greeklish (Phonetic), Greek to Latin",
-    "name" => "Greeklish",
-    "rules" => [
-      {
-        "to" => "i",
-        "from" => "\x{3b5}\x{3b9}"
-      },
-      {
-        "to" => "i",
-        "from" => "\x{3ad}\x{3b9}"
-      },
-      {
-        "to" => "i",
-        "from" => "\x{3b5}\x{3af}"
-      },
-      {
-        "to" => "ef",
-        "from" => "\x{3b5}\x{3c5}"
-      },
-      {
-        "to" => "ef",
-        "from" => "\x{3ad}\x{3c5}"
-      },
-      {
-        "to" => "ef",
-        "from" => "\x{3b5}\x{3cd}"
-      },
-      {
-        "to" => "u",
-        "from" => "\x{3bf}\x{3c5}"
-      },
-      {
-        "to" => "u",
-        "from" => "\x{3bf}\x{3cd}"
-      },
-      {
-        "to" => "u",
-        "from" => "\x{3cc}\x{3c5}"
-      },
-      {
-        "to" => "A",
-        "from" => "\x{391}"
-      },
-      {
-        "to" => "a",
-        "from" => "\x{3b1}"
-      },
-      {
-        "to" => "A",
-        "from" => "\x{386}"
-      },
-      {
-        "to" => "a",
-        "from" => "\x{3ac}"
-      },
-      {
-        "to" => "V",
-        "from" => "\x{392}"
-      },
-      {
-        "to" => "v",
-        "from" => "\x{3b2}"
-      },
-      {
-        "to" => "Y",
-        "from" => "\x{393}"
-      },
-      {
-        "to" => "y",
-        "from" => "\x{3b3}"
-      },
-      {
-        "to" => "D",
-        "from" => "\x{394}"
-      },
-      {
-        "to" => "d",
-        "from" => "\x{3b4}"
-      },
-      {
-        "to" => "E",
-        "from" => "\x{395}"
-      },
-      {
-        "to" => "e",
-        "from" => "\x{3b5}"
-      },
-      {
-        "to" => "E",
-        "from" => "\x{388}"
-      },
-      {
-        "to" => "e",
-        "from" => "\x{3ad}"
-      },
-      {
-        "to" => "Z",
-        "from" => "\x{396}"
-      },
-      {
-        "to" => "z",
-        "from" => "\x{3b6}"
-      },
-      {
-        "to" => "I",
-        "from" => "\x{397}"
-      },
-      {
-        "to" => "i",
-        "from" => "\x{3b7}"
-      },
-      {
-        "to" => "I",
-        "from" => "\x{389}"
-      },
-      {
-        "to" => "i",
-        "from" => "\x{3ae}"
-      },
-      {
-        "to" => "Th",
-        "from" => "\x{398}"
-      },
-      {
-        "to" => "th",
-        "from" => "\x{3b8}"
-      },
-      {
-        "to" => "I",
-        "from" => "\x{399}"
-      },
-      {
-        "to" => "i",
-        "from" => "\x{3b9}"
-      },
-      {
-        "to" => "I",
-        "from" => "\x{38a}"
-      },
-      {
-        "to" => "i",
-        "from" => "\x{3af}"
-      },
-      {
-        "to" => "I",
-        "from" => "\x{3aa}"
-      },
-      {
-        "to" => "i",
-        "from" => "\x{3ca}"
-      },
-      {
-        "to" => "i",
-        "from" => "\x{390}"
-      },
-      {
-        "to" => "K",
-        "from" => "\x{39a}"
-      },
-      {
-        "to" => "k",
-        "from" => "\x{3ba}"
-      },
-      {
-        "to" => "L",
-        "from" => "\x{39b}"
-      },
-      {
-        "to" => "l",
-        "from" => "\x{3bb}"
-      },
-      {
-        "to" => "M",
-        "from" => "\x{39c}"
-      },
-      {
-        "to" => "m",
-        "from" => "\x{3bc}"
-      },
-      {
-        "to" => "N",
-        "from" => "\x{39d}"
-      },
-      {
-        "to" => "n",
-        "from" => "\x{3bd}"
-      },
-      {
-        "to" => "X",
-        "from" => "\x{39e}"
-      },
-      {
-        "to" => "x",
-        "from" => "\x{3be}"
-      },
-      {
-        "to" => "O",
-        "from" => "\x{39f}"
-      },
-      {
-        "to" => "o",
-        "from" => "\x{3bf}"
-      },
-      {
-        "to" => "O",
-        "from" => "\x{38c}"
-      },
-      {
-        "to" => "o",
-        "from" => "\x{3cc}"
-      },
-      {
-        "to" => "P",
-        "from" => "\x{3a0}"
-      },
-      {
-        "to" => "p",
-        "from" => "\x{3c0}"
-      },
-      {
-        "to" => "R",
-        "from" => "\x{3a1}"
-      },
-      {
-        "to" => "r",
-        "from" => "\x{3c1}"
-      },
-      {
-        "to" => "S",
-        "from" => "\x{3a3}"
-      },
-      {
-        "to" => "s",
-        "from" => "\x{3c3}"
-      },
-      {
-        "to" => "T",
-        "from" => "\x{3a4}"
-      },
-      {
-        "to" => "t",
-        "from" => "\x{3c4}"
-      },
-      {
-        "to" => "I",
-        "from" => "\x{3a5}"
-      },
-      {
-        "to" => "i",
-        "from" => "\x{3c5}"
-      },
-      {
-        "to" => "I",
-        "from" => "\x{38e}"
-      },
-      {
-        "to" => "i",
-        "from" => "\x{3cd}"
-      },
-      {
-        "to" => "I",
-        "from" => "\x{3ab}"
-      },
-      {
-        "to" => "i",
-        "from" => "\x{3cb}"
-      },
-      {
-        "to" => "i",
-        "from" => "\x{3b0}"
-      },
-      {
-        "to" => "F",
-        "from" => "\x{3a6}"
-      },
-      {
-        "to" => "f",
-        "from" => "\x{3c6}"
-      },
-      {
-        "to" => "H",
-        "from" => "\x{3a7}"
-      },
-      {
-        "to" => "h",
-        "from" => "\x{3c7}"
-      },
-      {
-        "to" => "Ps",
-        "from" => "\x{3a8}"
-      },
-      {
-        "to" => "ps",
-        "from" => "\x{3c8}"
-      },
-      {
-        "to" => "O",
-        "from" => "\x{3a9}"
-      },
-      {
-        "to" => "o",
-        "from" => "\x{3c9}"
-      },
-      {
-        "to" => "O",
-        "from" => "\x{38f}"
-      },
-      {
-        "to" => "o",
-        "from" => "\x{3ce}"
-      },
-      {
-        "to" => "s",
-        "from" => "\x{3c2}"
-      },
-      {
-        "to" => "?",
-        "from" => "\x{37e}",
-        "context" => {
-          "after" => "\\b"
-        }
-      },
-      {
-        "to" => "?",
-        "from" => ";",
-        "context" => {
-          "after" => "\\b"
-        }
-      },
-      {
-        "to" => ";",
-        "from" => "\x{b7}"
-      },
-      {
-        "to" => "-",
-        "from" => "\x{203f}"
-      },
-      {
-        "to" => "",
-        "from" => "\x{384}"
-      },
-      {
-        "to" => "",
-        "from" => "\x{385}"
-      },
-      {
-        "to" => "",
-        "from" => "\x{342}"
-      },
-      {
-        "to" => "",
-        "from" => "\x{343}"
-      },
-      {
-        "to" => "",
-        "from" => "\x{313}"
-      },
-      {
-        "to" => "",
-        "from" => "\x{314}"
-      },
-      {
-        "to" => "",
-        "from" => "\x{345}"
-      },
-      {
-        "to" => "",
-        "from" => "\x{345}"
-      }
-    ],
-    "reverse" => "false"
-  },
-  "ISO 843" => {
-    "desc" => "ISO 843:1997 TL (Type 1), Greek to Latin",
-    "name" => "ISO 843",
-    "rules" => [
-      {
-        "to" => "A",
-        "from" => "\x{391}"
-      },
-      {
-        "to" => "a",
-        "from" => "\x{3b1}"
-      },
-      {
-        "to" => "V",
-        "from" => "\x{392}"
-      },
-      {
-        "to" => "v",
-        "from" => "\x{3b2}"
-      },
-      {
-        "to" => "G",
-        "from" => "\x{393}"
-      },
-      {
-        "to" => "g",
-        "from" => "\x{3b3}"
-      },
-      {
-        "to" => "D",
-        "from" => "\x{394}"
-      },
-      {
-        "to" => "d",
-        "from" => "\x{3b4}"
-      },
-      {
-        "to" => "E",
-        "from" => "\x{395}"
-      },
-      {
-        "to" => "e",
-        "from" => "\x{3b5}"
-      },
-      {
-        "to" => "Z",
-        "from" => "\x{396}"
-      },
-      {
-        "to" => "z",
-        "from" => "\x{3b6}"
-      },
-      {
-        "to" => "\x{12a}",
-        "from" => "\x{397}"
-      },
-      {
-        "to" => "\x{12b}",
-        "from" => "\x{3b7}"
-      },
-      {
-        "to" => "Th",
-        "from" => "\x{398}"
-      },
-      {
-        "to" => "th",
-        "from" => "\x{3b8}"
-      },
-      {
-        "to" => "I",
-        "from" => "\x{399}"
-      },
-      {
-        "to" => "i",
-        "from" => "\x{3b9}"
-      },
-      {
-        "to" => "K",
-        "from" => "\x{39a}"
-      },
-      {
-        "to" => "k",
-        "from" => "\x{3ba}"
-      },
-      {
-        "to" => "L",
-        "from" => "\x{39b}"
-      },
-      {
-        "to" => "l",
-        "from" => "\x{3bb}"
-      },
-      {
-        "to" => "M",
-        "from" => "\x{39c}"
-      },
-      {
-        "to" => "m",
-        "from" => "\x{3bc}"
-      },
-      {
-        "to" => "N",
-        "from" => "\x{39d}"
-      },
-      {
-        "to" => "n",
-        "from" => "\x{3bd}"
-      },
-      {
-        "to" => "X",
-        "from" => "\x{39e}"
-      },
-      {
-        "to" => "x",
-        "from" => "\x{3be}"
-      },
-      {
-        "to" => "O",
-        "from" => "\x{39f}"
-      },
-      {
-        "to" => "o",
-        "from" => "\x{3bf}"
-      },
-      {
-        "to" => "P",
-        "from" => "\x{3a0}"
-      },
-      {
-        "to" => "p",
-        "from" => "\x{3c0}"
-      },
-      {
-        "to" => "R",
-        "from" => "\x{3a1}"
-      },
-      {
-        "to" => "r",
-        "from" => "\x{3c1}"
-      },
-      {
-        "to" => "S",
-        "from" => "\x{3a3}"
-      },
-      {
-        "to" => "s",
-        "from" => "\x{3c2}"
-      },
-      {
-        "to" => "s",
-        "from" => "\x{3c3}"
-      },
-      {
-        "to" => "T",
-        "from" => "\x{3a4}"
-      },
-      {
-        "to" => "t",
-        "from" => "\x{3c4}"
-      },
-      {
-        "to" => "Y",
-        "from" => "\x{3a5}"
-      },
-      {
-        "to" => "y",
-        "from" => "\x{3c5}"
-      },
-      {
-        "to" => "F",
-        "from" => "\x{3a6}"
-      },
-      {
-        "to" => "f",
-        "from" => "\x{3c6}"
-      },
-      {
-        "to" => "Ch",
-        "from" => "\x{3a7}"
-      },
-      {
-        "to" => "ch",
-        "from" => "\x{3c7}"
-      },
-      {
-        "to" => "Ps",
-        "from" => "\x{3a8}"
-      },
-      {
-        "to" => "ps",
-        "from" => "\x{3c8}"
-      },
-      {
-        "to" => "\x{14c}",
-        "from" => "\x{3a9}"
-      },
-      {
-        "to" => "\x{14d}",
-        "from" => "\x{3c9}"
-      },
-      {
-        "to" => "S",
-        "from" => "\x{3da}"
-      },
-      {
-        "to" => "s",
-        "from" => "\x{3db}"
-      },
-      {
-        "to" => "W",
-        "from" => "\x{3dc}"
-      },
-      {
-        "to" => "f",
-        "from" => "\x{3dd}"
-      },
-      {
-        "to" => "j",
-        "from" => "\x{3f3}"
-      },
-      {
-        "to" => "\x{b4}",
-        "from" => "\x{384}"
-      },
-      {
-        "to" => "\x{a8}\x{301}",
-        "from" => "\x{385}"
-      },
-      {
-        "to" => "\x{302}",
-        "from" => "\x{342}"
-      },
-      {
-        "to" => "\x{2bc}",
-        "from" => "\x{343}"
-      },
-      {
-        "to" => "\x{2bc}",
-        "from" => "\x{313}"
-      },
-      {
-        "to" => "h",
-        "from" => "\x{314}"
-      },
-      {
-        "to" => "\x{327}",
-        "from" => "\x{345}"
-      },
-      {
-        "to" => "\x{327}",
-        "from" => "\x{345}"
-      },
-      {
-        "to" => "\x{c1}",
-        "from" => "\x{386}"
-      },
-      {
-        "to" => "\x{e1}",
-        "from" => "\x{3ac}"
-      },
-      {
-        "to" => "\x{c9}",
-        "from" => "\x{388}"
-      },
-      {
-        "to" => "\x{e9}",
-        "from" => "\x{3ad}"
-      },
-      {
-        "to" => "\x{12a}\x{301}",
-        "from" => "\x{389}"
-      },
-      {
-        "to" => "\x{12b}\x{301}",
-        "from" => "\x{3ae}"
-      },
-      {
-        "to" => "\x{cd}",
-        "from" => "\x{38a}"
-      },
-      {
-        "to" => "\x{ed}",
-        "from" => "\x{3af}"
-      },
-      {
-        "to" => "\x{d3}",
-        "from" => "\x{38c}"
-      },
-      {
-        "to" => "\x{f3}",
-        "from" => "\x{3cc}"
-      },
-      {
-        "to" => "\x{dd}",
-        "from" => "\x{38e}"
-      },
-      {
-        "to" => "\x{fd}",
-        "from" => "\x{3cd}"
-      },
-      {
-        "to" => "\x{1e52}",
-        "from" => "\x{38f}"
-      },
-      {
-        "to" => "\x{1e53}",
-        "from" => "\x{3ce}"
-      },
-      {
-        "to" => "\x{cf}",
-        "from" => "\x{3aa}"
-      },
-      {
-        "to" => "\x{ef}",
-        "from" => "\x{3ca}"
-      },
-      {
-        "to" => "\x{178}",
-        "from" => "\x{3ab}"
-      },
-      {
-        "to" => "\x{ff}",
-        "from" => "\x{3cb}"
-      },
-      {
-        "to" => "\x{1e2f}",
-        "from" => "\x{390}"
-      },
-      {
-        "to" => "\x{ff}\x{301}",
-        "from" => "\x{3b0}"
-      },
-      {
-        "to" => "?",
-        "from" => "\x{37e}",
-        "context" => {
-          "after" => "\\b"
-        }
-      },
-      {
-        "to" => "?",
-        "from" => ";",
-        "context" => {
-          "after" => "\\b"
-        }
-      },
-      {
-        "to" => ";",
-        "from" => "\x{b7}"
-      },
-      {
-        "to" => "-",
-        "from" => "\x{203f}"
-      }
-    ],
-    "reverse" => "false"
-  },
-  "Common CES" => {
-    "desc" => "Czech without diacritics",
-    "name" => "Common CES",
+  "common_slk" => {
+    "desc" => "Slovak without diacritics",
+    "name" => "Common SLK",
+    "id" => "common_slk",
     "rules" => [
       {
         "to" => "A",
@@ -740,6 +11,14 @@
       {
         "to" => "a",
         "from" => "\x{e1}"
+      },
+      {
+        "to" => "A",
+        "from" => "\x{c4}"
+      },
+      {
+        "to" => "a",
+        "from" => "\x{e4}"
       },
       {
         "to" => "C",
@@ -770,20 +49,36 @@
         "from" => "\x{e9}"
       },
       {
-        "to" => "E",
-        "from" => "\x{11a}"
-      },
-      {
-        "to" => "e",
-        "from" => "\x{11b}"
-      },
-      {
         "to" => "I",
         "from" => "\x{cd}"
       },
       {
         "to" => "i",
         "from" => "\x{ed}"
+      },
+      {
+        "to" => "L",
+        "from" => "\x{139}"
+      },
+      {
+        "to" => "l",
+        "from" => "\x{13a}"
+      },
+      {
+        "to" => "L",
+        "from" => "\x{13d}"
+      },
+      {
+        "to" => "l",
+        "from" => "\x{13e}"
+      },
+      {
+        "to" => "L",
+        "from" => "L\x{30c}"
+      },
+      {
+        "to" => "l",
+        "from" => "l\x{30c}"
       },
       {
         "to" => "N",
@@ -803,11 +98,11 @@
       },
       {
         "to" => "R",
-        "from" => "\x{158}"
+        "from" => "\x{154}"
       },
       {
         "to" => "r",
-        "from" => "\x{159}"
+        "from" => "\x{155}"
       },
       {
         "to" => "S",
@@ -827,7 +122,7 @@
       },
       {
         "to" => "t",
-        "from" => "t\x{30c};"
+        "from" => "t\x{30c}"
       },
       {
         "to" => "U",
@@ -836,14 +131,6 @@
       {
         "to" => "u",
         "from" => "\x{fa}"
-      },
-      {
-        "to" => "U",
-        "from" => "\x{16e}"
-      },
-      {
-        "to" => "u",
-        "from" => "\x{16f}"
       },
       {
         "to" => "Y",
@@ -860,20 +147,197 @@
       {
         "to" => "z",
         "from" => "\x{17e}"
+      },
+      {
+        "to" => "O",
+        "from" => "\x{d4}"
+      },
+      {
+        "to" => "o",
+        "from" => "\x{f4}"
+      },
+      {
+        "to" => "DZ",
+        "from" => "\x{1f1}"
+      },
+      {
+        "to" => "Dz",
+        "from" => "\x{1f2}"
+      },
+      {
+        "to" => "dz",
+        "from" => "\x{1f3}"
+      },
+      {
+        "to" => "DZ",
+        "from" => "\x{1c4}"
+      },
+      {
+        "to" => "Dz",
+        "from" => "\x{1c5}"
+      },
+      {
+        "to" => "dz",
+        "from" => "\x{1c6}"
       }
     ],
     "reverse" => "false"
   },
-  "Streamlined System BUL" => {
+  "common_ron" => {
+    "desc" => "Romanian without diacritics",
+    "name" => "Common RON",
+    "id" => "common_ron",
+    "rules" => [
+      {
+        "to" => "A",
+        "from" => "\x{102}"
+      },
+      {
+        "to" => "a",
+        "from" => "\x{103}"
+      },
+      {
+        "to" => "A",
+        "from" => "\x{c2}"
+      },
+      {
+        "to" => "a",
+        "from" => "\x{e2}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{ce}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{ee}"
+      },
+      {
+        "to" => "S",
+        "from" => "\x{218}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{219}"
+      },
+      {
+        "to" => "S",
+        "from" => "\x{15e}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{15f}"
+      },
+      {
+        "to" => "T",
+        "from" => "\x{21a}"
+      },
+      {
+        "to" => "t",
+        "from" => "\x{21b}"
+      },
+      {
+        "to" => "T",
+        "from" => "\x{162}"
+      },
+      {
+        "to" => "t",
+        "from" => "\x{163}"
+      }
+    ],
+    "reverse" => "false"
+  },
+  "common_pol" => {
+    "desc" => "Unaccented Polish",
+    "name" => "Common POL",
+    "id" => "common_pol",
+    "rules" => [
+      {
+        "to" => "A",
+        "from" => "\x{104}"
+      },
+      {
+        "to" => "a",
+        "from" => "\x{105}"
+      },
+      {
+        "to" => "C",
+        "from" => "\x{106}"
+      },
+      {
+        "to" => "c",
+        "from" => "\x{107}"
+      },
+      {
+        "to" => "E",
+        "from" => "\x{118}"
+      },
+      {
+        "to" => "e",
+        "from" => "\x{119}"
+      },
+      {
+        "to" => "L",
+        "from" => "\x{141}"
+      },
+      {
+        "to" => "l",
+        "from" => "\x{142}"
+      },
+      {
+        "to" => "N",
+        "from" => "\x{143}"
+      },
+      {
+        "to" => "n",
+        "from" => "\x{144}"
+      },
+      {
+        "to" => "O",
+        "from" => "\x{d3}"
+      },
+      {
+        "to" => "o",
+        "from" => "\x{f3}"
+      },
+      {
+        "to" => "S",
+        "from" => "\x{15a}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{15b}"
+      },
+      {
+        "to" => "Z",
+        "from" => "\x{179}"
+      },
+      {
+        "to" => "z",
+        "from" => "\x{17a}"
+      },
+      {
+        "to" => "Z",
+        "from" => "\x{17b}"
+      },
+      {
+        "to" => "z",
+        "from" => "\x{17c}"
+      }
+    ],
+    "reverse" => "false"
+  },
+  "streamlined_system_bul" => {
     "desc" => "The Streamlined System: 2006, Cyrillic to Latin, Bulgarian",
     "name" => "Streamlined System BUL",
+    "id" => "streamlined_system_bul",
     "rules" => [
       {
         "to" => "SHT",
         "from" => "\x{429}",
         "context" => {
-          "after" => "[[:upper:][:space:]]",
-          "before" => "[[:upper:][:space:]]"
+          "after" => "[\\p{IsUpper}\\p{IsSpace}]",
+          "before" => "[\\p{IsUpper}\\p{IsSpace}]"
         }
       },
       {
@@ -888,8 +352,8 @@
         "to" => "ZH",
         "from" => "\x{416}",
         "context" => {
-          "after" => "[[:upper:][:space:]]",
-          "before" => "[[:upper:][:space:]]"
+          "after" => "[\\p{IsUpper}\\p{IsSpace}]",
+          "before" => "[\\p{IsUpper}\\p{IsSpace}]"
         }
       },
       {
@@ -904,8 +368,8 @@
         "to" => "TS",
         "from" => "\x{426}",
         "context" => {
-          "after" => "[[:upper:][:space:]]",
-          "before" => "[[:upper:][:space:]]"
+          "after" => "[\\p{IsUpper}\\p{IsSpace}]",
+          "before" => "[\\p{IsUpper}\\p{IsSpace}]"
         }
       },
       {
@@ -920,8 +384,8 @@
         "to" => "CH",
         "from" => "\x{427}",
         "context" => {
-          "after" => "[[:upper:][:space:]]",
-          "before" => "[[:upper:][:space:]]"
+          "after" => "[\\p{IsUpper}\\p{IsSpace}]",
+          "before" => "[\\p{IsUpper}\\p{IsSpace}]"
         }
       },
       {
@@ -936,8 +400,8 @@
         "to" => "SH",
         "from" => "\x{428}",
         "context" => {
-          "after" => "[[:upper:][:space:]]",
-          "before" => "[[:upper:][:space:]]"
+          "after" => "[\\p{IsUpper}\\p{IsSpace}]",
+          "before" => "[\\p{IsUpper}\\p{IsSpace}]"
         }
       },
       {
@@ -952,8 +416,8 @@
         "to" => "YU",
         "from" => "\x{42e}",
         "context" => {
-          "after" => "[[:upper:][:space:]]",
-          "before" => "[[:upper:][:space:]]"
+          "after" => "[\\p{IsUpper}\\p{IsSpace}]",
+          "before" => "[\\p{IsUpper}\\p{IsSpace}]"
         }
       },
       {
@@ -968,8 +432,8 @@
         "to" => "YA",
         "from" => "\x{42f}",
         "context" => {
-          "after" => "[[:upper:][:space:]]",
-          "before" => "[[:upper:][:space:]]"
+          "after" => "[\\p{IsUpper}\\p{IsSpace}]",
+          "before" => "[\\p{IsUpper}\\p{IsSpace}]"
         }
       },
       {
@@ -1167,675 +631,343 @@
     ],
     "reverse" => "false"
   },
-  "Common SLK" => {
-    "desc" => "Slovak without diacritics",
-    "name" => "Common SLK",
+  "common_classical_mon" => {
+    "desc" => "Classical Mongolian Script to Latin",
+    "name" => "Common Classical MON",
+    "id" => "common_classical_mon",
     "rules" => [
       {
-        "to" => "A",
-        "from" => "\x{c1}"
-      },
-      {
         "to" => "a",
-        "from" => "\x{e1}"
-      },
-      {
-        "to" => "A",
-        "from" => "\x{c4}"
-      },
-      {
-        "to" => "a",
-        "from" => "\x{e4}"
-      },
-      {
-        "to" => "C",
-        "from" => "\x{10c}"
-      },
-      {
-        "to" => "c",
-        "from" => "\x{10d}"
-      },
-      {
-        "to" => "D",
-        "from" => "\x{10e}"
-      },
-      {
-        "to" => "d",
-        "from" => "\x{10f}"
-      },
-      {
-        "to" => "d",
-        "from" => "d\x{30c}"
-      },
-      {
-        "to" => "E",
-        "from" => "\x{c9}"
+        "from" => "\x{1820}"
       },
       {
         "to" => "e",
-        "from" => "\x{e9}"
-      },
-      {
-        "to" => "I",
-        "from" => "\x{cd}"
+        "from" => "\x{1821}"
       },
       {
         "to" => "i",
-        "from" => "\x{ed}"
-      },
-      {
-        "to" => "L",
-        "from" => "\x{139}"
-      },
-      {
-        "to" => "l",
-        "from" => "\x{13a}"
-      },
-      {
-        "to" => "L",
-        "from" => "\x{13d}"
-      },
-      {
-        "to" => "l",
-        "from" => "\x{13e}"
-      },
-      {
-        "to" => "L",
-        "from" => "L\x{30c}"
-      },
-      {
-        "to" => "l",
-        "from" => "l\x{30c}"
-      },
-      {
-        "to" => "N",
-        "from" => "\x{147}"
-      },
-      {
-        "to" => "n",
-        "from" => "\x{148}"
-      },
-      {
-        "to" => "O",
-        "from" => "\x{d3}"
+        "from" => "\x{1822}"
       },
       {
         "to" => "o",
-        "from" => "\x{f3}"
-      },
-      {
-        "to" => "R",
-        "from" => "\x{154}"
-      },
-      {
-        "to" => "r",
-        "from" => "\x{155}"
-      },
-      {
-        "to" => "S",
-        "from" => "\x{160}"
-      },
-      {
-        "to" => "s",
-        "from" => "\x{161}"
-      },
-      {
-        "to" => "T",
-        "from" => "\x{164}"
-      },
-      {
-        "to" => "t",
-        "from" => "\x{165}"
-      },
-      {
-        "to" => "t",
-        "from" => "t\x{30c}"
-      },
-      {
-        "to" => "U",
-        "from" => "\x{da}"
+        "from" => "\x{1823}"
       },
       {
         "to" => "u",
-        "from" => "\x{fa}"
+        "from" => "\x{1824}"
       },
       {
-        "to" => "Y",
-        "from" => "\x{dd}"
+        "to" => "\x{f6}",
+        "from" => "\x{1825}"
       },
       {
-        "to" => "y",
-        "from" => "\x{fd}"
+        "to" => "\x{fc}",
+        "from" => "\x{1826}"
       },
       {
-        "to" => "Z",
-        "from" => "\x{17d}"
+        "to" => "\x{113}",
+        "from" => "\x{1827}"
       },
       {
-        "to" => "z",
-        "from" => "\x{17e}"
+        "to" => "ng",
+        "from" => "\x{1829}"
       },
       {
-        "to" => "O",
-        "from" => "\x{d4}"
-      },
-      {
-        "to" => "o",
-        "from" => "\x{f4}"
-      },
-      {
-        "to" => "DZ",
-        "from" => "\x{1f1}"
-      },
-      {
-        "to" => "Dz",
-        "from" => "\x{1f2}"
-      },
-      {
-        "to" => "dz",
-        "from" => "\x{1f3}"
-      },
-      {
-        "to" => "DZ",
-        "from" => "\x{1c4}"
-      },
-      {
-        "to" => "Dz",
-        "from" => "\x{1c5}"
-      },
-      {
-        "to" => "dz",
-        "from" => "\x{1c6}"
-      }
-    ],
-    "reverse" => "false"
-  },
-  "DIN 1460 BUL" => {
-    "desc" => "DIN 1460:1982, Cyrillic to Latin, Bulgarian",
-    "name" => "DIN 1460 BUL",
-    "rules" => [
-      {
-        "to" => "\x{160}T",
-        "from" => "\x{429}",
-        "context" => {
-          "after" => "[[:upper:][:space:]]",
-          "before" => "[[:upper:][:space:]]"
-        }
-      },
-      {
-        "to" => "\x{160}t",
-        "from" => "\x{429}"
-      },
-      {
-        "to" => "\x{161}t",
-        "from" => "\x{449}"
-      },
-      {
-        "to" => "JU",
-        "from" => "\x{42e}",
-        "context" => {
-          "after" => "[[:upper:][:space:]]",
-          "before" => "[[:upper:][:space:]]"
-        }
-      },
-      {
-        "to" => "Ju",
-        "from" => "\x{42e}"
-      },
-      {
-        "to" => "ju",
-        "from" => "\x{44e}"
-      },
-      {
-        "to" => "JA",
-        "from" => "\x{42f}",
-        "context" => {
-          "after" => "[[:upper:][:space:]]",
-          "before" => "[[:upper:][:space:]]"
-        }
-      },
-      {
-        "to" => "Ja",
-        "from" => "\x{42f}"
-      },
-      {
-        "to" => "ja",
-        "from" => "\x{44f}"
-      },
-      {
-        "to" => "CH",
-        "from" => "\x{425}",
-        "context" => {
-          "after" => "[[:upper:][:space:]]",
-          "before" => "[[:upper:][:space:]]"
-        }
-      },
-      {
-        "to" => "Ch",
-        "from" => "\x{425}"
-      },
-      {
-        "to" => "ch",
-        "from" => "\x{445}"
-      },
-      {
-        "to" => "J-",
-        "from" => "\x{419}",
-        "context" => {
-          "before" => "[auAU\x{430}\x{443}\x{410}\x{423}]"
-        }
-      },
-      {
-        "to" => "j-",
-        "from" => "\x{439}",
-        "context" => {
-          "before" => "[au\x{430}\x{443}]"
-        }
-      },
-      {
-        "to" => "\x{160}-",
-        "from" => "\x{428}",
-        "context" => {
-          "before" => "[tT\x{442}\x{422}]"
-        }
-      },
-      {
-        "to" => "\x{161}-",
-        "from" => "\x{448}",
-        "context" => {
-          "before" => "[t\x{442}]"
-        }
-      },
-      {
-        "to" => "A",
-        "from" => "\x{410}"
-      },
-      {
-        "to" => "a",
-        "from" => "\x{430}"
-      },
-      {
-        "to" => "B",
-        "from" => "\x{411}"
+        "to" => "n",
+        "from" => "\x{1828}"
       },
       {
         "to" => "b",
-        "from" => "\x{431}"
-      },
-      {
-        "to" => "V",
-        "from" => "\x{412}"
-      },
-      {
-        "to" => "v",
-        "from" => "\x{432}"
-      },
-      {
-        "to" => "G",
-        "from" => "\x{413}"
-      },
-      {
-        "to" => "g",
-        "from" => "\x{433}"
-      },
-      {
-        "to" => "D",
-        "from" => "\x{414}"
-      },
-      {
-        "to" => "d",
-        "from" => "\x{434}"
-      },
-      {
-        "to" => "E",
-        "from" => "\x{415}"
-      },
-      {
-        "to" => "e",
-        "from" => "\x{435}"
-      },
-      {
-        "to" => "\x{17d}",
-        "from" => "\x{416}"
-      },
-      {
-        "to" => "\x{17e}",
-        "from" => "\x{436}"
-      },
-      {
-        "to" => "Z",
-        "from" => "\x{417}"
-      },
-      {
-        "to" => "z",
-        "from" => "\x{437}"
-      },
-      {
-        "to" => "I",
-        "from" => "\x{418}"
-      },
-      {
-        "to" => "i",
-        "from" => "\x{438}"
-      },
-      {
-        "to" => "J",
-        "from" => "\x{419}"
-      },
-      {
-        "to" => "j",
-        "from" => "\x{439}"
-      },
-      {
-        "to" => "K",
-        "from" => "\x{41a}"
-      },
-      {
-        "to" => "k",
-        "from" => "\x{43a}"
-      },
-      {
-        "to" => "L",
-        "from" => "\x{41b}"
-      },
-      {
-        "to" => "l",
-        "from" => "\x{43b}"
-      },
-      {
-        "to" => "M",
-        "from" => "\x{41c}"
-      },
-      {
-        "to" => "m",
-        "from" => "\x{43c}"
-      },
-      {
-        "to" => "N",
-        "from" => "\x{41d}"
-      },
-      {
-        "to" => "n",
-        "from" => "\x{43d}"
-      },
-      {
-        "to" => "O",
-        "from" => "\x{41e}"
-      },
-      {
-        "to" => "o",
-        "from" => "\x{43e}"
-      },
-      {
-        "to" => "P",
-        "from" => "\x{41f}"
+        "from" => "\x{182a}"
       },
       {
         "to" => "p",
-        "from" => "\x{43f}"
+        "from" => "\x{182b}"
       },
       {
-        "to" => "R",
-        "from" => "\x{420}"
-      },
-      {
-        "to" => "r",
-        "from" => "\x{440}"
-      },
-      {
-        "to" => "T",
-        "from" => "\x{422}"
-      },
-      {
-        "to" => "t",
-        "from" => "\x{442}"
-      },
-      {
-        "to" => "U",
-        "from" => "\x{423}"
-      },
-      {
-        "to" => "u",
-        "from" => "\x{443}"
-      },
-      {
-        "to" => "F",
-        "from" => "\x{424}"
-      },
-      {
-        "to" => "f",
-        "from" => "\x{444}"
-      },
-      {
-        "to" => "C",
-        "from" => "\x{426}"
-      },
-      {
-        "to" => "c",
-        "from" => "\x{446}"
-      },
-      {
-        "to" => "S",
-        "from" => "\x{421}"
-      },
-      {
-        "to" => "s",
-        "from" => "\x{441}"
-      },
-      {
-        "to" => "\x{10c}",
-        "from" => "\x{427}"
-      },
-      {
-        "to" => "\x{10d}",
-        "from" => "\x{447}"
-      },
-      {
-        "to" => "\x{160}",
-        "from" => "\x{428}"
-      },
-      {
-        "to" => "\x{161}",
-        "from" => "\x{448}"
-      },
-      {
-        "to" => "\x{102}",
-        "from" => "\x{42a}"
-      },
-      {
-        "to" => "\x{103}",
-        "from" => "\x{44a}"
-      },
-      {
-        "to" => "'",
-        "from" => "\x{42c}",
+        "to" => "k",
+        "from" => "\x{182c}",
         "context" => {
-          "after" => "[[:upper:]]"
+          "before" => "i"
         }
       },
       {
-        "to" => "'",
-        "from" => "\x{44c}"
+        "to" => "q",
+        "from" => "\x{182c}",
+        "context" => {
+          "before" => "\x{180e}?[aou]"
+        }
+      },
+      {
+        "to" => "q",
+        "from" => "\x{182c}",
+        "context" => {
+          "after" => "[aou]"
+        }
+      },
+      {
+        "to" => "k",
+        "from" => "\x{182c}",
+        "context" => {
+          "before" => "[\x{fc}e\x{f6}]"
+        }
+      },
+      {
+        "to" => "k",
+        "from" => "\x{182c}",
+        "context" => {
+          "after" => "[\x{fc}e\x{f6}]"
+        }
+      },
+      {
+        "to" => "q",
+        "from" => "\x{182c}"
+      },
+      {
+        "to" => "k",
+        "from" => "\x{182c}"
+      },
+      {
+        "to" => "g",
+        "from" => "\x{182d}",
+        "context" => {
+          "before" => "i\\s"
+        }
+      },
+      {
+        "to" => "\x{263}",
+        "from" => "\x{182d}",
+        "context" => {
+          "before" => "\x{180e}?[aou]"
+        }
+      },
+      {
+        "to" => "\x{263}",
+        "from" => "\x{182d}",
+        "context" => {
+          "after" => "[aou]"
+        }
+      },
+      {
+        "to" => "g",
+        "from" => "\x{182d}",
+        "context" => {
+          "before" => "[\x{fc}e\x{f6}]"
+        }
+      },
+      {
+        "to" => "g",
+        "from" => "\x{182d}",
+        "context" => {
+          "after" => "[\x{fc}e\x{f6}]"
+        }
+      },
+      {
+        "to" => "\x{263}",
+        "from" => "\x{182d}",
+        "context" => {
+          "after" => "[aou]."
+        }
+      },
+      {
+        "to" => "\x{263}",
+        "from" => "\x{182d}",
+        "context" => {
+          "after" => "[aou].i"
+        }
+      },
+      {
+        "to" => "\x{263}",
+        "from" => "\x{182d}",
+        "context" => {
+          "after" => "[aou]..i"
+        }
+      },
+      {
+        "to" => "\x{263}",
+        "from" => "\x{182d}",
+        "context" => {
+          "before" => ".[aou]"
+        }
+      },
+      {
+        "to" => "g",
+        "from" => "\x{182d}",
+        "context" => {
+          "before" => ".[\x{fc}e\x{f6}]"
+        }
+      },
+      {
+        "to" => "g",
+        "from" => "\x{182d}"
+      },
+      {
+        "to" => "\x{263}",
+        "from" => "\x{182d}"
+      },
+      {
+        "to" => "m",
+        "from" => "\x{182e}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{1830}"
+      },
+      {
+        "to" => "\x{161}",
+        "from" => "\x{1831}"
+      },
+      {
+        "to" => "t",
+        "from" => "\x{1832}"
+      },
+      {
+        "to" => "d",
+        "from" => "\x{1833}"
+      },
+      {
+        "to" => "\x{10d}",
+        "from" => "\x{1834}"
+      },
+      {
+        "to" => "j",
+        "from" => "\x{1835}"
+      },
+      {
+        "to" => "y",
+        "from" => "\x{1836}"
+      },
+      {
+        "to" => "r",
+        "from" => "\x{1837}"
+      },
+      {
+        "to" => "v",
+        "from" => "\x{1838}"
+      },
+      {
+        "to" => "w",
+        "from" => "\x{1838}"
+      },
+      {
+        "to" => "f",
+        "from" => "\x{1839}"
+      },
+      {
+        "to" => "\x{1e33}",
+        "from" => "\x{183a}"
+      },
+      {
+        "to" => "\x{1e9}",
+        "from" => "\x{183b}"
+      },
+      {
+        "to" => "\x{17e}",
+        "from" => "\x{183f}"
+      },
+      {
+        "to" => "lh",
+        "from" => "\x{1840}"
+      },
+      {
+        "to" => "l",
+        "from" => "\x{182f}"
+      },
+      {
+        "to" => "zh",
+        "from" => "\x{1841}"
+      },
+      {
+        "to" => "z",
+        "from" => "\x{183d}"
+      },
+      {
+        "to" => "ch",
+        "from" => "\x{1842}"
+      },
+      {
+        "to" => "c",
+        "from" => "\x{183c}"
+      },
+      {
+        "to" => "h",
+        "from" => "\x{183e}"
+      },
+      {
+        "to" => "\x{a7}",
+        "from" => "\x{1800}"
+      },
+      {
+        "to" => "\x{2026}",
+        "from" => "\x{1801}"
+      },
+      {
+        "to" => ",",
+        "from" => "\x{1802}"
+      },
+      {
+        "to" => ".",
+        "from" => "\x{1803}"
+      },
+      {
+        "to" => ":",
+        "from" => "\x{1804}"
+      },
+      {
+        "to" => "\x{b6}",
+        "from" => "\x{1805}"
+      },
+      {
+        "to" => "-",
+        "from" => "\x{180e}"
+      },
+      {
+        "to" => 0,
+        "from" => "\x{1810}"
+      },
+      {
+        "to" => 1,
+        "from" => "\x{1811}"
+      },
+      {
+        "to" => 2,
+        "from" => "\x{1812}"
+      },
+      {
+        "to" => 3,
+        "from" => "\x{1813}"
+      },
+      {
+        "to" => 4,
+        "from" => "\x{1814}"
+      },
+      {
+        "to" => 5,
+        "from" => "\x{1815}"
+      },
+      {
+        "to" => 6,
+        "from" => "\x{1816}"
+      },
+      {
+        "to" => 7,
+        "from" => "\x{1817}"
+      },
+      {
+        "to" => 8,
+        "from" => "\x{1818}"
+      },
+      {
+        "to" => 9,
+        "from" => "\x{1819}"
       }
     ],
     "reverse" => "true"
   },
-  "Common RON" => {
-    "desc" => "Romanian without diacritics",
-    "name" => "Common RON",
-    "rules" => [
-      {
-        "to" => "A",
-        "from" => "\x{102}"
-      },
-      {
-        "to" => "a",
-        "from" => "\x{103}"
-      },
-      {
-        "to" => "A",
-        "from" => "\x{c2}"
-      },
-      {
-        "to" => "a",
-        "from" => "\x{e2}"
-      },
-      {
-        "to" => "I",
-        "from" => "\x{ce}"
-      },
-      {
-        "to" => "i",
-        "from" => "\x{ee}"
-      },
-      {
-        "to" => "S",
-        "from" => "\x{218}"
-      },
-      {
-        "to" => "s",
-        "from" => "\x{219}"
-      },
-      {
-        "to" => "S",
-        "from" => "\x{15e}"
-      },
-      {
-        "to" => "s",
-        "from" => "\x{15f}"
-      },
-      {
-        "to" => "T",
-        "from" => "\x{21a}"
-      },
-      {
-        "to" => "t",
-        "from" => "\x{21b}"
-      },
-      {
-        "to" => "T",
-        "from" => "\x{162}"
-      },
-      {
-        "to" => "t",
-        "from" => "\x{163}"
-      }
-    ],
-    "reverse" => "false"
-  },
-  "Common SLV" => {
-    "desc" => "Slovenian without diacritics",
-    "name" => "Common SLV",
-    "rules" => [
-      {
-        "to" => "C",
-        "from" => "\x{10c}"
-      },
-      {
-        "to" => "c",
-        "from" => "\x{10d}"
-      },
-      {
-        "to" => "S",
-        "from" => "\x{160}"
-      },
-      {
-        "to" => "s",
-        "from" => "\x{161}"
-      },
-      {
-        "to" => "Z",
-        "from" => "\x{17d}"
-      },
-      {
-        "to" => "z",
-        "from" => "\x{17e}"
-      }
-    ],
-    "reverse" => "false"
-  },
-  "Common POL" => {
-    "desc" => "Unaccented Polish",
-    "name" => "Common POL",
-    "rules" => [
-      {
-        "to" => "A",
-        "from" => "\x{104}"
-      },
-      {
-        "to" => "a",
-        "from" => "\x{105}"
-      },
-      {
-        "to" => "C",
-        "from" => "\x{106}"
-      },
-      {
-        "to" => "c",
-        "from" => "\x{107}"
-      },
-      {
-        "to" => "E",
-        "from" => "\x{118}"
-      },
-      {
-        "to" => "e",
-        "from" => "\x{119}"
-      },
-      {
-        "to" => "L",
-        "from" => "\x{141}"
-      },
-      {
-        "to" => "l",
-        "from" => "\x{142}"
-      },
-      {
-        "to" => "N",
-        "from" => "\x{143}"
-      },
-      {
-        "to" => "n",
-        "from" => "\x{144}"
-      },
-      {
-        "to" => "O",
-        "from" => "\x{d3}"
-      },
-      {
-        "to" => "o",
-        "from" => "\x{f3}"
-      },
-      {
-        "to" => "S",
-        "from" => "\x{15a}"
-      },
-      {
-        "to" => "s",
-        "from" => "\x{15b}"
-      },
-      {
-        "to" => "Z",
-        "from" => "\x{179}"
-      },
-      {
-        "to" => "z",
-        "from" => "\x{17a}"
-      },
-      {
-        "to" => "Z",
-        "from" => "\x{17b}"
-      },
-      {
-        "to" => "z",
-        "from" => "\x{17c}"
-      }
-    ],
-    "reverse" => "false"
-  },
-  "ISO 9" => {
+  "iso_9" => {
     "desc" => "ISO 9:1995, Cyrillic to Latin",
     "name" => "ISO 9",
+    "id" => "iso_9",
     "rules" => [
       {
         "to" => "A",
@@ -2425,7 +1557,7 @@
         "to" => "\x{2ba}",
         "from" => "\x{42a}",
         "context" => {
-          "after" => "[[:upper:]]"
+          "after" => "\\p{IsUpper}"
         }
       },
       {
@@ -2534,9 +1666,754 @@
     ],
     "reverse" => "true"
   },
-  "DIN 31634" => {
+  "din_1460_bul" => {
+    "desc" => "DIN 1460:1982, Cyrillic to Latin, Bulgarian",
+    "name" => "DIN 1460 BUL",
+    "id" => "din_1460_bul",
+    "rules" => [
+      {
+        "to" => "\x{160}T",
+        "from" => "\x{429}",
+        "context" => {
+          "after" => "[\\p{IsUpper}\\p{IsSpace}]",
+          "before" => "[\\p{IsUpper}\\p{IsSpace}]"
+        }
+      },
+      {
+        "to" => "\x{160}t",
+        "from" => "\x{429}"
+      },
+      {
+        "to" => "\x{161}t",
+        "from" => "\x{449}"
+      },
+      {
+        "to" => "JU",
+        "from" => "\x{42e}",
+        "context" => {
+          "after" => "[\\p{IsUpper}\\p{IsSpace}]",
+          "before" => "[\\p{IsUpper}\\p{IsSpace}]"
+        }
+      },
+      {
+        "to" => "Ju",
+        "from" => "\x{42e}"
+      },
+      {
+        "to" => "ju",
+        "from" => "\x{44e}"
+      },
+      {
+        "to" => "JA",
+        "from" => "\x{42f}",
+        "context" => {
+          "after" => "[\\p{IsUpper}\\p{IsSpace}]",
+          "before" => "[\\p{IsUpper}\\p{IsSpace}]"
+        }
+      },
+      {
+        "to" => "Ja",
+        "from" => "\x{42f}"
+      },
+      {
+        "to" => "ja",
+        "from" => "\x{44f}"
+      },
+      {
+        "to" => "CH",
+        "from" => "\x{425}",
+        "context" => {
+          "after" => "[\\p{IsUpper}\\p{IsSpace}]",
+          "before" => "[\\p{IsUpper}\\p{IsSpace}]"
+        }
+      },
+      {
+        "to" => "Ch",
+        "from" => "\x{425}"
+      },
+      {
+        "to" => "ch",
+        "from" => "\x{445}"
+      },
+      {
+        "to" => "J-",
+        "from" => "\x{419}",
+        "context" => {
+          "before" => "[auAU\x{430}\x{443}\x{410}\x{423}]"
+        }
+      },
+      {
+        "to" => "j-",
+        "from" => "\x{439}",
+        "context" => {
+          "before" => "[au\x{430}\x{443}]"
+        }
+      },
+      {
+        "to" => "\x{160}-",
+        "from" => "\x{428}",
+        "context" => {
+          "before" => "[tT\x{442}\x{422}]"
+        }
+      },
+      {
+        "to" => "\x{161}-",
+        "from" => "\x{448}",
+        "context" => {
+          "before" => "[t\x{442}]"
+        }
+      },
+      {
+        "to" => "A",
+        "from" => "\x{410}"
+      },
+      {
+        "to" => "a",
+        "from" => "\x{430}"
+      },
+      {
+        "to" => "B",
+        "from" => "\x{411}"
+      },
+      {
+        "to" => "b",
+        "from" => "\x{431}"
+      },
+      {
+        "to" => "V",
+        "from" => "\x{412}"
+      },
+      {
+        "to" => "v",
+        "from" => "\x{432}"
+      },
+      {
+        "to" => "G",
+        "from" => "\x{413}"
+      },
+      {
+        "to" => "g",
+        "from" => "\x{433}"
+      },
+      {
+        "to" => "D",
+        "from" => "\x{414}"
+      },
+      {
+        "to" => "d",
+        "from" => "\x{434}"
+      },
+      {
+        "to" => "E",
+        "from" => "\x{415}"
+      },
+      {
+        "to" => "e",
+        "from" => "\x{435}"
+      },
+      {
+        "to" => "\x{17d}",
+        "from" => "\x{416}"
+      },
+      {
+        "to" => "\x{17e}",
+        "from" => "\x{436}"
+      },
+      {
+        "to" => "Z",
+        "from" => "\x{417}"
+      },
+      {
+        "to" => "z",
+        "from" => "\x{437}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{418}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{438}"
+      },
+      {
+        "to" => "J",
+        "from" => "\x{419}"
+      },
+      {
+        "to" => "j",
+        "from" => "\x{439}"
+      },
+      {
+        "to" => "K",
+        "from" => "\x{41a}"
+      },
+      {
+        "to" => "k",
+        "from" => "\x{43a}"
+      },
+      {
+        "to" => "L",
+        "from" => "\x{41b}"
+      },
+      {
+        "to" => "l",
+        "from" => "\x{43b}"
+      },
+      {
+        "to" => "M",
+        "from" => "\x{41c}"
+      },
+      {
+        "to" => "m",
+        "from" => "\x{43c}"
+      },
+      {
+        "to" => "N",
+        "from" => "\x{41d}"
+      },
+      {
+        "to" => "n",
+        "from" => "\x{43d}"
+      },
+      {
+        "to" => "O",
+        "from" => "\x{41e}"
+      },
+      {
+        "to" => "o",
+        "from" => "\x{43e}"
+      },
+      {
+        "to" => "P",
+        "from" => "\x{41f}"
+      },
+      {
+        "to" => "p",
+        "from" => "\x{43f}"
+      },
+      {
+        "to" => "R",
+        "from" => "\x{420}"
+      },
+      {
+        "to" => "r",
+        "from" => "\x{440}"
+      },
+      {
+        "to" => "T",
+        "from" => "\x{422}"
+      },
+      {
+        "to" => "t",
+        "from" => "\x{442}"
+      },
+      {
+        "to" => "U",
+        "from" => "\x{423}"
+      },
+      {
+        "to" => "u",
+        "from" => "\x{443}"
+      },
+      {
+        "to" => "F",
+        "from" => "\x{424}"
+      },
+      {
+        "to" => "f",
+        "from" => "\x{444}"
+      },
+      {
+        "to" => "C",
+        "from" => "\x{426}"
+      },
+      {
+        "to" => "c",
+        "from" => "\x{446}"
+      },
+      {
+        "to" => "S",
+        "from" => "\x{421}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{441}"
+      },
+      {
+        "to" => "\x{10c}",
+        "from" => "\x{427}"
+      },
+      {
+        "to" => "\x{10d}",
+        "from" => "\x{447}"
+      },
+      {
+        "to" => "\x{160}",
+        "from" => "\x{428}"
+      },
+      {
+        "to" => "\x{161}",
+        "from" => "\x{448}"
+      },
+      {
+        "to" => "\x{102}",
+        "from" => "\x{42a}"
+      },
+      {
+        "to" => "\x{103}",
+        "from" => "\x{44a}"
+      },
+      {
+        "to" => "'",
+        "from" => "\x{42c}",
+        "context" => {
+          "after" => "\\p{IsUpper}"
+        }
+      },
+      {
+        "to" => "'",
+        "from" => "\x{44c}"
+      }
+    ],
+    "reverse" => "true"
+  },
+  "common_slv" => {
+    "desc" => "Slovenian without diacritics",
+    "name" => "Common SLV",
+    "id" => "common_slv",
+    "rules" => [
+      {
+        "to" => "C",
+        "from" => "\x{10c}"
+      },
+      {
+        "to" => "c",
+        "from" => "\x{10d}"
+      },
+      {
+        "to" => "S",
+        "from" => "\x{160}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{161}"
+      },
+      {
+        "to" => "Z",
+        "from" => "\x{17d}"
+      },
+      {
+        "to" => "z",
+        "from" => "\x{17e}"
+      }
+    ],
+    "reverse" => "false"
+  },
+  "iso_843" => {
+    "desc" => "ISO 843:1997 TL (Type 1), Greek to Latin",
+    "name" => "ISO 843",
+    "id" => "iso_843",
+    "rules" => [
+      {
+        "to" => "A",
+        "from" => "\x{391}"
+      },
+      {
+        "to" => "a",
+        "from" => "\x{3b1}"
+      },
+      {
+        "to" => "V",
+        "from" => "\x{392}"
+      },
+      {
+        "to" => "v",
+        "from" => "\x{3b2}"
+      },
+      {
+        "to" => "G",
+        "from" => "\x{393}"
+      },
+      {
+        "to" => "g",
+        "from" => "\x{3b3}"
+      },
+      {
+        "to" => "D",
+        "from" => "\x{394}"
+      },
+      {
+        "to" => "d",
+        "from" => "\x{3b4}"
+      },
+      {
+        "to" => "E",
+        "from" => "\x{395}"
+      },
+      {
+        "to" => "e",
+        "from" => "\x{3b5}"
+      },
+      {
+        "to" => "Z",
+        "from" => "\x{396}"
+      },
+      {
+        "to" => "z",
+        "from" => "\x{3b6}"
+      },
+      {
+        "to" => "\x{12a}",
+        "from" => "\x{397}"
+      },
+      {
+        "to" => "\x{12b}",
+        "from" => "\x{3b7}"
+      },
+      {
+        "to" => "Th",
+        "from" => "\x{398}"
+      },
+      {
+        "to" => "th",
+        "from" => "\x{3b8}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{399}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3b9}"
+      },
+      {
+        "to" => "K",
+        "from" => "\x{39a}"
+      },
+      {
+        "to" => "k",
+        "from" => "\x{3ba}"
+      },
+      {
+        "to" => "L",
+        "from" => "\x{39b}"
+      },
+      {
+        "to" => "l",
+        "from" => "\x{3bb}"
+      },
+      {
+        "to" => "M",
+        "from" => "\x{39c}"
+      },
+      {
+        "to" => "m",
+        "from" => "\x{3bc}"
+      },
+      {
+        "to" => "N",
+        "from" => "\x{39d}"
+      },
+      {
+        "to" => "n",
+        "from" => "\x{3bd}"
+      },
+      {
+        "to" => "X",
+        "from" => "\x{39e}"
+      },
+      {
+        "to" => "x",
+        "from" => "\x{3be}"
+      },
+      {
+        "to" => "O",
+        "from" => "\x{39f}"
+      },
+      {
+        "to" => "o",
+        "from" => "\x{3bf}"
+      },
+      {
+        "to" => "P",
+        "from" => "\x{3a0}"
+      },
+      {
+        "to" => "p",
+        "from" => "\x{3c0}"
+      },
+      {
+        "to" => "R",
+        "from" => "\x{3a1}"
+      },
+      {
+        "to" => "r",
+        "from" => "\x{3c1}"
+      },
+      {
+        "to" => "S",
+        "from" => "\x{3a3}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{3c2}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{3c3}"
+      },
+      {
+        "to" => "T",
+        "from" => "\x{3a4}"
+      },
+      {
+        "to" => "t",
+        "from" => "\x{3c4}"
+      },
+      {
+        "to" => "Y",
+        "from" => "\x{3a5}"
+      },
+      {
+        "to" => "y",
+        "from" => "\x{3c5}"
+      },
+      {
+        "to" => "F",
+        "from" => "\x{3a6}"
+      },
+      {
+        "to" => "f",
+        "from" => "\x{3c6}"
+      },
+      {
+        "to" => "Ch",
+        "from" => "\x{3a7}"
+      },
+      {
+        "to" => "ch",
+        "from" => "\x{3c7}"
+      },
+      {
+        "to" => "Ps",
+        "from" => "\x{3a8}"
+      },
+      {
+        "to" => "ps",
+        "from" => "\x{3c8}"
+      },
+      {
+        "to" => "\x{14c}",
+        "from" => "\x{3a9}"
+      },
+      {
+        "to" => "\x{14d}",
+        "from" => "\x{3c9}"
+      },
+      {
+        "to" => "S",
+        "from" => "\x{3da}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{3db}"
+      },
+      {
+        "to" => "W",
+        "from" => "\x{3dc}"
+      },
+      {
+        "to" => "f",
+        "from" => "\x{3dd}"
+      },
+      {
+        "to" => "j",
+        "from" => "\x{3f3}"
+      },
+      {
+        "to" => "\x{b4}",
+        "from" => "\x{384}"
+      },
+      {
+        "to" => "\x{a8}\x{301}",
+        "from" => "\x{385}"
+      },
+      {
+        "to" => "\x{302}",
+        "from" => "\x{342}"
+      },
+      {
+        "to" => "\x{2bc}",
+        "from" => "\x{343}"
+      },
+      {
+        "to" => "\x{2bc}",
+        "from" => "\x{313}"
+      },
+      {
+        "to" => "h",
+        "from" => "\x{314}"
+      },
+      {
+        "to" => "\x{327}",
+        "from" => "\x{345}"
+      },
+      {
+        "to" => "\x{327}",
+        "from" => "\x{345}"
+      },
+      {
+        "to" => "\x{c1}",
+        "from" => "\x{386}"
+      },
+      {
+        "to" => "\x{e1}",
+        "from" => "\x{3ac}"
+      },
+      {
+        "to" => "\x{c9}",
+        "from" => "\x{388}"
+      },
+      {
+        "to" => "\x{e9}",
+        "from" => "\x{3ad}"
+      },
+      {
+        "to" => "\x{12a}\x{301}",
+        "from" => "\x{389}"
+      },
+      {
+        "to" => "\x{12b}\x{301}",
+        "from" => "\x{3ae}"
+      },
+      {
+        "to" => "\x{cd}",
+        "from" => "\x{38a}"
+      },
+      {
+        "to" => "\x{ed}",
+        "from" => "\x{3af}"
+      },
+      {
+        "to" => "\x{d3}",
+        "from" => "\x{38c}"
+      },
+      {
+        "to" => "\x{f3}",
+        "from" => "\x{3cc}"
+      },
+      {
+        "to" => "\x{dd}",
+        "from" => "\x{38e}"
+      },
+      {
+        "to" => "\x{fd}",
+        "from" => "\x{3cd}"
+      },
+      {
+        "to" => "\x{1e52}",
+        "from" => "\x{38f}"
+      },
+      {
+        "to" => "\x{1e53}",
+        "from" => "\x{3ce}"
+      },
+      {
+        "to" => "\x{cf}",
+        "from" => "\x{3aa}"
+      },
+      {
+        "to" => "\x{ef}",
+        "from" => "\x{3ca}"
+      },
+      {
+        "to" => "\x{178}",
+        "from" => "\x{3ab}"
+      },
+      {
+        "to" => "\x{ff}",
+        "from" => "\x{3cb}"
+      },
+      {
+        "to" => "\x{1e2f}",
+        "from" => "\x{390}"
+      },
+      {
+        "to" => "\x{ff}\x{301}",
+        "from" => "\x{3b0}"
+      },
+      {
+        "to" => "?",
+        "from" => "\x{37e}",
+        "context" => {
+          "after" => "\\b"
+        }
+      },
+      {
+        "to" => "?",
+        "from" => ";",
+        "context" => {
+          "after" => "\\b"
+        }
+      },
+      {
+        "to" => ";",
+        "from" => "\x{b7}"
+      },
+      {
+        "to" => "-",
+        "from" => "\x{203f}"
+      }
+    ],
+    "reverse" => "false"
+  },
+  "common_deu" => {
+    "desc" => "German umlauts",
+    "name" => "Common DEU",
+    "id" => "common_deu",
+    "rules" => [
+      {
+        "to" => "Ae",
+        "from" => "\x{c4}"
+      },
+      {
+        "to" => "ae",
+        "from" => "\x{e4}"
+      },
+      {
+        "to" => "Oe",
+        "from" => "\x{d6}"
+      },
+      {
+        "to" => "oe",
+        "from" => "\x{f6}"
+      },
+      {
+        "to" => "Ue",
+        "from" => "\x{dc}"
+      },
+      {
+        "to" => "ue",
+        "from" => "\x{fc}"
+      },
+      {
+        "to" => "SS",
+        "from" => "\x{df}",
+        "context" => {
+          "after" => "\\p{IsUpper}"
+        }
+      },
+      {
+        "to" => "ss",
+        "from" => "\x{df}"
+      }
+    ],
+    "reverse" => "false"
+  },
+  "din_31634" => {
     "desc" => "DIN 31634:1982, Greek to Latin",
     "name" => "DIN 31634",
+    "id" => "din_31634",
     "rules" => [
       {
         "to" => "AU",
@@ -3005,378 +2882,514 @@
     ],
     "reverse" => "false"
   },
-  "Common DEU" => {
-    "desc" => "German umlauts",
-    "name" => "Common DEU",
+  "common_ces" => {
+    "desc" => "Czech without diacritics",
+    "name" => "Common CES",
+    "id" => "common_ces",
     "rules" => [
       {
-        "to" => "Ae",
-        "from" => "\x{c4}"
+        "to" => "A",
+        "from" => "\x{c1}"
       },
       {
-        "to" => "ae",
-        "from" => "\x{e4}"
+        "to" => "a",
+        "from" => "\x{e1}"
       },
       {
-        "to" => "Oe",
-        "from" => "\x{d6}"
+        "to" => "C",
+        "from" => "\x{10c}"
       },
       {
-        "to" => "oe",
-        "from" => "\x{f6}"
+        "to" => "c",
+        "from" => "\x{10d}"
       },
       {
-        "to" => "Ue",
-        "from" => "\x{dc}"
+        "to" => "D",
+        "from" => "\x{10e}"
       },
       {
-        "to" => "ue",
-        "from" => "\x{fc}"
+        "to" => "d",
+        "from" => "\x{10f}"
       },
       {
-        "to" => "SS",
-        "from" => "\x{df}",
-        "context" => {
-          "after" => "\\p{IsUpper}"
-        }
+        "to" => "d",
+        "from" => "d\x{30c}"
       },
       {
-        "to" => "ss",
-        "from" => "\x{df}"
+        "to" => "E",
+        "from" => "\x{c9}"
+      },
+      {
+        "to" => "e",
+        "from" => "\x{e9}"
+      },
+      {
+        "to" => "E",
+        "from" => "\x{11a}"
+      },
+      {
+        "to" => "e",
+        "from" => "\x{11b}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{cd}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{ed}"
+      },
+      {
+        "to" => "N",
+        "from" => "\x{147}"
+      },
+      {
+        "to" => "n",
+        "from" => "\x{148}"
+      },
+      {
+        "to" => "O",
+        "from" => "\x{d3}"
+      },
+      {
+        "to" => "o",
+        "from" => "\x{f3}"
+      },
+      {
+        "to" => "R",
+        "from" => "\x{158}"
+      },
+      {
+        "to" => "r",
+        "from" => "\x{159}"
+      },
+      {
+        "to" => "S",
+        "from" => "\x{160}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{161}"
+      },
+      {
+        "to" => "T",
+        "from" => "\x{164}"
+      },
+      {
+        "to" => "t",
+        "from" => "\x{165}"
+      },
+      {
+        "to" => "t",
+        "from" => "t\x{30c};"
+      },
+      {
+        "to" => "U",
+        "from" => "\x{da}"
+      },
+      {
+        "to" => "u",
+        "from" => "\x{fa}"
+      },
+      {
+        "to" => "U",
+        "from" => "\x{16e}"
+      },
+      {
+        "to" => "u",
+        "from" => "\x{16f}"
+      },
+      {
+        "to" => "Y",
+        "from" => "\x{dd}"
+      },
+      {
+        "to" => "y",
+        "from" => "\x{fd}"
+      },
+      {
+        "to" => "Z",
+        "from" => "\x{17d}"
+      },
+      {
+        "to" => "z",
+        "from" => "\x{17e}"
       }
     ],
     "reverse" => "false"
   },
-  "Common Classical MON" => {
-    "desc" => "Classical Mongolian Script to Latin",
-    "name" => "Common Classical MON",
+  "greeklish" => {
+    "desc" => "Greeklish (Phonetic), Greek to Latin",
+    "name" => "Greeklish",
+    "id" => "greeklish",
     "rules" => [
       {
-        "to" => "a",
-        "from" => "\x{1820}"
-      },
-      {
-        "to" => "e",
-        "from" => "\x{1821}"
+        "to" => "i",
+        "from" => "\x{3b5}\x{3b9}"
       },
       {
         "to" => "i",
-        "from" => "\x{1822}"
+        "from" => "\x{3ad}\x{3b9}"
       },
       {
-        "to" => "o",
-        "from" => "\x{1823}"
+        "to" => "i",
+        "from" => "\x{3b5}\x{3af}"
+      },
+      {
+        "to" => "ef",
+        "from" => "\x{3b5}\x{3c5}"
+      },
+      {
+        "to" => "ef",
+        "from" => "\x{3ad}\x{3c5}"
+      },
+      {
+        "to" => "ef",
+        "from" => "\x{3b5}\x{3cd}"
       },
       {
         "to" => "u",
-        "from" => "\x{1824}"
+        "from" => "\x{3bf}\x{3c5}"
       },
       {
-        "to" => "\x{f6}",
-        "from" => "\x{1825}"
+        "to" => "u",
+        "from" => "\x{3bf}\x{3cd}"
       },
       {
-        "to" => "\x{fc}",
-        "from" => "\x{1826}"
+        "to" => "u",
+        "from" => "\x{3cc}\x{3c5}"
       },
       {
-        "to" => "\x{113}",
-        "from" => "\x{1827}"
+        "to" => "A",
+        "from" => "\x{391}"
       },
       {
-        "to" => "ng",
-        "from" => "\x{1829}"
+        "to" => "a",
+        "from" => "\x{3b1}"
       },
       {
-        "to" => "n",
-        "from" => "\x{1828}"
+        "to" => "A",
+        "from" => "\x{386}"
       },
       {
-        "to" => "b",
-        "from" => "\x{182a}"
+        "to" => "a",
+        "from" => "\x{3ac}"
       },
       {
-        "to" => "p",
-        "from" => "\x{182b}"
-      },
-      {
-        "to" => "k",
-        "from" => "\x{182c}",
-        "context" => {
-          "before" => "i"
-        }
-      },
-      {
-        "to" => "q",
-        "from" => "\x{182c}",
-        "context" => {
-          "before" => "\x{180e}?[aou]"
-        }
-      },
-      {
-        "to" => "q",
-        "from" => "\x{182c}",
-        "context" => {
-          "after" => "[aou]"
-        }
-      },
-      {
-        "to" => "k",
-        "from" => "\x{182c}",
-        "context" => {
-          "before" => "[\x{fc}e\x{f6}]"
-        }
-      },
-      {
-        "to" => "k",
-        "from" => "\x{182c}",
-        "context" => {
-          "after" => "[\x{fc}e\x{f6}]"
-        }
-      },
-      {
-        "to" => "q",
-        "from" => "\x{182c}"
-      },
-      {
-        "to" => "k",
-        "from" => "\x{182c}"
-      },
-      {
-        "to" => "g",
-        "from" => "\x{182d}",
-        "context" => {
-          "before" => "i\\s"
-        }
-      },
-      {
-        "to" => "\x{263}",
-        "from" => "\x{182d}",
-        "context" => {
-          "before" => "\x{180e}?[aou]"
-        }
-      },
-      {
-        "to" => "\x{263}",
-        "from" => "\x{182d}",
-        "context" => {
-          "after" => "[aou]"
-        }
-      },
-      {
-        "to" => "g",
-        "from" => "\x{182d}",
-        "context" => {
-          "before" => "[\x{fc}e\x{f6}]"
-        }
-      },
-      {
-        "to" => "g",
-        "from" => "\x{182d}",
-        "context" => {
-          "after" => "[\x{fc}e\x{f6}]"
-        }
-      },
-      {
-        "to" => "\x{263}",
-        "from" => "\x{182d}",
-        "context" => {
-          "after" => "[aou]."
-        }
-      },
-      {
-        "to" => "\x{263}",
-        "from" => "\x{182d}",
-        "context" => {
-          "after" => "[aou].i"
-        }
-      },
-      {
-        "to" => "\x{263}",
-        "from" => "\x{182d}",
-        "context" => {
-          "after" => "[aou]..i"
-        }
-      },
-      {
-        "to" => "\x{263}",
-        "from" => "\x{182d}",
-        "context" => {
-          "before" => ".[aou]"
-        }
-      },
-      {
-        "to" => "g",
-        "from" => "\x{182d}",
-        "context" => {
-          "before" => ".[\x{fc}e\x{f6}]"
-        }
-      },
-      {
-        "to" => "g",
-        "from" => "\x{182d}"
-      },
-      {
-        "to" => "\x{263}",
-        "from" => "\x{182d}"
-      },
-      {
-        "to" => "m",
-        "from" => "\x{182e}"
-      },
-      {
-        "to" => "s",
-        "from" => "\x{1830}"
-      },
-      {
-        "to" => "\x{161}",
-        "from" => "\x{1831}"
-      },
-      {
-        "to" => "t",
-        "from" => "\x{1832}"
-      },
-      {
-        "to" => "d",
-        "from" => "\x{1833}"
-      },
-      {
-        "to" => "\x{10d}",
-        "from" => "\x{1834}"
-      },
-      {
-        "to" => "j",
-        "from" => "\x{1835}"
-      },
-      {
-        "to" => "y",
-        "from" => "\x{1836}"
-      },
-      {
-        "to" => "r",
-        "from" => "\x{1837}"
+        "to" => "V",
+        "from" => "\x{392}"
       },
       {
         "to" => "v",
-        "from" => "\x{1838}"
+        "from" => "\x{3b2}"
       },
       {
-        "to" => "w",
-        "from" => "\x{1838}"
+        "to" => "Y",
+        "from" => "\x{393}"
       },
       {
-        "to" => "f",
-        "from" => "\x{1839}"
+        "to" => "y",
+        "from" => "\x{3b3}"
       },
       {
-        "to" => "\x{1e33}",
-        "from" => "\x{183a}"
+        "to" => "D",
+        "from" => "\x{394}"
       },
       {
-        "to" => "\x{1e9}",
-        "from" => "\x{183b}"
+        "to" => "d",
+        "from" => "\x{3b4}"
       },
       {
-        "to" => "\x{17e}",
-        "from" => "\x{183f}"
+        "to" => "E",
+        "from" => "\x{395}"
       },
       {
-        "to" => "lh",
-        "from" => "\x{1840}"
+        "to" => "e",
+        "from" => "\x{3b5}"
       },
       {
-        "to" => "l",
-        "from" => "\x{182f}"
+        "to" => "E",
+        "from" => "\x{388}"
       },
       {
-        "to" => "zh",
-        "from" => "\x{1841}"
+        "to" => "e",
+        "from" => "\x{3ad}"
+      },
+      {
+        "to" => "Z",
+        "from" => "\x{396}"
       },
       {
         "to" => "z",
-        "from" => "\x{183d}"
+        "from" => "\x{3b6}"
       },
       {
-        "to" => "ch",
-        "from" => "\x{1842}"
+        "to" => "I",
+        "from" => "\x{397}"
       },
       {
-        "to" => "c",
-        "from" => "\x{183c}"
+        "to" => "i",
+        "from" => "\x{3b7}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{389}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3ae}"
+      },
+      {
+        "to" => "Th",
+        "from" => "\x{398}"
+      },
+      {
+        "to" => "th",
+        "from" => "\x{3b8}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{399}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3b9}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{38a}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3af}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{3aa}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3ca}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{390}"
+      },
+      {
+        "to" => "K",
+        "from" => "\x{39a}"
+      },
+      {
+        "to" => "k",
+        "from" => "\x{3ba}"
+      },
+      {
+        "to" => "L",
+        "from" => "\x{39b}"
+      },
+      {
+        "to" => "l",
+        "from" => "\x{3bb}"
+      },
+      {
+        "to" => "M",
+        "from" => "\x{39c}"
+      },
+      {
+        "to" => "m",
+        "from" => "\x{3bc}"
+      },
+      {
+        "to" => "N",
+        "from" => "\x{39d}"
+      },
+      {
+        "to" => "n",
+        "from" => "\x{3bd}"
+      },
+      {
+        "to" => "X",
+        "from" => "\x{39e}"
+      },
+      {
+        "to" => "x",
+        "from" => "\x{3be}"
+      },
+      {
+        "to" => "O",
+        "from" => "\x{39f}"
+      },
+      {
+        "to" => "o",
+        "from" => "\x{3bf}"
+      },
+      {
+        "to" => "O",
+        "from" => "\x{38c}"
+      },
+      {
+        "to" => "o",
+        "from" => "\x{3cc}"
+      },
+      {
+        "to" => "P",
+        "from" => "\x{3a0}"
+      },
+      {
+        "to" => "p",
+        "from" => "\x{3c0}"
+      },
+      {
+        "to" => "R",
+        "from" => "\x{3a1}"
+      },
+      {
+        "to" => "r",
+        "from" => "\x{3c1}"
+      },
+      {
+        "to" => "S",
+        "from" => "\x{3a3}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{3c3}"
+      },
+      {
+        "to" => "T",
+        "from" => "\x{3a4}"
+      },
+      {
+        "to" => "t",
+        "from" => "\x{3c4}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{3a5}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3c5}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{38e}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3cd}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{3ab}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3cb}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{3b0}"
+      },
+      {
+        "to" => "F",
+        "from" => "\x{3a6}"
+      },
+      {
+        "to" => "f",
+        "from" => "\x{3c6}"
+      },
+      {
+        "to" => "H",
+        "from" => "\x{3a7}"
       },
       {
         "to" => "h",
-        "from" => "\x{183e}"
+        "from" => "\x{3c7}"
       },
       {
-        "to" => "\x{a7}",
-        "from" => "\x{1800}"
+        "to" => "Ps",
+        "from" => "\x{3a8}"
       },
       {
-        "to" => "\x{2026}",
-        "from" => "\x{1801}"
+        "to" => "ps",
+        "from" => "\x{3c8}"
       },
       {
-        "to" => ",",
-        "from" => "\x{1802}"
+        "to" => "O",
+        "from" => "\x{3a9}"
       },
       {
-        "to" => ".",
-        "from" => "\x{1803}"
+        "to" => "o",
+        "from" => "\x{3c9}"
       },
       {
-        "to" => ":",
-        "from" => "\x{1804}"
+        "to" => "O",
+        "from" => "\x{38f}"
       },
       {
-        "to" => "\x{b6}",
-        "from" => "\x{1805}"
+        "to" => "o",
+        "from" => "\x{3ce}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{3c2}"
+      },
+      {
+        "to" => "?",
+        "from" => "\x{37e}",
+        "context" => {
+          "after" => "\\b"
+        }
+      },
+      {
+        "to" => "?",
+        "from" => ";",
+        "context" => {
+          "after" => "\\b"
+        }
+      },
+      {
+        "to" => ";",
+        "from" => "\x{b7}"
       },
       {
         "to" => "-",
-        "from" => "\x{180e}"
+        "from" => "\x{203f}"
       },
       {
-        "to" => 0,
-        "from" => "\x{1810}"
+        "to" => "",
+        "from" => "\x{384}"
       },
       {
-        "to" => 1,
-        "from" => "\x{1811}"
+        "to" => "",
+        "from" => "\x{385}"
       },
       {
-        "to" => 2,
-        "from" => "\x{1812}"
+        "to" => "",
+        "from" => "\x{342}"
       },
       {
-        "to" => 3,
-        "from" => "\x{1813}"
+        "to" => "",
+        "from" => "\x{343}"
       },
       {
-        "to" => 4,
-        "from" => "\x{1814}"
+        "to" => "",
+        "from" => "\x{313}"
       },
       {
-        "to" => 5,
-        "from" => "\x{1815}"
+        "to" => "",
+        "from" => "\x{314}"
       },
       {
-        "to" => 6,
-        "from" => "\x{1816}"
+        "to" => "",
+        "from" => "\x{345}"
       },
       {
-        "to" => 7,
-        "from" => "\x{1817}"
-      },
-      {
-        "to" => 8,
-        "from" => "\x{1818}"
-      },
-      {
-        "to" => 9,
-        "from" => "\x{1819}"
+        "to" => "",
+        "from" => "\x{345}"
       }
     ],
-    "reverse" => "true"
+    "reverse" => "false"
   }
 );

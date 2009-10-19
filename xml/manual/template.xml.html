@@ -22,35 +22,53 @@
 
 <span class="kwa">&lt;translit&gt;</span>
 
-  <span class="kwa">&lt;name&gt;</span><span class="kwa">&lt;/name&gt;</span>
-  <span class="kwa">&lt;desc&gt;</span><span class="kwa">&lt;/desc&gt;</span>
-  <span class="kwa">&lt;reverse&gt;</span><span class="kwa">&lt;/reverse&gt;</span>
+    <span class="kwa">&lt;name&gt;</span><span class="kwa">&lt;/name&gt;</span>
+    <span class="kwa">&lt;desc&gt;</span><span class="kwa">&lt;/desc&gt;</span>
+    <span class="kwa">&lt;reverse&gt;</span><span class="kwa">&lt;/reverse&gt;</span>
 
-  <span class="com">&lt;!-- set of transliteration rules --&gt;</span>
+    <span class="com">&lt;!-- set of transliteration rules --&gt;</span>
 
-  <span class="kwa">&lt;rules&gt;</span>
+    <span class="kwa">&lt;rules&gt;</span>
 
-    <span class="kwa">&lt;rule&gt;</span>
-      <span class="kwa">&lt;from&gt;</span>X<span class="kwa">&lt;/from&gt;</span>
-      <span class="kwa">&lt;to&gt;</span>Y<span class="kwa">&lt;/to&gt;</span>
-    <span class="kwa">&lt;/rule&gt;</span>
+        <span class="com">&lt;!-- Without context... --&gt;</span>
 
-  <span class="com">&lt;!-- the context may be specified as</span>
-<span class="com">       'after' or 'before' or both (= bewtween) --&gt;</span>
-    <span class="kwa">&lt;rule&gt;</span>
-      <span class="kwa">&lt;from&gt;</span>A<span class="kwa">&lt;/from&gt;</span>
-      <span class="kwa">&lt;to&gt;</span>B<span class="kwa">&lt;/to&gt;</span>
-      <span class="kwa">&lt;context&gt;</span>
-	  <span class="kwa">&lt;after&gt;</span>x<span class="kwa">&lt;/after&gt;</span>
-	  <span class="kwa">&lt;before&gt;</span>y<span class="kwa">&lt;/before&gt;</span>
-    <span class="kwa">&lt;/rule&gt;</span>
+        <span class="com">&lt;!-- ...using ASCII characters --&gt;</span>
+        <span class="kwa">&lt;rule&gt;</span>
+            <span class="kwa">&lt;from&gt;</span>X<span class="kwa">&lt;/from&gt;</span>
+            <span class="kwa">&lt;to&gt;</span>Y<span class="kwa">&lt;/to&gt;</span>
+        <span class="kwa">&lt;/rule&gt;</span>
 
-  <span class="kwa">&lt;/rules&gt;</span>
+        <span class="com">&lt;!-- ...using Unicode codepoints (hexadecimal) --&gt;</span>
+        <span class="kwa">&lt;rule&gt;</span>
+            <span class="kwa">&lt;from&gt;</span>&amp;#x00E4;<span class="kwa">&lt;/from&gt;</span> <span class="com">&lt;!-- LATIN SMALL LETTER A WITH DIAERESIS --&gt;</span>
+            <span class="kwa">&lt;to&gt;</span>ae<span class="kwa">&lt;/to&gt;</span>
+        <span class="kwa">&lt;/rule&gt;</span>
+
+        <span class="com">&lt;!-- ...using Unicode codepoints (decimal) --&gt;</span>
+        <span class="kwa">&lt;rule&gt;</span>
+            <span class="kwa">&lt;from&gt;</span>&amp;#<span class="num">228</span>;<span class="kwa">&lt;/from&gt;</span>   <span class="com">&lt;!-- LATIN SMALL LETTER A WITH DIAERESIS --&gt;</span>
+            <span class="kwa">&lt;to&gt;</span>ae<span class="kwa">&lt;/to&gt;</span>
+        <span class="kwa">&lt;/rule&gt;</span>
+
+
+        <span class="com">&lt;!-- With context... --&gt;</span>
+
+        <span class="com">&lt;!-- ...specified as 'after', 'before' or both (= between) --&gt;</span>
+        <span class="kwa">&lt;rule&gt;</span>
+            <span class="kwa">&lt;from&gt;</span>A<span class="kwa">&lt;/from&gt;</span>
+            <span class="kwa">&lt;to&gt;</span>B<span class="kwa">&lt;/to&gt;</span>
+            <span class="kwa">&lt;context&gt;</span>
+                <span class="kwa">&lt;after&gt;</span>x<span class="kwa">&lt;/after&gt;</span>
+                <span class="kwa">&lt;before&gt;</span>y<span class="kwa">&lt;/before&gt;</span>
+            <span class="kwa">&lt;/context&gt;</span>
+        <span class="kwa">&lt;/rule&gt;</span>
+
+    <span class="kwa">&lt;/rules&gt;</span>
 
 <span class="kwa">&lt;/translit&gt;</span>
 
 <span class="com">&lt;!--</span>
-<span class="com">  vim: sts=2 enc=utf-8</span>
+<span class="com">  vim: sts=4 sw=4 enc=utf-8 ai et</span>
 <span class="com">--&gt;</span>
 </pre>
 </body>

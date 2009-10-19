@@ -16,14 +16,12 @@ require 5.008;
 
 use Carp;
 
-use utf8;
-no bytes;
 use Encode;
 
 use Lingua::Translit::Tables;
 
 
-our $VERSION = '0.14';
+our $VERSION = '0.15';
 
 
 =pod
@@ -99,7 +97,7 @@ sub new
     # Stay compatible with programs that use Lingua::Translit < 0.05
     if ($name =~ /^DIN 5008$/i)
     {
-	$name = "Common DEU";
+        $name = "Common DEU";
     }
 
     my $table = Lingua::Translit::Tables::_get_table_reference($name);
@@ -145,7 +143,7 @@ sub translit
 
     unless ($utf8_flag_on)
     {
-	$text = decode("UTF-8", $text);
+        $text = decode("UTF-8", $text);
     }
 
     # Return if no input was given
@@ -156,47 +154,47 @@ sub translit
 
     foreach my $rule (@{$self->{rules}})
     {
-	if (defined $rule->{context})
-	{
-	    my $c = $rule->{context};
-	    
-	    # single context rules
-	    if (defined $c->{before}   && !defined $c->{after})
-	    {
-		$tr_text =~ s/\Q$rule->{from}\E(?=$c->{before})/$rule->{to}/g;
-	    }
-	    elsif (defined $c->{after} && !defined $c->{before})
-	    {
-		$tr_text =~ s/(?<=$c->{after})\Q$rule->{from}\E/$rule->{to}/g;
-	    }
+        if (defined $rule->{context})
+        {
+            my $c = $rule->{context};
 
-	    # double context rules: logical "inbetween"
-	    elsif (defined $c->{before} && defined $c->{after})
-	    {
-		$tr_text =~
-		    s/
-		    (?<=$c->{after})\Q$rule->{from}\E(?=$c->{before})
-		    /$rule->{to}/gx;
-	    }
+            # single context rules
+            if (defined $c->{before}   && !defined $c->{after})
+            {
+                $tr_text =~ s/\Q$rule->{from}\E(?=$c->{before})/$rule->{to}/g;
+            }
+            elsif (defined $c->{after} && !defined $c->{before})
+            {
+                $tr_text =~ s/(?<=$c->{after})\Q$rule->{from}\E/$rule->{to}/g;
+            }
 
-	    else
-	    {
-		croak("incomplete rule context");
-	    }
-	}
-	else
-	{
-	    $tr_text =~ s/\Q$rule->{from}\E/$rule->{to}/g;
-	}
+            # double context rules: logical "inbetween"
+            elsif (defined $c->{before} && defined $c->{after})
+            {
+            $tr_text =~
+                s/
+                (?<=$c->{after})\Q$rule->{from}\E(?=$c->{before})
+                /$rule->{to}/gx;
+            }
+
+            else
+            {
+                croak("incomplete rule context");
+            }
+        }
+        else
+        {
+            $tr_text =~ s/\Q$rule->{from}\E/$rule->{to}/g;
+        }
     }
 
     unless ($utf8_flag_on)
     {
-	return encode("UTF-8", $tr_text);
+        return encode("UTF-8", $tr_text);
     }
     else
     {
-	return $tr_text;
+        return $tr_text;
     }
 }
 
@@ -221,7 +219,7 @@ sub translit_reverse
 
     unless ($utf8_flag_on)
     {
-	$text = decode("UTF-8", $text);
+        $text = decode("UTF-8", $text);
     }
 
     # Return if no input was given
@@ -235,47 +233,47 @@ sub translit_reverse
 
     foreach my $rule (@{$self->{rules}})
     {
-	if (defined $rule->{context})
-	{
-	    my $c = $rule->{context};
+        if (defined $rule->{context})
+        {
+            my $c = $rule->{context};
 
-	    # single context rules
-	    if (defined $c->{before} && !defined $c->{after})
-	    {
-		$tr_text =~ s/\Q$rule->{to}\E(?=$c->{before})/$rule->{from}/g;
-	    }
-	    elsif (defined $c->{after} && !defined $c->{before})
-	    {
-		$tr_text =~ s/(?<=$c->{after})\Q$rule->{to}\E/$rule->{from}/g;
-	    }
+            # single context rules
+            if (defined $c->{before} && !defined $c->{after})
+            {
+                $tr_text =~ s/\Q$rule->{to}\E(?=$c->{before})/$rule->{from}/g;
+            }
+            elsif (defined $c->{after} && !defined $c->{before})
+            {
+                $tr_text =~ s/(?<=$c->{after})\Q$rule->{to}\E/$rule->{from}/g;
+            }
 
-	    # double context rules: logical "inbetween"
-	    elsif (defined $c->{before} && defined $c->{after})
-	    {
-		$tr_text =~
-		    s/
-		    (?<=$c->{after})\Q$rule->{to}\E(?=$c->{before})
-		    /$rule->{from}/gx;
-	    }
+            # double context rules: logical "inbetween"
+            elsif (defined $c->{before} && defined $c->{after})
+            {
+                $tr_text =~
+                    s/
+                    (?<=$c->{after})\Q$rule->{to}\E(?=$c->{before})
+                    /$rule->{from}/gx;
+            }
 
-	    else
-	    {
-		croak("incomplete rule context");
-	    }
-	}
-	else
-	{
-	    $tr_text =~ s/\Q$rule->{to}\E/$rule->{from}/g;
-	}
+            else
+            {
+                croak("incomplete rule context");
+            }
+        }
+        else
+        {
+            $tr_text =~ s/\Q$rule->{to}\E/$rule->{from}/g;
+        }
     }
 
     unless ($utf8_flag_on)
     {
-	return encode("UTF-8", $tr_text);
+        return encode("UTF-8", $tr_text);
     }
     else
     {
-	return $tr_text;
+        return $tr_text;
     }
 }
 
@@ -425,4 +423,4 @@ Artistic license.
 1;
 
 
-# vim: sts=4 enc=utf-8
+# vim: sts=4 sw=4 enc=utf-8 ai et

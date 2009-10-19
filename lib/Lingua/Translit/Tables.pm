@@ -15,11 +15,8 @@ use warnings;
 require 5.008;
 
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
-
-use utf8;
-no bytes;
 
 use Carp;
 
@@ -81,15 +78,15 @@ Import translit_list_supported(). (Convenience tag)
 
 require Exporter;
 
-our @ISA	=   qw/Exporter/;
-our @EXPORT	=   qw//;	    # Export nothing by default
-our @EXPORT_OK	=   qw/translit_supported translit_reverse_supported
-		    translit_list_supported/;
+our @ISA        =   qw/Exporter/;
+our @EXPORT     =   qw//;           # Export nothing by default
+our @EXPORT_OK  =   qw/translit_supported translit_reverse_supported
+                       translit_list_supported/;
 
 our %EXPORT_TAGS = (
     checks  => [qw/translit_supported translit_reverse_supported/],
     list    => [qw/translit_list_supported/],
-    all	    => [@EXPORT_OK]
+    all     => [@EXPORT_OK]
 );
 
 
@@ -102,9 +99,13 @@ sub _get_table_reference
 {
     my $name = shift();
 
+    return unless $name;
+
+    $name = _get_table_id($name);
+
     foreach my $table (keys %tables)
     {
-	return $tables{$table} if ($table =~ /^$name$/i);
+        return $tables{$table} if ($table =~ /^$name$/i);
     }
 
     return;
@@ -121,7 +122,7 @@ Returns true (1), iff I<translit_name> is supported. False (0) otherwise.
 
 sub translit_supported
 {
-    return (_get_table_reference($_[0]) ? 1 : 0);
+    return (_get_table_reference(_get_table_id($_[0])) ? 1 : 0);
 }
 
 
@@ -134,7 +135,7 @@ transliteration. False (0) otherwise.
 
 sub translit_reverse_supported
 {
-    my $table = _get_table_reference($_[0]);
+    my $table = _get_table_reference(_get_table_id($_[0]));
 
     croak("Failed to retrieve table for $_[0].") unless ($table);
 
@@ -159,8 +160,8 @@ sub translit_list_supported
 {
     foreach my $table (keys %tables)
     {
-	my $t = $tables{$table};
-	print "$t->{name}, reversible=$t->{reverse}, $t->{desc}\n";
+        my $t = $tables{$table};
+        print "$t->{name}, reversible=$t->{reverse}, $t->{desc}\n";
     }
 }
 
@@ -252,6 +253,20 @@ Artistic license.
 =cut
 
 
+# Get a table's identifier (based on the table's name)
+#   i.e "Common DEU" -> "common_deu"
+sub _get_table_id
+{
+    my $name = shift();
+
+    return "" unless $name;
+
+    $name =~ s/\s/_/g;
+
+    return lc($name);
+}
+
+
 # For convenience, the next line is automatically substituted with the set
 # of transliteration tables at compile time.
 %tables; # PLACEHOLDER
@@ -260,4 +275,4 @@ Artistic license.
 1;
 
 
-# vim: sts=4 enc=utf-8
+# vim: sts=4 sw=4 enc=utf-8 ai et

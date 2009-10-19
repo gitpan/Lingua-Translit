@@ -4,7 +4,7 @@
 
 
 <!--
-  
+
   Transliteration definitions for Romanian diacritics.
 
   Copyright (C) 2008 Rona Linke <rlinke@lingua-systems.com>
@@ -15,12 +15,12 @@
 
 <translit>
 
-  <name>Common RON</name>
-  <desc>Romanian without diacritics</desc>
-  <reverse>false</reverse>
+    <name>Common RON</name>
+    <desc>Romanian without diacritics</desc>
+    <reverse>false</reverse>
 
-  <!-- set of transliteration rules -->
-  <!-- 
+    <!-- set of transliteration rules -->
+    <!--
     This transliteration is a simple mapping of characters with
     diacritics to the same character without a diacritic in
     hex notation of Unicode codepoints. (Letter names according
@@ -29,83 +29,83 @@
     LCL = LATIN CAPITAL LETTER
     LSL = LATIN SMALL LETTER
   -->
-  <rules>
+    <rules>
 
-    <rule>
-      <from>&#x0102;</from>	  <!-- LCL A WITH BREVE -->
-      <to>&#x0041;</to>		  <!-- LCL A -->
-    </rule>
+        <rule>
+            <from>&#x0102;</from>	  <!-- LCL A WITH BREVE -->
+            <to>&#x0041;</to>		  <!-- LCL A -->
+        </rule>
 
-    <rule>
-      <from>&#x0103;</from>	  <!-- LSL A WITH BREVE -->
-      <to>&#x0061;</to>		  <!-- LSL A -->
-    </rule>
+        <rule>
+            <from>&#x0103;</from>	  <!-- LSL A WITH BREVE -->
+            <to>&#x0061;</to>		  <!-- LSL A -->
+        </rule>
 
-    <rule>
-      <from>&#x00C2;</from>	  <!-- LCL A WITH CIRCUMFLEX -->
-      <to>&#x0041;</to>		  <!-- LCL A -->
-    </rule>
+        <rule>
+            <from>&#x00C2;</from>	  <!-- LCL A WITH CIRCUMFLEX -->
+            <to>&#x0041;</to>		  <!-- LCL A -->
+        </rule>
 
-    <rule>
-      <from>&#x00E2;</from>	  <!-- LSL A WITH CIRCUMFLEX -->
-      <to>&#x0061;</to>		  <!-- LSL A -->
-    </rule>
+        <rule>
+            <from>&#x00E2;</from>	  <!-- LSL A WITH CIRCUMFLEX -->
+            <to>&#x0061;</to>		  <!-- LSL A -->
+        </rule>
 
-    <rule>
-      <from>&#x00CE;</from>	  <!-- LCL I WITH CIRCUMFLEX -->
-      <to>&#x0049;</to>		  <!-- LCL I -->
-    </rule>
+        <rule>
+            <from>&#x00CE;</from>	  <!-- LCL I WITH CIRCUMFLEX -->
+            <to>&#x0049;</to>		  <!-- LCL I -->
+        </rule>
 
-    <rule>
-      <from>&#x00EE;</from>	  <!-- LSL I WITH CIRCUMFLEX -->
-      <to>&#x0069;</to>		  <!-- LSL I -->
-    </rule>
+        <rule>
+            <from>&#x00EE;</from>	  <!-- LSL I WITH CIRCUMFLEX -->
+            <to>&#x0069;</to>		  <!-- LSL I -->
+        </rule>
 
-    <rule>
-      <from>&#x0218;</from>	  <!-- LCL S WITH COMMA BELOW -->
-      <to>&#x0053;</to>		  <!-- LCL S  -->
-    </rule>
+        <rule>
+            <from>&#x0218;</from>	  <!-- LCL S WITH COMMA BELOW -->
+            <to>&#x0053;</to>		  <!-- LCL S  -->
+        </rule>
 
-    <rule>
-      <from>&#x0219;</from>	  <!-- LSL S WITH COMMA BELOW -->
-      <to>&#x0073;</to>		  <!-- LSL S -->
-    </rule>
+        <rule>
+            <from>&#x0219;</from>	  <!-- LSL S WITH COMMA BELOW -->
+            <to>&#x0073;</to>		  <!-- LSL S -->
+        </rule>
 
-    <rule>
-      <from>&#x015E;</from>	  <!-- LCL S WITH CEDILLA -->
-      <to>&#x0053;</to>		  <!-- LCL S -->
-    </rule>
+        <rule>
+            <from>&#x015E;</from>	  <!-- LCL S WITH CEDILLA -->
+            <to>&#x0053;</to>		  <!-- LCL S -->
+        </rule>
 
-    <rule>
-      <from>&#x015F;</from>	  <!-- LSL S WITH CEDILLA -->
-      <to>&#x0073;</to>		  <!-- LSL S  -->
-    </rule>
+        <rule>
+            <from>&#x015F;</from>	  <!-- LSL S WITH CEDILLA -->
+            <to>&#x0073;</to>		  <!-- LSL S  -->
+        </rule>
 
-    <rule>
-      <from>&#x021A;</from>	  <!-- LCL T WITH COMMA BELOW -->
-      <to>&#x0054;</to>		  <!-- LCL T -->
-    </rule>
+        <rule>
+            <from>&#x021A;</from>	  <!-- LCL T WITH COMMA BELOW -->
+            <to>&#x0054;</to>		  <!-- LCL T -->
+        </rule>
 
-    <rule>
-      <from>&#x021B;</from>	  <!-- LSL T WITH COMMA BELOW -->
-      <to>&#x0074;</to>		  <!-- LSL T -->
-    </rule>
-    
-    <rule>
-      <from>&#x0162;</from>	  <!-- LCL T WITH CEDILLA -->
-      <to>&#x0054;</to>		  <!-- LCL T -->
-    </rule>
+        <rule>
+            <from>&#x021B;</from>	  <!-- LSL T WITH COMMA BELOW -->
+            <to>&#x0074;</to>		  <!-- LSL T -->
+        </rule>
 
-    <rule>
-      <from>&#x0163;</from>	  <!-- LSL T WITH CEDILLA -->
-      <to>&#x0074;</to>		  <!-- LSL T -->
-    </rule>
+        <rule>
+            <from>&#x0162;</from>	  <!-- LCL T WITH CEDILLA -->
+            <to>&#x0054;</to>		  <!-- LCL T -->
+        </rule>
+
+        <rule>
+            <from>&#x0163;</from>	  <!-- LSL T WITH CEDILLA -->
+            <to>&#x0074;</to>		  <!-- LSL T -->
+        </rule>
 
 
-  </rules>
-  
+    </rules>
+
 </translit>
 
 <!--
-  vim: sts=2 enc=utf-8
+  vim: sts=4 sw=4 enc=utf-8 ai et
 -->

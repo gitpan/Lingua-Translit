@@ -1,6 +1,7 @@
 TARGET		:=	tables.dump
-DUMP		:=	perl xml2dump.pl -v 
+DUMP		:=	perl xml2dump.pl -v
 CHECK		:=	xmllint --noout --postvalid
+INDENT		:=	xmlindent -i 4
 
 # List of stable and supported transliteration tables
 TABLES		:=	din_31634.xml din_1460_bul.xml \
@@ -23,6 +24,12 @@ check: $(TABLES)
 	@for xml in $^; do \
 		echo "Checking $$xml..."; \
 		$(CHECK) $$xml; \
+	done
+
+indent: $(TABLES) template.xml
+	@for xml in $^; do \
+		$(INDENT) $$xml | perl -pe 's/[\t ]*$$//' > $$xml.$$$$; \
+		mv $$xml.$$$$ $$xml; \
 	done
 
 clean:

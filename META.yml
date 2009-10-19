@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                Lingua-Translit
-version:             0.14
+version:             0.15
 abstract:            transliterates text between writing systems
 license:             ~
 author:              

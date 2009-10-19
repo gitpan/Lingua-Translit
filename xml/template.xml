@@ -4,7 +4,7 @@
 
 
 <!--
-  
+
   Transliteration definitions for XXX.
 
   Copyright 200x ... <...>
@@ -14,33 +14,51 @@
 
 <translit>
 
-  <name></name>
-  <desc></desc>
-  <reverse></reverse>
+    <name></name>
+    <desc></desc>
+    <reverse></reverse>
 
-  <!-- set of transliteration rules -->
+    <!-- set of transliteration rules -->
 
-  <rules>
+    <rules>
 
-    <rule>
-      <from>X</from>
-      <to>Y</to>
-    </rule>
+        <!-- Without context... -->
 
-  <!-- the context may be specified as 
-       'after' or 'before' or both (= bewtween) -->
-    <rule>
-      <from>A</from>
-      <to>B</to>
-      <context>
-	  <after>x</after>
-	  <before>y</before>
-    </rule>
+        <!-- ...using ASCII characters -->
+        <rule>
+            <from>X</from>
+            <to>Y</to>
+        </rule>
 
-  </rules>
-  
+        <!-- ...using Unicode codepoints (hexadecimal) -->
+        <rule>
+            <from>&#x00E4;</from> <!-- LATIN SMALL LETTER A WITH DIAERESIS -->
+            <to>ae</to>
+        </rule>
+
+        <!-- ...using Unicode codepoints (decimal) -->
+        <rule>
+            <from>&#228;</from>   <!-- LATIN SMALL LETTER A WITH DIAERESIS -->
+            <to>ae</to>
+        </rule>
+
+
+        <!-- With context... -->
+
+        <!-- ...specified as 'after', 'before' or both (= between) -->
+        <rule>
+            <from>A</from>
+            <to>B</to>
+            <context>
+                <after>x</after>
+                <before>y</before>
+            </context>
+        </rule>
+
+    </rules>
+
 </translit>
 
 <!--
-  vim: sts=2 enc=utf-8
+  vim: sts=4 sw=4 enc=utf-8 ai et
 -->
