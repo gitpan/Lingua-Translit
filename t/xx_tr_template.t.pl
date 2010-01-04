@@ -1,14 +1,14 @@
 use strict;
 use Test::More tests => 3;  # number of tests
 
-my $name	=   "";	    # transliterations name
-my $reversible	=   0;	    # is the transliteration reversible?
+my $name        =   "";     # transliterations name
+my $reversible  =   0;      # is the transliteration reversible?
 
-my $input	=   "";	    # short corpus...
-my $output_ok	=   "";	    # ...its correct transliteration
+my $input       =   "";     # short corpus...
+my $output_ok   =   "";     # ...its correct transliteration
 
-my $context	=   "";	    # context-sensitive example
-my $context_ok	=   "";	    # ...its correct transliteration
+my $context     =   "";     # context-sensitive example
+my $context_ok  =   "";     # ...its correct transliteration
 
 use Lingua::Translit;
 
@@ -28,4 +28,4 @@ $output = $tr->translit($context);
 # 3
 is($output, $context_ok, "$name: transliteration (context-sensitive)");
 
-# vim: sts=4 enc=utf-8
+# vim: sts=4 sw=4 enc=utf-8 ai et

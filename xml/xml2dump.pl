@@ -24,7 +24,7 @@ my %tables;
 
 # set default options
 my %opt = (
-    output  => "transtbl.dump",
+    output  => "tables.dump",
     verbose => 0,
 );
 
@@ -57,7 +57,8 @@ foreach my $file (@ARGV) {
 
     my $ds;
 
-    my $doc = $xmlparser->parse_file($file) or die "Error parsing $file: $!\n";
+    my $doc = $xmlparser->parse_file($file)
+        or die "Error parsing $file: $!\n";
 
     # Retrieve meta-documentation from XML document first
     foreach my $meta (qw/name desc reverse/)
@@ -75,7 +76,8 @@ foreach my $file (@ARGV) {
     die "Description undefined.\n"      unless $ds->{desc};
     die "Reversibility undefined.\n"    unless $ds->{reverse};
 
-    # Check <reverse> tag contains valid data. TODO: move this to the DTD
+    # Check <reverse> tag contains valid data.
+    # TODO: move this to the DTD
     die "Reversibility: '$ds->{reverse}' -- Should be 'true' or 'false'.\n"
         unless $ds->{reverse} =~ /^(true|false)$/;
 
@@ -164,8 +166,9 @@ open FH, ">$opt{output}" or die "$opt{output}: $!\n";
 print FH $dumper->Dump();
 close(FH);
 
-print scalar(keys(%tables)) .
-    " transliteration table(s) dumped to $opt{output}.\n" if $opt{verbose};
+print scalar(keys(%tables)),
+    " transliteration table(s) dumped to $opt{output}.\n"
+    if $opt{verbose};
 
 
 sub show_help
@@ -179,9 +182,9 @@ sub show_help
         "\t--output  -o  FILE     set output file (default: transtbl.dump)\n",
         "\t--verbose -v           be verbose\n",
         "\t--help    -h           show this help\n";
-  
+
     exit($retval);
 }
-  
+
 
 # vim: sw=4 sts=4 enc=utf-8 ai et

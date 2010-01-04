@@ -21,7 +21,7 @@ use Encode;
 use Lingua::Translit::Tables;
 
 
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 
 =pod
@@ -33,15 +33,14 @@ Lingua::Translit - transliterates text between writing systems
 =head1 SYNOPSIS
 
   use Lingua::Translit;
-
+ 
   my $tr = new Lingua::Translit("ISO 843");
  
   my $text_tr = $tr->translit("character oriented string");
-
+ 
   if ($tr->can_reverse()) {
     $text_tr = $tr->translit_reverse("character oriented string");
   }
-
 
 =head1 DESCRIPTION
 
@@ -63,8 +62,8 @@ or has been used to transliterate a text, to work integrative and be able to
 reconstruct the original data.
 
 Reconstruction is a problem though for non-unique transliterations, if no
-language specific knowledge is available as the resulting clusters 
-of letters may be ambigous.
+language specific knowledge is available as the resulting clusters of
+letters may be ambigous.
 For example, the Greek character "PSI" maps to "ps", but "ps" could also
 result from the sequence "PI", "SIGMA" since "PI" maps to "p" and "SIGMA"
 maps to s.
@@ -201,9 +200,9 @@ sub translit
 
 =head2 translit_reverse(I<"character oriented string">)
 
-Transliterates the given text according to the object's transliteration 
-table, but uses it the other way round. For example table ISO 9 is a 
-transliteration scheme for the converion of Cyrillic letters to the Latin 
+Transliterates the given text according to the object's transliteration
+table, but uses it the other way round. For example table ISO 9 is a
+transliteration scheme for the converion of Cyrillic letters to the Latin
 alphabet. So if used reverse, Latin letters will be mapped to Cyrillic ones.
 
 Returns the transliterated text.
@@ -306,7 +305,7 @@ sub name
 =head2 desc()
 
 Returns a description for the transliteration,
-e.g. "ISO 9:1995, Cyrillic to Latin". 
+e.g. "ISO 9:1995, Cyrillic to Latin".
 
 =cut
 
@@ -323,6 +322,8 @@ sub desc
 =item Cyrillic
 
 I<ISO 9>, reversible, ISO 9:1995, Cyrillic to Latin
+
+I<DIN 1460 RUS>, reversible, DIN 1460:1982, Cyrillic to Latin, Russian
 
 I<Streamlined System BUL>, not reversible, The Streamlined System: 2006,
 Cyrillic to Latin, Bulgarian
@@ -359,12 +360,14 @@ I<Common Classical MON>, reversible, Classical Mongolian to Latin
 
 =head1 ADDING NEW TRANSLITERATIONS
 
-In case you want to add your own transliteration tables to L<Lingua::Translit>,
-a developer manual (F<xml/manual/>) is available in HTML and plain text format.
+In case you want to add your own transliteration tables to
+L<Lingua::Translit>, have a look at the developer manual included in the
+distribution.
 An online version is available at
-L<http://www.lingua-systems.com/transliteration/Lingua-Translit-Perl-module/developer-manual/>.
+L<http://www.lingua-systems.com/downloads/Lingua-Translit/>.
 
-All necessary tools and templates to start with are provided as well.
+A template of a transliteration table is provided as well
+(F<xml/template.xml>) so you can easily start developing.
 
 
 =head1 RESTRICTIONS
@@ -386,11 +389,13 @@ Please report bugs to perl@lingua-systems.com.
 
 =head1 SEE ALSO
 
-L<Lingua::Translit::Tables>, L<utf8>, L<Encode>, L<perlunicode>, L<bytes>
+L<Lingua::Translit::Tables>, L<Encode>, L<perlunicode>
 
 L<translit(1)>
 
-L<http://www.lingua-systems.com/transliteration/Lingua-Translit-Perl-module/online-transliteration.html/>
+L<http://www.lingua-systems.com/transliteration/Lingua-Translit-Perl-module/>
+
+L<http://www.lingua-systems.com/transliteration/Lingua-Translit-Perl-module/online-transliteration.html>
 provides an online frontend for L<Lingua::Translit>.
 
 =head1 CREDITS

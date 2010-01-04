@@ -1,5 +1,6 @@
 Makefile.PL
 MANIFEST
+MANIFEST.SKIP
 lib/Lingua/Translit.pm
 lib/Lingua/Translit/Tables.pm
 xml/tables.dump
@@ -19,6 +20,7 @@ xml/common_slk.xml
 xml/common_pol.xml
 xml/common_classical_mon.xml
 xml/din_1460_bul.xml
+xml/din_1460_rus.xml
 xml/streamlined_system_bul.xml
 t/xx_tr_template.t.pl
 t/01_Lingua-Translit-Tables.t
@@ -37,18 +39,10 @@ t/19_tr_Streamlined_System_BUL.t
 t/20_tr_Common_SLK.t
 t/21_tr_Common_SLV.t
 t/22_tr_Common_POL.t
+t/23_tr_DIN_1460_RUS.t
 tools/substitute_tables.pl
 Changes
 README
 translit
-xml/manual/Makefile
-xml/manual/manual.txt
-xml/manual/highlight.css
-xml/manual/11_tr_Common_DEU.t.html
-xml/manual/Common_DEU.xml.html
-xml/manual/template.xml.html
-xml/manual/xx_tr_template.t.html
-xml/manual/pod.css
-xml/manual/manual.pod
-xml/manual/manual.html
+developer-manual__eng.pdf
 META.yml                                 Module meta-data (added by MakeMaker)

@@ -1,5 +1,5 @@
 use strict;
-use Test::More tests => (12 + 13);
+use Test::More tests => (12 + (13 * 4));
 
 my $truth;
 
@@ -60,7 +60,21 @@ is($truth, 0, "support for empty table");
 
 foreach my $name (@check_support)
 {
+    my $id = Lingua::Translit::Tables::_get_table_id($name);
+
     $truth = translit_supported($name);
 
-    is($truth, 1, "support for existing table $name");
+    is($truth, 1, "support for existing table $id - by name");
+
+    $truth = translit_supported(uc($name));
+
+    is($truth, 1, "support for existing table $id - by uc(name)");
+
+    $truth = translit_supported(lc($name));
+
+    is($truth, 1, "support for existing table $id - by lc(name)");
+
+    $truth = translit_supported($id);
+
+    is($truth, 1, "support for existing table $id - by id");
 }

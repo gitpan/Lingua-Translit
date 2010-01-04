@@ -1,3 +1,14 @@
+0.16  -- 2010-01-04
+
+    * Added "DIN 1460 RUS" transliteration
+    * MANIFEST.SKIP: Added to ignore .git
+    * t/01_Lingua-Translit-Tables.t: Added various tests to verify any
+      supported transliteration can be referenced by a couple of variants
+      of their names, i.e. "Common DEU", "common_deu", "COMMON DEU" or
+      "common deu".
+    * t/11_tr_Common_DEU.t: Added decoded UTF-8 input tests
+    * Replaced HTML developer manual with a PDF version
+
 0.15  -- 2009-10-19
 
     * Added support for the current development version of Perl (5.11) by

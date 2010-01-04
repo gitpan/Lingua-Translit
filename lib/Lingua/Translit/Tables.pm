@@ -174,6 +174,8 @@ sub translit_list_supported
 
 I<ISO 9>, reversible, ISO 9:1995, Cyrillic to Latin
 
+I<DIN 1460 RUS>, reversible, DIN 1460:1982, Cyrillic to Latin, Russian
+
 I<Streamlined System BUL>, not reversible, The Streamlined System: 2006,
 Cyrillic to Latin, Bulgarian
 

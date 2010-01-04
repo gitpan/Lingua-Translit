@@ -67,9 +67,21 @@ Write the transliterated text to I<FILE>. Defaults to STDOUT.
 
 Print a list of supported transliterations showing their
 
-  * name
-  * reversibility
-  * description
+=over 4
+
+=item *
+
+name
+
+=item *
+
+reversibility
+
+=item *
+
+description
+
+=back
 
 =item B<--verbose>, B<-v>
 
@@ -227,7 +239,7 @@ Please report bugs to perl@lingua-systems.com.
 
 L<Lingua::Translit>, L<Lingua::Translit::Tables>
 
-L<http://www.lingua-systems.com/transliteration/Lingua-Translit-Perl-module/online-transliteration.html/>
+L<http://www.lingua-systems.com/transliteration/Lingua-Translit-Perl-module/online-transliteration.html>
 provides an online frontend for L<Lingua::Translit>.
 
 =head1 AUTHORS
