@@ -4,7 +4,8 @@ CHECK		:=	xmllint --noout --postvalid
 INDENT		:=	xmlindent -i 4
 
 # List of stable and supported transliteration tables
-TABLES		:=	din_31634.xml din_1460_bul.xml din_1460_rus.xml \
+TABLES		:=	din_31634.xml \
+			din_1460_bul.xml din_1460_rus.xml din_1460_ukr.xml \
 			iso_843.xml iso_9.xml \
 			streamlined_system_bul.xml \
 			greeklish.xml \

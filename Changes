@@ -1,3 +1,9 @@
+0.17  -- 2010-01-20
+
+    * Added "DIN 1460 UKR" transliteration
+    * xml/din_1460_rus.xml: Hard and soft sign improvements
+    * t/23_tr_DIN_1460_RUS.t: Added all caps hard sign test
+
 0.16  -- 2010-01-04
 
     * Added "DIN 1460 RUS" transliteration

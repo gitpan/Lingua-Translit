@@ -21,8 +21,10 @@ my $hypen_lat = 'takže izvesten kak J-a krivédko - ' .
                 'ot ėsk. j-ugyt, j-uit ljudi - ' .
                 'Kandalakšskaja (Š-Č-20)';
 
-my $sign_cyr  = 'объявлять - высказаться - выстроилисъ';
-my $sign_lat  = 'ob"javljat\' - vyskazat\'sja - vystroilis"';
+my $sign_cyr  = 'объявлять - высказаться - ОБЯЗАЛИСЬ - ' .
+                'выстроилисъ - ПРЕДЪ';
+my $sign_lat  = 'ob"javljat\' - vyskazat\'sja - OBJAZALIS\' - ' .
+                'vystroilis" - PRED"';
 
 
 use Lingua::Translit;
@@ -55,11 +57,11 @@ is($o, $hypen_cyr, "$name: DIN 1460 §3 (reverse)");
 $o = $tr->translit($sign_cyr);
 
 # 6
-is($o, $sign_lat, "$name: hard signs");
+is($o, $sign_lat, "$name: hard and soft signs");
 
 $o = $tr->translit_reverse($o);
 
 # 7
-is($o, $sign_cyr, "$name: hard signs (reverse)");
+is($o, $sign_cyr, "$name: hard and soft signs (reverse)");
 
 # vim: sts=4 sw=4 enc=utf-8 ai et ft=perl

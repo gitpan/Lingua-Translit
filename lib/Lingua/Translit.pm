@@ -5,7 +5,7 @@ package Lingua::Translit;
 # Copyright (C) 2007-2008 ...
 #   Alex Linke <alinke@lingua-systems.com>
 #   Rona Linke <rlinke@lingua-systems.com>
-# Copyright (C) 2009 Lingua-Systems Software GmbH
+# Copyright (C) 2009-2010 Lingua-Systems Software GmbH
 #
 
 
@@ -14,14 +14,13 @@ use warnings;
 
 require 5.008;
 
-use Carp;
-
-use Encode;
+use Carp   qw/croak/;
+use Encode qw/encode decode/;
 
 use Lingua::Translit::Tables;
 
 
-our $VERSION = '0.16';
+our $VERSION = '0.17';
 
 
 =pod
@@ -325,10 +324,12 @@ I<ISO 9>, reversible, ISO 9:1995, Cyrillic to Latin
 
 I<DIN 1460 RUS>, reversible, DIN 1460:1982, Cyrillic to Latin, Russian
 
-I<Streamlined System BUL>, not reversible, The Streamlined System: 2006,
-Cyrillic to Latin, Bulgarian
+I<DIN 1460 UKR>, reversible, DIN 1460:1982, Cyrillic to Latin, Ukrainian
 
 I<DIN 1460 BUL>, reversible, DIN 1460:1982, Cyrillic to Latin, Bulgarian
+
+I<Streamlined System BUL>, not reversible, The Streamlined System: 2006,
+Cyrillic to Latin, Bulgarian
 
 =item Greek
 
@@ -416,7 +417,7 @@ Rona Linke <rlinke@lingua-systems.com>
 
 Copyright (C) 2007-2008 Alex Linke and Rona Linke
 
-Copyright (C) 2009 Lingua-Systems Software GmbH
+Copyright (C) 2009-2010 Lingua-Systems Software GmbH
 
 This module is free software. It may be used, redistributed
 and/or modified under the terms of either the GPL v2 or the

@@ -21,6 +21,7 @@ xml/common_pol.xml
 xml/common_classical_mon.xml
 xml/din_1460_bul.xml
 xml/din_1460_rus.xml
+xml/din_1460_ukr.xml
 xml/streamlined_system_bul.xml
 t/xx_tr_template.t.pl
 t/01_Lingua-Translit-Tables.t
@@ -40,6 +41,7 @@ t/20_tr_Common_SLK.t
 t/21_tr_Common_SLV.t
 t/22_tr_Common_POL.t
 t/23_tr_DIN_1460_RUS.t
+t/24_tr_DIN_1460_UKR.t
 tools/substitute_tables.pl
 Changes
 README

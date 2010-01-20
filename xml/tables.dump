@@ -1003,18 +1003,18 @@
       },
       {
         "to" => "\"",
-        "from" => "\x{44a}",
+        "from" => "\x{42a}",
         "context" => {
-          "after" => "\\p{IsWord}",
-          "before" => "(\\b|\$)"
+          "after" => "\\p{IsUpper}",
+          "before" => "([^\\p{IsWord}]|\$)"
         }
       },
       {
         "to" => "\"",
-        "from" => "\x{42a}",
+        "from" => "\x{44a}",
         "context" => {
           "after" => "\\p{IsWord}",
-          "before" => "(\\b|\$)"
+          "before" => "([^\\p{IsWord}]|\$)"
         }
       },
       {
@@ -1311,14 +1311,14 @@
       },
       {
         "to" => "'",
-        "from" => "\x{44c}"
-      },
-      {
-        "to" => "'",
         "from" => "\x{42c}",
         "context" => {
           "after" => "\\p{IsUpper}"
         }
+      },
+      {
+        "to" => "'",
+        "from" => "\x{44c}"
       },
       {
         "to" => "\x{11b}",
@@ -2400,6 +2400,49 @@
     ],
     "reverse" => "false"
   },
+  "common_deu" => {
+    "desc" => "German umlauts",
+    "name" => "Common DEU",
+    "id" => "common_deu",
+    "rules" => [
+      {
+        "to" => "Ae",
+        "from" => "\x{c4}"
+      },
+      {
+        "to" => "ae",
+        "from" => "\x{e4}"
+      },
+      {
+        "to" => "Oe",
+        "from" => "\x{d6}"
+      },
+      {
+        "to" => "oe",
+        "from" => "\x{f6}"
+      },
+      {
+        "to" => "Ue",
+        "from" => "\x{dc}"
+      },
+      {
+        "to" => "ue",
+        "from" => "\x{fc}"
+      },
+      {
+        "to" => "SS",
+        "from" => "\x{df}",
+        "context" => {
+          "after" => "\\p{IsUpper}"
+        }
+      },
+      {
+        "to" => "ss",
+        "from" => "\x{df}"
+      }
+    ],
+    "reverse" => "false"
+  },
   "iso_843" => {
     "desc" => "ISO 843:1997 TL (Type 1), Greek to Latin",
     "name" => "ISO 843",
@@ -2754,49 +2797,6 @@
       {
         "to" => "-",
         "from" => "\x{203f}"
-      }
-    ],
-    "reverse" => "false"
-  },
-  "common_deu" => {
-    "desc" => "German umlauts",
-    "name" => "Common DEU",
-    "id" => "common_deu",
-    "rules" => [
-      {
-        "to" => "Ae",
-        "from" => "\x{c4}"
-      },
-      {
-        "to" => "ae",
-        "from" => "\x{e4}"
-      },
-      {
-        "to" => "Oe",
-        "from" => "\x{d6}"
-      },
-      {
-        "to" => "oe",
-        "from" => "\x{f6}"
-      },
-      {
-        "to" => "Ue",
-        "from" => "\x{dc}"
-      },
-      {
-        "to" => "ue",
-        "from" => "\x{fc}"
-      },
-      {
-        "to" => "SS",
-        "from" => "\x{df}",
-        "context" => {
-          "after" => "\\p{IsUpper}"
-        }
-      },
-      {
-        "to" => "ss",
-        "from" => "\x{df}"
       }
     ],
     "reverse" => "false"
@@ -3408,6 +3408,367 @@
       }
     ],
     "reverse" => "false"
+  },
+  "din_1460_ukr" => {
+    "desc" => "DIN 1460:1982, Cyrillic to Latin, Ukrainian",
+    "name" => "DIN 1460 UKR",
+    "id" => "din_1460_ukr",
+    "rules" => [
+      {
+        "to" => "je",
+        "from" => "\x{454}"
+      },
+      {
+        "to" => "JE",
+        "from" => "\x{404}",
+        "context" => {
+          "after" => "[\\p{IsUpper}\\p{IsSpace}]",
+          "before" => "[\\p{IsUpper}\\p{IsSpace}]"
+        }
+      },
+      {
+        "to" => "Je",
+        "from" => "\x{404}"
+      },
+      {
+        "to" => "ch",
+        "from" => "\x{445}"
+      },
+      {
+        "to" => "CH",
+        "from" => "\x{425}",
+        "context" => {
+          "after" => "[\\p{IsUpper}\\p{IsSpace}]",
+          "before" => "[\\p{IsUpper}\\p{IsSpace}]"
+        }
+      },
+      {
+        "to" => "Ch",
+        "from" => "\x{425}"
+      },
+      {
+        "to" => "\x{161}\x{10d}",
+        "from" => "\x{449}"
+      },
+      {
+        "to" => "\x{160}\x{10c}",
+        "from" => "\x{429}",
+        "context" => {
+          "after" => "[\\p{IsUpper}\\p{IsSpace}]",
+          "before" => "[\\p{IsUpper}\\p{IsSpace}]"
+        }
+      },
+      {
+        "to" => "\x{160}\x{10d}",
+        "from" => "\x{429}"
+      },
+      {
+        "to" => "ju",
+        "from" => "\x{44e}"
+      },
+      {
+        "to" => "JU",
+        "from" => "\x{42e}",
+        "context" => {
+          "after" => "[\\p{IsUpper}\\p{IsSpace}]",
+          "before" => "[\\p{IsUpper}\\p{IsSpace}]"
+        }
+      },
+      {
+        "to" => "Ju",
+        "from" => "\x{42e}"
+      },
+      {
+        "to" => "ja",
+        "from" => "\x{44f}"
+      },
+      {
+        "to" => "JA",
+        "from" => "\x{42f}",
+        "context" => {
+          "after" => "[\\p{IsUpper}\\p{IsSpace}]",
+          "before" => "[\\p{IsUpper}\\p{IsSpace}]"
+        }
+      },
+      {
+        "to" => "Ja",
+        "from" => "\x{42f}"
+      },
+      {
+        "to" => "J-",
+        "from" => "\x{419}",
+        "context" => {
+          "before" => "[aueAUE\x{430}\x{443}\x{435}\x{410}\x{423}\x{415}]"
+        }
+      },
+      {
+        "to" => "j-",
+        "from" => "\x{439}",
+        "context" => {
+          "before" => "[aue\x{430}\x{443}\x{435}]"
+        }
+      },
+      {
+        "to" => "\x{160}-",
+        "from" => "\x{428}",
+        "context" => {
+          "before" => "[\x{10c}\x{10d}\x{427}\x{447}]"
+        }
+      },
+      {
+        "to" => "\x{161}-",
+        "from" => "\x{448}",
+        "context" => {
+          "before" => "[\x{10d}\x{447}]"
+        }
+      },
+      {
+        "to" => "c-",
+        "from" => "\x{446}",
+        "context" => {
+          "before" => "[h\x{433}]"
+        }
+      },
+      {
+        "to" => "C-",
+        "from" => "\x{426}",
+        "context" => {
+          "before" => "[hH\x{433}\x{413}]"
+        }
+      },
+      {
+        "to" => "a",
+        "from" => "\x{430}"
+      },
+      {
+        "to" => "A",
+        "from" => "\x{410}"
+      },
+      {
+        "to" => "b",
+        "from" => "\x{431}"
+      },
+      {
+        "to" => "B",
+        "from" => "\x{411}"
+      },
+      {
+        "to" => "v",
+        "from" => "\x{432}"
+      },
+      {
+        "to" => "V",
+        "from" => "\x{412}"
+      },
+      {
+        "to" => "h",
+        "from" => "\x{433}"
+      },
+      {
+        "to" => "H",
+        "from" => "\x{413}"
+      },
+      {
+        "to" => "g",
+        "from" => "\x{491}"
+      },
+      {
+        "to" => "G",
+        "from" => "\x{490}"
+      },
+      {
+        "to" => "d",
+        "from" => "\x{434}"
+      },
+      {
+        "to" => "D",
+        "from" => "\x{414}"
+      },
+      {
+        "to" => "e",
+        "from" => "\x{435}"
+      },
+      {
+        "to" => "E",
+        "from" => "\x{415}"
+      },
+      {
+        "to" => "\x{17e}",
+        "from" => "\x{436}"
+      },
+      {
+        "to" => "\x{17d}",
+        "from" => "\x{416}"
+      },
+      {
+        "to" => "z",
+        "from" => "\x{437}"
+      },
+      {
+        "to" => "Z",
+        "from" => "\x{417}"
+      },
+      {
+        "to" => "y",
+        "from" => "\x{438}"
+      },
+      {
+        "to" => "Y",
+        "from" => "\x{418}"
+      },
+      {
+        "to" => "i",
+        "from" => "\x{456}"
+      },
+      {
+        "to" => "I",
+        "from" => "\x{406}"
+      },
+      {
+        "to" => "\x{ef}",
+        "from" => "\x{457}"
+      },
+      {
+        "to" => "\x{cf}",
+        "from" => "\x{407}"
+      },
+      {
+        "to" => "j",
+        "from" => "\x{439}"
+      },
+      {
+        "to" => "J",
+        "from" => "\x{419}"
+      },
+      {
+        "to" => "k",
+        "from" => "\x{43a}"
+      },
+      {
+        "to" => "K",
+        "from" => "\x{41a}"
+      },
+      {
+        "to" => "l",
+        "from" => "\x{43b}"
+      },
+      {
+        "to" => "L",
+        "from" => "\x{41b}"
+      },
+      {
+        "to" => "m",
+        "from" => "\x{43c}"
+      },
+      {
+        "to" => "M",
+        "from" => "\x{41c}"
+      },
+      {
+        "to" => "n",
+        "from" => "\x{43d}"
+      },
+      {
+        "to" => "N",
+        "from" => "\x{41d}"
+      },
+      {
+        "to" => "o",
+        "from" => "\x{43e}"
+      },
+      {
+        "to" => "O",
+        "from" => "\x{41e}"
+      },
+      {
+        "to" => "p",
+        "from" => "\x{43f}"
+      },
+      {
+        "to" => "P",
+        "from" => "\x{41f}"
+      },
+      {
+        "to" => "r",
+        "from" => "\x{440}"
+      },
+      {
+        "to" => "R",
+        "from" => "\x{420}"
+      },
+      {
+        "to" => "s",
+        "from" => "\x{441}"
+      },
+      {
+        "to" => "S",
+        "from" => "\x{421}"
+      },
+      {
+        "to" => "t",
+        "from" => "\x{442}"
+      },
+      {
+        "to" => "T",
+        "from" => "\x{422}"
+      },
+      {
+        "to" => "u",
+        "from" => "\x{443}"
+      },
+      {
+        "to" => "U",
+        "from" => "\x{423}"
+      },
+      {
+        "to" => "f",
+        "from" => "\x{444}"
+      },
+      {
+        "to" => "F",
+        "from" => "\x{424}"
+      },
+      {
+        "to" => "c",
+        "from" => "\x{446}"
+      },
+      {
+        "to" => "C",
+        "from" => "\x{426}"
+      },
+      {
+        "to" => "\x{10d}",
+        "from" => "\x{447}"
+      },
+      {
+        "to" => "\x{10c}",
+        "from" => "\x{427}"
+      },
+      {
+        "to" => "\x{161}",
+        "from" => "\x{448}"
+      },
+      {
+        "to" => "\x{160}",
+        "from" => "\x{428}"
+      },
+      {
+        "to" => "'",
+        "from" => "\x{42c}",
+        "context" => {
+          "after" => "\\p{IsUpper}"
+        }
+      },
+      {
+        "to" => "'",
+        "from" => "\x{44c}"
+      },
+      {
+        "to" => "\x{2ee}",
+        "from" => "\x{2bc}"
+      }
+    ],
+    "reverse" => "true"
   },
   "greeklish" => {
     "desc" => "Greeklish (Phonetic), Greek to Latin",

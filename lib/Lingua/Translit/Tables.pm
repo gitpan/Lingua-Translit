@@ -5,7 +5,7 @@ package Lingua::Translit::Tables;
 # Copyright (C) 2007-2008 ...
 #   Alex Linke <alinke@lingua-systems.com>
 #   Rona Linke <rlinke@lingua-systems.com>
-# Copyright (C) 2009 Lingua-Systems Software GmbH
+# Copyright (C) 2009-2010 Lingua-Systems Software GmbH
 #
 
 
@@ -176,10 +176,12 @@ I<ISO 9>, reversible, ISO 9:1995, Cyrillic to Latin
 
 I<DIN 1460 RUS>, reversible, DIN 1460:1982, Cyrillic to Latin, Russian
 
-I<Streamlined System BUL>, not reversible, The Streamlined System: 2006,
-Cyrillic to Latin, Bulgarian
+I<DIN 1460 UKR>, reversible, DIN 1460:1982, Cyrillic to Latin, Ukrainian
 
 I<DIN 1460 BUL>, reversible, DIN 1460:1982, Cyrillic to Latin, Bulgarian
+
+I<Streamlined System BUL>, not reversible, The Streamlined System: 2006,
+Cyrillic to Latin, Bulgarian
 
 =item Greek
 
@@ -211,12 +213,15 @@ I<Common Classical MON>, reversible, Classical Mongolian to Latin
 
 =head1 ADDING NEW TRANSLITERATIONS
 
-In case you want to add your own transliteration tables to L<Lingua::Translit>,
-a developer manual (F<xml/manual/>) is available in HTML and plain text format.
+In case you want to add your own transliteration tables to
+L<Lingua::Translit>, have a look at the developer manual included in the
+distribution.
 An online version is available at
-L<http://www.lingua-systems.com/transliteration/Lingua-Translit-Perl-module/developer-manual/>.
+L<http://www.lingua-systems.com/downloads/Lingua-Translit/>.
 
-All necessary tools and templates to start with are provided as well.
+A template of a transliteration table is provided as well
+(F<xml/template.xml>) so you can easily start developing.
+
 
 =head1 BUGS
 
@@ -227,6 +232,9 @@ Please report bugs to perl@lingua-systems.com.
 =head1 SEE ALSO
 
 L<Lingua::Translit>
+
+L<http://www.lingua-systems.com/transliteration/Lingua-Translit-Perl-module/>
+
 
 =head1 CREDITS
 
@@ -244,9 +252,9 @@ Rona Linke <rlinke@lingua-systems.com>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (C) 2008 Alex Linke and Rona Linke
+Copyright (C) 2007-2008 Alex Linke and Rona Linke
 
-Copyright (C) 2009 Lingua-Systems Software GmbH
+Copyright (C) 2009-2010 Lingua-Systems Software GmbH
 
 This module is free software. It may be used, redistributed
 and/or modified under the terms of either the GPL v2 or the
@@ -270,7 +278,7 @@ sub _get_table_id
 
 
 # For convenience, the next line is automatically substituted with the set
-# of transliteration tables at compile time.
+# of transliteration tables at build time.
 %tables; # PLACEHOLDER
 
 

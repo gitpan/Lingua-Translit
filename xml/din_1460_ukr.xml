@@ -5,11 +5,11 @@
 
 <!--
 
-  Transliteration definitions for DIN 1460 (Russian).
+  Transliteration definitions for DIN 1460 (Ukrainian).
 
   Alex Linke <alinke@lingua-systems.com>
 
-  Copyright (C) 2009 Lingua-Systems Software GmbH
+  Copyright (C) 2010 Lingua-Systems Software GmbH
 
 -->
 
@@ -18,8 +18,8 @@
 
     <!-- meta information -->
 
-    <name>DIN 1460 RUS</name>
-    <desc>DIN 1460:1982, Cyrillic to Latin, Russian</desc>
+    <name>DIN 1460 UKR</name>
+    <desc>DIN 1460:1982, Cyrillic to Latin, Ukrainian</desc>
     <reverse>true</reverse>
 
 
@@ -32,6 +32,7 @@
             CSL = CYRILLIC SMALL LETTER
             LCL = LATIN CAPITAL LETTER
             LSL = LATIN SMALL LETTER
+            ML  = MODIFIER LETTER
     -->
 
     <rules>
@@ -39,6 +40,23 @@
 
         <!-- context dependent and multi-character rules -->
 
+
+        <rule> <!-- 11-1 -->
+            <from>&#x0454;</from>   <!-- CSL UKRAINIAN IE -->
+            <to>je</to>             <!-- LSL J & LSL E -->
+        </rule>
+        <rule> <!-- 11-2 ALLCAPS -->
+            <from>&#x0404;</from>   <!-- CCL UKRAINIAN IE -->
+            <to>JE</to>             <!-- LCL J & LCL E -->
+            <context>
+                <before>[\p{IsUpper}\p{IsSpace}]</before>
+                <after>[\p{IsUpper}\p{IsSpace}]</after>
+            </context>
+        </rule>
+        <rule> <!-- 11-2 -->
+            <from>&#x0404;</from>   <!-- CCL UKRAINIAN IE -->
+            <to>Je</to>             <!-- LCL J & LSL E -->
+        </rule>
 
         <rule> <!-- 36-1 -->
             <from>&#x0445;</from>       <!-- CSL HA -->
@@ -75,40 +93,6 @@
             <from>&#x0429;</from>   <!-- CCL SHCHA  -->
             <to>&#x0160;&#x010D;</to>
             <!-- LCL S WITH CARON & LSL S WITH CARON -->
-        </rule>
-
-        <rule> <!-- 42-2 end of word --> <!-- **OBSOLETE** -->
-            <from>&#x042A;</from>   <!-- CCL HARD SIGN  -->
-            <to>&#x0022;</to>       <!-- QUOTATION MARK -->
-            <context>
-                <before>([^\p{IsWord}]|$)</before>
-                <after>\p{IsUpper}</after>
-            </context>
-        </rule>
-        <rule> <!-- 42-1 end of word --> <!-- **OBSOLETE** -->
-            <from>&#x044A;</from>   <!-- CSL HARD SIGN  -->
-            <to>&#x0022;</to>       <!-- QUOTATION MARK -->
-            <context>
-                <before>([^\p{IsWord}]|$)</before>
-                <after>\p{IsWord}</after>
-            </context>
-        </rule>
-
-        <rule> <!-- 42-1 within word -->
-            <from>&#x044A;</from>   <!-- CSL HARD SIGN  -->
-            <to>&#x0022;</to>       <!-- QUOTATION MARK -->
-            <context>
-                <before>\p{IsWord}</before>
-                <after>\p{IsWord}</after>
-            </context>
-        </rule>
-        <rule> <!-- 42-2 within word -->
-            <from>&#x042A;</from>   <!-- CCL HARD SIGN  -->
-            <to>&#x0022;</to>       <!-- QUOTATION MARK -->
-            <context>
-                <before>\p{IsWord}</before>
-                <after>\p{IsWord}</after>
-            </context>
         </rule>
 
         <rule> <!-- 47-1 -->
@@ -151,17 +135,16 @@
 
         <rule>
             <from>&#x0419;</from>       <!-- CCL SHORT I  -->
-            <to>&#x004A;&#x002D;</to>   <!-- LCL J with hyphen -->
+            <to>J-</to>                 <!-- LCL J & HYPHEN -->
             <context>
-                <before>[auAU&#x0430;&#x0443;&#x0410;&#x0423;]</before>
+                <before>[aueAUE&#x0430;&#x0443;&#x0435;&#x0410;&#x0423;&#x0415;]</before>
             </context>
         </rule>
-
         <rule>
             <from>&#x0439;</from>       <!-- CSL SHORT I -->
-            <to>&#x006A;&#x002D;</to>   <!-- LSL J & HYPHEN -->
+            <to>j-</to>                 <!-- LSL J & HYPHEN -->
             <context>
-                <before>[au&#x0430;&#x0443;]</before>
+                <before>[aue&#x0430;&#x0443;&#x0435;]</before>
             </context>
         </rule>
 
@@ -172,7 +155,6 @@
                 <before>[&#x010C;&#x010D;&#x0427;&#x0447;]</before>
             </context>
         </rule>
-
         <rule>
             <from>&#x0448;</from>       <!-- CSL SHA  -->
             <to>&#x0161;&#x002D;</to>   <!-- LSL S WITH CARON & HYPHEN -->
@@ -180,6 +162,22 @@
                 <before>[&#x010D;&#x0447;]</before>
             </context>
         </rule>
+
+        <rule>
+            <from>&#x0446;</from>   <!-- CSL TSE -->
+            <to>c-</to>             <!-- LSL C & HYPHEN -->
+            <context>
+                <before>[h&#x0433;]</before>
+            </context>
+        </rule>
+        <rule>
+            <from>&#x0426;</from>   <!-- CCL TSE -->
+            <to>C-</to>             <!-- LCL C & HYPHEN -->
+            <context>
+                <before>[hH&#x0433;&#x0413;]</before>
+            </context>
+        </rule>
+
 
 
         <!-- context indepenent rules -->
@@ -195,30 +193,39 @@
         </rule>
 
         <rule> <!-- 02-1 -->
-            <from>&#x0431;</from>   <!--CSL BE  -->
-            <to>&#x0062;</to>       <!--LSL B  -->
+            <from>&#x0431;</from>   <!-- CSL BE -->
+            <to>&#x0062;</to>       <!-- LSL B -->
         </rule>
         <rule> <!-- 02-2 -->
-            <from>&#x0411;</from>   <!-- CCL BE  -->
-            <to>&#x0042;</to>       <!-- LCL B  -->
+            <from>&#x0411;</from>   <!-- CCL BE -->
+            <to>&#x0042;</to>       <!-- LCL B -->
         </rule>
 
         <rule> <!-- 03-1 -->
-            <from>&#x0432;</from>   <!--CSL VE  -->
-            <to>&#x0076;</to>       <!--LSL V  -->
+            <from>&#x0432;</from>   <!-- CSL VE -->
+            <to>&#x0076;</to>       <!-- LSL V -->
         </rule>
         <rule> <!-- 03-2 -->
-            <from>&#x0412;</from>   <!--CCL VE  -->
-            <to>&#x0056;</to>       <!--LCL V  -->
+            <from>&#x0412;</from>   <!-- CCL VE -->
+            <to>&#x0056;</to>       <!-- LCL V -->
         </rule>
 
         <rule> <!-- 04-1 -->
             <from>&#x0433;</from>   <!--CSL GHE  -->
-            <to>&#x0067;</to>       <!--LSL G  -->
+            <to>h</to>              <!--LSL H  -->
         </rule>
         <rule> <!-- 04-2 -->
-            <from>&#x0413;</from>   <!--CCL GHE  -->
-            <to>&#x0047;</to>       <!--LCL G  -->
+            <from>&#x0413;</from>   <!--CCL GHE -->
+            <to>H</to>              <!--LCL H -->
+        </rule>
+
+        <rule> <!-- 05-01 -->
+            <from>&#x0491;</from>   <!-- CSL GHE WITH UPTURN -->
+            <to>g</to>              <!-- LSL G -->
+        </rule>
+        <rule> <!-- 05-02 -->
+            <from>&#x0490;</from>   <!-- CCL GHE WITH UPTURN -->
+            <to>G</to>              <!-- LCL G -->
         </rule>
 
         <rule> <!-- 06-1 -->
@@ -237,15 +244,6 @@
         <rule> <!-- 09-2 -->
             <from>&#x0415;</from>   <!-- CCL IE  -->
             <to>&#x0045;</to>       <!-- LCL E  -->
-        </rule>
-
-        <rule> <!-- 10-1 -->
-            <from>&#x0451;</from>   <!-- CSL IO -->
-            <to>&#x00EB;</to>       <!-- LSL E WITH DIAERESIS -->
-        </rule>
-        <rule> <!-- 10-2 -->
-            <from>&#x0401;</from>   <!-- CCL IO -->
-            <to>&#x00CB;</to>       <!-- LCL E WITH DIAERESIS -->
         </rule>
 
         <rule> <!-- 12-1 -->
@@ -268,20 +266,29 @@
 
         <rule> <!-- 15-1 -->
             <from>&#x0438;</from>   <!-- CSL I -->
-            <to>&#x0069;</to>       <!-- LSL I  -->
+            <to>y</to>              <!-- LSL Y  -->
         </rule>
         <rule> <!-- 15-2 -->
             <from>&#x0418;</from>   <!-- CCL I  -->
-            <to>&#x0049;</to>       <!-- LCL I  -->
+            <to>Y</to>              <!-- LCL Y  -->
         </rule>
 
-        <rule> <!-- 16-1 -->        <!-- **OBSOLETE** -->
+        <rule> <!-- 16-1 -->
             <from>&#x0456;</from>   <!-- CSL BYELORUSSIAN-UKRAINIAN IE -->
             <to>&#x0069;</to>       <!-- LSL I -->
         </rule>
-        <rule> <!-- 16-2 -->        <!-- **OBSOLETE** -->
+        <rule> <!-- 16-2 -->
             <from>&#x0406;</from>   <!-- CCL BYELORUSSIAN-UKRAINIAN IE -->
             <to>&#x0049;</to>       <!-- LCL I -->
+        </rule>
+
+        <rule> <!-- 17-1 -->
+            <from>&#x0457;</from>   <!-- CSL YI -->
+            <to>&#x00EF;</to>       <!-- LSL I WITH DIAERESIS -->
+        </rule>
+        <rule> <!-- 17-2 -->
+            <from>&#x0407;</from>   <!-- CCL YI -->
+            <to>&#x00CF;</to>       <!-- LCL I WITH DIAERESIS -->
         </rule>
 
         <rule> <!-- 19-1 -->
@@ -419,15 +426,6 @@
             <to>&#x0160;</to>       <!-- LCL S WITH CARON  -->
         </rule>
 
-        <rule> <!-- 43-1 -->
-            <from>&#x044B;</from>   <!-- CSL YERU -->
-            <to>&#x0079;</to>       <!-- LSL Y -->
-        </rule>
-        <rule> <!-- 43-2 -->
-            <from>&#x042B;</from>   <!-- CCL YERU -->
-            <to>&#x0059;</to>       <!-- LCL Y -->
-        </rule>
-
         <rule> <!-- 44-2 -->
             <from>&#x042C;</from>   <!-- CCL SOFT SIGN  -->
             <to>&#x0027;</to>       <!-- APOSTROPHE  -->
@@ -440,43 +438,10 @@
             <to>&#x0027;</to>       <!-- APOSTROPHE  -->
         </rule>
 
-        <rule> <!-- 45-1 -->        <!-- **OBSOLETE** -->
-            <from>&#x0463;</from>   <!-- CSL YAT -->
-            <to>&#x011B;</to>       <!-- LSL E WITH CARON -->
+        <rule> <!-- 52 -->
+            <from>&#x02BC;</from>   <!-- ML APOSTROPHE -->
+            <to>&#x02EE;</to>       <!-- ML DOUBLE APOSTROPHE -->
         </rule>
-        <rule> <!-- 45-2 -->        <!-- **OBSOLETE** -->
-            <from>&#x0462;</from>   <!-- CCL YAT -->
-            <to>&#x011A;</to>       <!-- LCL E WITH CARON -->
-        </rule>
-
-        <rule> <!-- 46-1 -->
-            <from>&#x044D;</from>   <!-- CSL E -->
-            <to>&#x0117;</to>       <!-- LSL E WITH DOT ABOVE -->
-        </rule>
-        <rule> <!-- 46-2 -->
-            <from>&#x042D;</from>   <!-- CCL E -->
-            <to>&#x0116;</to>       <!-- LCL E WITH DOT ABOVE -->
-        </rule>
-
-        <rule> <!-- 50-1 -->        <!-- **OBSOLETE** -->
-            <from>&#x0473;</from>   <!-- CSL FITA -->
-            <to>&#x1e1f;</to>       <!-- LSL F WITH DOT ABOVE -->
-        </rule>
-        <rule> <!-- 50-2 -->        <!-- **OBSOLETE** -->
-            <from>&#x0472;</from>   <!-- CCL FITA -->
-            <to>&#x1e1e;</to>       <!-- LCL F WITH DOT ABOVE -->
-        </rule>
-
-        <rule> <!-- 51-1 -->        <!-- **OBSOLETE** -->
-            <from>&#x0475;</from>   <!-- CSL IZHITSA -->
-            <to>&#x1e8f;</to>       <!-- LSL Y WITH DOT ABOVE -->
-        </rule>
-        <rule> <!-- 51-2 -->        <!-- **OBSOLETE** -->
-            <from>&#x0474;</from>   <!-- CCL IZHITSA -->
-            <to>&#x1e8e;</to>       <!-- LCL Y WITH DOT ABOVE -->
-        </rule>
-
-        <!-- 52 omitted -->
 
     </rules>
 
