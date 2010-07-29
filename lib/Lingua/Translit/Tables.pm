@@ -15,7 +15,7 @@ use warnings;
 require 5.008;
 
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 
 use Carp;
@@ -158,10 +158,12 @@ The same information is provided in this document as well:
 
 sub translit_list_supported
 {
-    foreach my $table (keys %tables)
+    foreach my $table (sort keys %tables)
     {
         my $t = $tables{$table};
-        print "$t->{name}, reversible=$t->{reverse}, $t->{desc}\n";
+        print "$t->{name}, ",
+            ($t->{reverse} eq "false" ? "not " : ""),
+            "reversible, $t->{desc}\n";
     }
 }
 
@@ -182,6 +184,15 @@ I<DIN 1460 BUL>, reversible, DIN 1460:1982, Cyrillic to Latin, Bulgarian
 
 I<Streamlined System BUL>, not reversible, The Streamlined System: 2006,
 Cyrillic to Latin, Bulgarian
+
+I<GOST 7.79 RUS>, reversible, GOST 7.79:2000 (table B), Cyrillic to Latin,
+Russian
+
+I<GOST 7.79 RUS OLD>, not reversible, GOST 7.79:2000 (table B), Cyrillic to
+Latin with support for Old Russian (pre 1918), Russian
+
+I<GOST 7.79 UKR>, reversible, GOST 7.79:2000 (table B), Cyrillic to Latin,
+Ukrainian
 
 =item Greek
 

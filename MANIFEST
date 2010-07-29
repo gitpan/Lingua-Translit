@@ -23,6 +23,9 @@ xml/din_1460_bul.xml
 xml/din_1460_rus.xml
 xml/din_1460_ukr.xml
 xml/streamlined_system_bul.xml
+xml/gost_7-79_rus_old.xml
+xml/gost_7-79_rus.xml
+xml/gost_7-79_ukr.xml
 t/xx_tr_template.t.pl
 t/01_Lingua-Translit-Tables.t
 t/02_Lingua-Translit.t
@@ -42,6 +45,9 @@ t/21_tr_Common_SLV.t
 t/22_tr_Common_POL.t
 t/23_tr_DIN_1460_RUS.t
 t/24_tr_DIN_1460_UKR.t
+t/25_tr_GOST_RUS_OLD.t
+t/26_tr_GOST_RUS.t
+t/27_tr_GOST_UKR.t
 tools/substitute_tables.pl
 Changes
 README

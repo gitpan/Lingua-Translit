@@ -2,7 +2,7 @@
 
 #
 # Copyright (C) 2007-2008 Alex Linke <alinke@lingua-systems.com>
-# Copyright (C) 2009 Lingua-Systems Software GmbH
+# Copyright (C) 2009-2010 Lingua-Systems Software GmbH
 #
 
 use strict;
@@ -27,7 +27,7 @@ $fh->close();
 
 if ($in_content =~ s/\n\%tables;\s+# PLACEHOLDER\s*\n/\n$tbls\n/)
 {
-    print "$infile: substited tables: " . length($tbls) . " bytes.\n";
+    print "$infile: substituted tables: " . length($tbls) . " bytes.\n";
 }
 else
 {
@@ -41,3 +41,5 @@ chmod 0644, $infile or die "chmod: $!\n";
 $fh->open("> $infile") or die "$infile: $!\n";
 print $fh $in_content;
 $fh->close();
+
+# vim: sts=4 sw=4 enc=utf-8 ai et

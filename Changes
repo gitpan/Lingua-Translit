@@ -1,3 +1,14 @@
+0.18  -- 2010-07-29
+
+    * Added transliterations:
+        * "GOST 7.79 RUS OLD" (GOST 7.79:2000 B, support for Old Russian)
+        * "GOST 7.79 RUS"     (GOST 7.79:2000 B, reversible)
+        * "GOST 7.79 UKR"     (GOST 7.79:2000 B, reversible)
+    * lib/Lingua/Translit/Tables.pm: Improved translit_list_supported()
+      output (v0.9)
+    * translit: Minor improvements (v0.4)
+    * tools/substitute_tables.pl: Typo fixed
+
 0.17  -- 2010-01-20
 
     * Added "DIN 1460 UKR" transliteration

@@ -11,7 +11,9 @@ TABLES		:=	din_31634.xml \
 			greeklish.xml \
 			common_deu.xml common_ron.xml common_ces.xml \
 				common_classical_mon.xml common_slk.xml \
-				common_slv.xml common_pol.xml
+				common_slv.xml common_pol.xml \
+			gost_7-79_rus_old.xml gost_7-79_rus.xml \
+				gost_7-79_ukr.xml
 
 all: clean tables
 

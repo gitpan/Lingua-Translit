@@ -20,7 +20,7 @@ use Encode qw/encode decode/;
 use Lingua::Translit::Tables;
 
 
-our $VERSION = '0.17';
+our $VERSION = '0.18';
 
 
 =pod
@@ -330,6 +330,15 @@ I<DIN 1460 BUL>, reversible, DIN 1460:1982, Cyrillic to Latin, Bulgarian
 
 I<Streamlined System BUL>, not reversible, The Streamlined System: 2006,
 Cyrillic to Latin, Bulgarian
+
+I<GOST 7.79 RUS>, reversible, GOST 7.79:2000 (table B), Cyrillic to Latin,
+Russian
+
+I<GOST 7.79 RUS OLD>, not reversible, GOST 7.79:2000 (table B), Cyrillic to
+Latin with support for Old Russian (pre 1918), Russian
+
+I<GOST 7.79 UKR>, reversible, GOST 7.79:2000 (table B), Cyrillic to Latin,
+Ukrainian
 
 =item Greek
 
