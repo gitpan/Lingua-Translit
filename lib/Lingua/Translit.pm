@@ -5,7 +5,7 @@ package Lingua::Translit;
 # Copyright (C) 2007-2008 ...
 #   Alex Linke <alinke@lingua-systems.com>
 #   Rona Linke <rlinke@lingua-systems.com>
-# Copyright (C) 2009-2010 Lingua-Systems Software GmbH
+# Copyright (C) 2009-2011 Lingua-Systems Software GmbH
 #
 
 
@@ -20,7 +20,7 @@ use Encode qw/encode decode/;
 use Lingua::Translit::Tables;
 
 
-our $VERSION = '0.18';
+our $VERSION = '0.19';
 
 
 =pod
@@ -320,6 +320,8 @@ sub desc
 
 =item Cyrillic
 
+I<ALA-LC RUS>, not reversible, ALA-LC:1997, Cyrillic to Latin, Russian
+
 I<ISO 9>, reversible, ISO 9:1995, Cyrillic to Latin
 
 I<DIN 1460 RUS>, reversible, DIN 1460:1982, Cyrillic to Latin, Russian
@@ -416,6 +418,9 @@ help on Romanian transliteration.
 Thanks to Bayanzul Lodoysamba <baynaa@users.sourceforge.net> for contributing
 the "Common Classical Mongolian" transliteration table.
 
+Thanks to Dmitry Smal and Rusar Publishing for contributing the "ALA-LC RUS"
+transliteration table.
+
 =head1 AUTHORS
 
 Alex Linke <alinke@lingua-systems.com>
@@ -426,7 +431,7 @@ Rona Linke <rlinke@lingua-systems.com>
 
 Copyright (C) 2007-2008 Alex Linke and Rona Linke
 
-Copyright (C) 2009-2010 Lingua-Systems Software GmbH
+Copyright (C) 2009-2011 Lingua-Systems Software GmbH
 
 This module is free software. It may be used, redistributed
 and/or modified under the terms of either the GPL v2 or the
@@ -438,4 +443,4 @@ Artistic license.
 1;
 
 
-# vim: sts=4 sw=4 enc=utf-8 ai et
+# vim: sts=4 sw=4 ai et

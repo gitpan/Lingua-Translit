@@ -60,4 +60,4 @@ $o = $tr->translit_reverse($o);
 is($o, $caps_cyr, "$name: capital letters only (reverse)");
 
 
-# vim: sts=4 sw=4 enc=utf-8 ai et ft=perl
+# vim: sts=4 sw=4 ai et ft=perl

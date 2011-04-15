@@ -1,3 +1,8 @@
+0.19  -- 2011-04-15
+
+    * Added "ALA-LC RUS" transliteration (ALA-LC:1997). Thanks to Dmitry Smal
+      and Rusar Publishing for contributing this table!
+
 0.18  -- 2010-07-29
 
     * Added transliterations:
@@ -146,4 +151,4 @@
         * ISO 843
         * DIN 5008
 
-# vim: sw=4 sts=4 enc=utf-8 ai et ft=changelog
+# vim: sw=4 sts=4 ai et ft=changelog

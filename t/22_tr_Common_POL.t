@@ -46,4 +46,4 @@ my $o = $tr->translit($alphabet);
 # 3
 is($o, $alphabet_ok, "$name: alphabet");
 
-# vim: sts=4 enc=utf-8
+# vim: sts=4

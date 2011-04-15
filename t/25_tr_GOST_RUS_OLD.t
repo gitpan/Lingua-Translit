@@ -53,4 +53,4 @@ $output = $tr->translit($old);
 is($output, $old_ok, "$name: Old Russian");
 
 
-# vim: sts=4 sw=4 enc=utf-8 ai et
+# vim: sts=4 sw=4 ai et

@@ -70,4 +70,4 @@ $output = $tr->translit_reverse($output);
 is($output, $reverse, "$name: reverse (reverse)");
 
 
-# vim: sts=4 sw=4 enc=utf-8 ai et
+# vim: sts=4 sw=4 ai et

@@ -63,4 +63,4 @@ $o    = $tr->translit(decode("UTF-8", $all_caps));
 # 7
 is($o, $all_caps_ok, "$name: all caps (decoded)");
 
-# vim: sts=4 sw=4 enc=utf-8 ai et ft=perl
+# vim: sts=4 sw=4 ai et ft=perl

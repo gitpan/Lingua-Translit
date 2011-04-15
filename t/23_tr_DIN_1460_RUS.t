@@ -64,4 +64,4 @@ $o = $tr->translit_reverse($o);
 # 7
 is($o, $sign_cyr, "$name: hard and soft signs (reverse)");
 
-# vim: sts=4 sw=4 enc=utf-8 ai et ft=perl
+# vim: sts=4 sw=4 ai et ft=perl
