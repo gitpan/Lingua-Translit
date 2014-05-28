@@ -2,14 +2,14 @@
 
 #
 # Copyright (C) 2007-2008 Alex Linke <alinke@lingua-systems.com>
-# Copyright (C) 2009-2010 Lingua-Systems Software GmbH
+# Copyright (C) 2009-2014 Lingua-Systems Software GmbH
 #
 
 use strict;
 use IO::File;
 
 my $tbl_file = 'xml/tables.dump';
-my $infile   = $ARGV[0] || die "usage: $0 file";
+my $infile = $ARGV[0] || die "usage: $0 file";
 
 my $fh = new IO::File();
 
@@ -25,12 +25,10 @@ $fh->open($tbl_file) or die "$tbl_file: $!\n";
 my $tbls = <$fh>;
 $fh->close();
 
-if ($in_content =~ s/\n\%tables;\s+# PLACEHOLDER\s*\n/\n$tbls\n/)
-{
+if ( $in_content =~ s/\n\%tables;\s+# PLACEHOLDER\s*\n/\n$tbls\n/ ) {
     print "$infile: substituted tables: " . length($tbls) . " bytes.\n";
 }
-else
-{
+else {
     print "$infile: no substitution.\n";
     exit 1;
 }
@@ -42,4 +40,4 @@ $fh->open("> $infile") or die "$infile: $!\n";
 print $fh $in_content;
 $fh->close();
 
-# vim: sts=4 sw=4 enc=utf-8 ai et
+# vim: sts=4 sw=4 ts=4 ai et

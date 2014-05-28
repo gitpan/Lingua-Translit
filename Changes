@@ -1,3 +1,13 @@
+0.20  -- 2014-05-22
+
+    * lib/Lingua/Translit/Tables.pm: Added sub to handle Perl's
+      "Unicode Bug", see perlunicode for details (v0.10). This fixes the
+      errors reported by Perl v5.18.0.
+    * MANIFEST: Added missing "ALA-LC RUS" files to distribution.
+    * xml/: Removed "Common Classical MON" transliteration due to errors
+      and contributors lack of time to fix these.
+    * Code cleanups
+
 0.19  -- 2011-04-15
 
     * Added "ALA-LC RUS" transliteration (ALA-LC:1997). Thanks to Dmitry Smal
@@ -151,4 +161,4 @@
         * ISO 843
         * DIN 5008
 
-# vim: sw=4 sts=4 ai et ft=changelog
+# vim: set sw=4 sts=4 ts=4 ai et ft=changelog:

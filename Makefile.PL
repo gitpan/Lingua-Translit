@@ -7,15 +7,14 @@ use ExtUtils::MakeMaker;
 
 
 WriteMakefile(
-    NAME	    =>  "Lingua::Translit",
+    NAME            =>  "Lingua::Translit",
     VERSION_FROM    =>  "lib/Lingua/Translit.pm",
     ABSTRACT_FROM   =>  "lib/Lingua/Translit.pm",
-    AUTHOR	    =>  'Alex Linke <alinke@lingua-systems.com>',
-    EXE_FILES	    =>  [qw/translit/],
-    PL_FILES	    =>	{
-	    'tools/substitute_tables.pl' =>
-		'blib/lib/Lingua/Translit/Tables.pm'
-	},
+    AUTHOR          =>  'Alex Linke <alinke@lingua-systems.com>',
+    EXE_FILES       =>  [ qw/translit/ ],
+    PL_FILES        =>  {
+        'tools/substitute_tables.pl' => 'blib/lib/Lingua/Translit/Tables.pm'
+    },
 );
 
 
@@ -24,9 +23,8 @@ package MY;
 sub postamble
 {
     # include target to rebuild tables
-    return  "tables:\n\t\$(MAKE) -C xml tables\n\n" .
-	    "manual:\n\t\$(MAKE) -C xml/manual\n";
+    return  "tables:\n\t\$(MAKE) -C xml tables\n";
 }
 
 
-# vim: sts=4 enc=utf-8
+# vim: sts=4 sw=4 ts=4 ai et

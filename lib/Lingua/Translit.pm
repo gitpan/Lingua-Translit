@@ -1,27 +1,23 @@
 package Lingua::Translit;
 
-
 #
 # Copyright (C) 2007-2008 ...
 #   Alex Linke <alinke@lingua-systems.com>
 #   Rona Linke <rlinke@lingua-systems.com>
-# Copyright (C) 2009-2011 Lingua-Systems Software GmbH
+# Copyright (C) 2009-2014 Lingua-Systems Software GmbH
 #
-
 
 use strict;
 use warnings;
 
 require 5.008;
 
-use Carp   qw/croak/;
+use Carp qw/croak/;
 use Encode qw/encode decode/;
 
 use Lingua::Translit::Tables;
 
-
-our $VERSION = '0.19';
-
+our $VERSION = '0.20';
 
 =pod
 
@@ -32,11 +28,11 @@ Lingua::Translit - transliterates text between writing systems
 =head1 SYNOPSIS
 
   use Lingua::Translit;
- 
+
   my $tr = new Lingua::Translit("ISO 843");
- 
+
   my $text_tr = $tr->translit("character oriented string");
- 
+
   if ($tr->can_reverse()) {
     $text_tr = $tr->translit_reverse("character oriented string");
   }
@@ -82,8 +78,7 @@ Initializes an object with the specific transliteration table, e.g. "ISO 9".
 
 =cut
 
-sub new
-{
+sub new {
     my $class = shift();
     my $name  = shift();
 
@@ -93,8 +88,7 @@ sub new
     croak("No transliteration name given.") unless $name;
 
     # Stay compatible with programs that use Lingua::Translit < 0.05
-    if ($name =~ /^DIN 5008$/i)
-    {
+    if ( $name =~ /^DIN 5008$/i ) {
         $name = "Common DEU";
     }
 
@@ -110,19 +104,18 @@ sub new
     croak("$name table: missing 'rules'")   unless defined $table->{rules};
 
     # Copy over the table's data
-    $self->{name}   = $table->{name};
-    $self->{desc}   = $table->{desc};
-    $self->{rules}  = $table->{rules};
+    $self->{name}  = $table->{name};
+    $self->{desc}  = $table->{desc};
+    $self->{rules} = $table->{rules};
 
     # Set a truth value of the transliteration's reversibility according to
     # the natural language string in the original transliteration table
-    $self->{reverse} = ($table->{reverse} =~ /^true$/i) ? 1 : 0;
+    $self->{reverse} = ( $table->{reverse} =~ /^true$/i ) ? 1 : 0;
 
     undef($table);
 
     return bless $self, $class;
 }
-
 
 =head2 translit(I<"character oriented string">)
 
@@ -132,70 +125,54 @@ Returns the transliterated text.
 
 =cut
 
-sub translit
-{
+sub translit {
     my $self = shift();
     my $text = shift();
-
-    my $utf8_flag_on = Encode::is_utf8($text);
-
-    unless ($utf8_flag_on)
-    {
-        $text = decode("UTF-8", $text);
-    }
 
     # Return if no input was given
     return unless $text;
 
-    # Copy over the input string. It will be modified directly.
-    my $tr_text = $text;
+    my $utf8_flag_on = Encode::is_utf8($text);
 
-    foreach my $rule (@{$self->{rules}})
-    {
-        if (defined $rule->{context})
-        {
+    unless ($utf8_flag_on) {
+        $text = decode( "UTF-8", $text );
+    }
+
+    foreach my $rule ( @{ $self->{rules} } ) {
+        if ( defined $rule->{context} ) {
             my $c = $rule->{context};
 
             # single context rules
-            if (defined $c->{before}   && !defined $c->{after})
-            {
-                $tr_text =~ s/\Q$rule->{from}\E(?=$c->{before})/$rule->{to}/g;
+            if ( defined $c->{before} && !defined $c->{after} ) {
+                $text =~ s/$rule->{from}(?=$c->{before})/$rule->{to}/g;
             }
-            elsif (defined $c->{after} && !defined $c->{before})
-            {
-                $tr_text =~ s/(?<=$c->{after})\Q$rule->{from}\E/$rule->{to}/g;
+            elsif ( defined $c->{after} && !defined $c->{before} ) {
+                $text =~ s/(?<=$c->{after})$rule->{from}/$rule->{to}/g;
             }
 
             # double context rules: logical "inbetween"
-            elsif (defined $c->{before} && defined $c->{after})
-            {
-            $tr_text =~
-                s/
-                (?<=$c->{after})\Q$rule->{from}\E(?=$c->{before})
+            elsif ( defined $c->{before} && defined $c->{after} ) {
+                $text =~ s/
+                (?<=$c->{after})$rule->{from}(?=$c->{before})
                 /$rule->{to}/gx;
             }
 
-            else
-            {
+            else {
                 croak("incomplete rule context");
             }
         }
-        else
-        {
-            $tr_text =~ s/\Q$rule->{from}\E/$rule->{to}/g;
+        else {
+            $text =~ s/$rule->{from}/$rule->{to}/g;
         }
     }
 
-    unless ($utf8_flag_on)
-    {
-        return encode("UTF-8", $tr_text);
+    unless ($utf8_flag_on) {
+        return encode( "UTF-8", $text );
     }
-    else
-    {
-        return $tr_text;
+    else {
+        return $text;
     }
 }
-
 
 =head2 translit_reverse(I<"character oriented string">)
 
@@ -208,17 +185,9 @@ Returns the transliterated text.
 
 =cut
 
-sub translit_reverse
-{
+sub translit_reverse {
     my $self = shift();
     my $text = shift();
-
-    my $utf8_flag_on = Encode::is_utf8($text);
-
-    unless ($utf8_flag_on)
-    {
-        $text = decode("UTF-8", $text);
-    }
 
     # Return if no input was given
     return unless $text;
@@ -226,55 +195,47 @@ sub translit_reverse
     # Is this transliteration reversible?
     croak("$self->{name} cannot be reversed") unless $self->{reverse};
 
-    # Copy over the input string. It will be modified directly.
-    my $tr_text = $text;
+    my $utf8_flag_on = Encode::is_utf8($text);
 
-    foreach my $rule (@{$self->{rules}})
-    {
-        if (defined $rule->{context})
-        {
+    unless ($utf8_flag_on) {
+        $text = decode( "UTF-8", $text );
+    }
+
+    foreach my $rule ( @{ $self->{rules} } ) {
+        if ( defined $rule->{context} ) {
             my $c = $rule->{context};
 
             # single context rules
-            if (defined $c->{before} && !defined $c->{after})
-            {
-                $tr_text =~ s/\Q$rule->{to}\E(?=$c->{before})/$rule->{from}/g;
+            if ( defined $c->{before} && !defined $c->{after} ) {
+                $text =~ s/$rule->{to}(?=$c->{before})/$rule->{from}/g;
             }
-            elsif (defined $c->{after} && !defined $c->{before})
-            {
-                $tr_text =~ s/(?<=$c->{after})\Q$rule->{to}\E/$rule->{from}/g;
+            elsif ( defined $c->{after} && !defined $c->{before} ) {
+                $text =~ s/(?<=$c->{after})$rule->{to}/$rule->{from}/g;
             }
 
             # double context rules: logical "inbetween"
-            elsif (defined $c->{before} && defined $c->{after})
-            {
-                $tr_text =~
-                    s/
-                    (?<=$c->{after})\Q$rule->{to}\E(?=$c->{before})
+            elsif ( defined $c->{before} && defined $c->{after} ) {
+                $text =~ s/
+                    (?<=$c->{after})$rule->{to}(?=$c->{before})
                     /$rule->{from}/gx;
             }
 
-            else
-            {
+            else {
                 croak("incomplete rule context");
             }
         }
-        else
-        {
-            $tr_text =~ s/\Q$rule->{to}\E/$rule->{from}/g;
+        else {
+            $text =~ s/$rule->{to}/$rule->{from}/g;
         }
     }
 
-    unless ($utf8_flag_on)
-    {
-        return encode("UTF-8", $tr_text);
+    unless ($utf8_flag_on) {
+        return encode( "UTF-8", $text );
     }
-    else
-    {
-        return $tr_text;
+    else {
+        return $text;
     }
 }
-
 
 =head2 can_reverse()
 
@@ -283,11 +244,9 @@ False (0) otherwise.
 
 =cut
 
-sub can_reverse
-{
+sub can_reverse {
     return $_[0]->{reverse};
 }
-
 
 =head2 name()
 
@@ -295,11 +254,9 @@ Returns the name of the chosen transliteration table, e.g. "ISO 9".
 
 =cut
 
-sub name
-{
+sub name {
     return $_[0]->{name};
 }
-
 
 =head2 desc()
 
@@ -308,11 +265,9 @@ e.g. "ISO 9:1995, Cyrillic to Latin".
 
 =cut
 
-sub desc
-{
+sub desc {
     return $_[0]->{desc};
 }
-
 
 =head1 SUPPORTED TRANSLITERATIONS
 
@@ -364,10 +319,6 @@ I<Common SLK>, not reversible, Slovak without diacritics
 
 I<Common SLV>, not reversible, Slovenian without diacritics
 
-=item Mongolian
-
-I<Common Classical MON>, reversible, Classical Mongolian to Latin
-
 =back
 
 =head1 ADDING NEW TRANSLITERATIONS
@@ -376,7 +327,7 @@ In case you want to add your own transliteration tables to
 L<Lingua::Translit>, have a look at the developer manual included in the
 distribution.
 An online version is available at
-L<http://www.lingua-systems.com/downloads/Lingua-Translit/>.
+L<http://www.lingua-systems.com/translit/downloads/>.
 
 A template of a transliteration table is provided as well
 (F<xml/template.xml>) so you can easily start developing.
@@ -405,18 +356,12 @@ L<Lingua::Translit::Tables>, L<Encode>, L<perlunicode>
 
 L<translit(1)>
 
-L<http://www.lingua-systems.com/transliteration/Lingua-Translit-Perl-module/>
-
-L<http://www.lingua-systems.com/transliteration/Lingua-Translit-Perl-module/online-transliteration.html>
-provides an online frontend for L<Lingua::Translit>.
+L<http://www.lingua-systems.com/translit/>
 
 =head1 CREDITS
 
 Thanks to Dr. Daniel Eiwen, Romanisches Seminar, Universitaet Koeln for his
 help on Romanian transliteration.
-
-Thanks to Bayanzul Lodoysamba <baynaa@users.sourceforge.net> for contributing
-the "Common Classical Mongolian" transliteration table.
 
 Thanks to Dmitry Smal and Rusar Publishing for contributing the "ALA-LC RUS"
 transliteration table.
@@ -431,7 +376,7 @@ Rona Linke <rlinke@lingua-systems.com>
 
 Copyright (C) 2007-2008 Alex Linke and Rona Linke
 
-Copyright (C) 2009-2011 Lingua-Systems Software GmbH
+Copyright (C) 2009-2014 Lingua-Systems Software GmbH
 
 This module is free software. It may be used, redistributed
 and/or modified under the terms of either the GPL v2 or the
@@ -439,8 +384,6 @@ Artistic license.
 
 =cut
 
-
 1;
 
-
-# vim: sts=4 sw=4 ai et
+# vim: sts=4 sw=4 ts=4 ai et

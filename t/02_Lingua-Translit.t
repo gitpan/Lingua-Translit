@@ -1,11 +1,11 @@
 use strict;
-use Test::More tests => (8 + (4*13));
+use Test::More tests => (8 + (12 * 4));
 
 my $truth;
 my @check_support = (
     "ISO 843", "Common DEU", "ISO 9", "Greeklish", "DIN 31634", "Common RON",
-    "Common CES", "Common Classical MON", "DIN 1460 BUL",
-    "Streamlined System BUL", "Common SLV", "Common SLK", "Common POL"
+    "Common CES", "DIN 1460 BUL", "Streamlined System BUL", "Common SLV",
+    "Common SLK", "Common POL"
 );
 
 my $num_str = "1234567890";
