@@ -17,7 +17,7 @@ use Encode qw/encode decode/;
 
 use Lingua::Translit::Tables;
 
-our $VERSION = '0.20';
+our $VERSION = '0.21';
 
 =pod
 
@@ -319,6 +319,10 @@ I<Common SLK>, not reversible, Slovak without diacritics
 
 I<Common SLV>, not reversible, Slovenian without diacritics
 
+=item Arabic
+
+I<Common ARA>, not reversible, Common Romanization of Arabic
+
 =back
 
 =head1 ADDING NEW TRANSLITERATIONS
@@ -365,6 +369,9 @@ help on Romanian transliteration.
 
 Thanks to Dmitry Smal and Rusar Publishing for contributing the "ALA-LC RUS"
 transliteration table.
+
+Thanks to Ahmed Elsheshtawy for his help implementing the "Common ARA" Arabic
+transliteration.
 
 =head1 AUTHORS
 

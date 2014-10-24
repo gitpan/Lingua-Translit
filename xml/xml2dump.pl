@@ -2,7 +2,7 @@
 
 #
 # Copyright (C) 2007-2008 Alex Linke <alinke@lingua-systems.com>
-# Copyright (C) 2009-2013 Lingua-Systems Software GmbH
+# Copyright (C) 2009-2014 Lingua-Systems Software GmbH
 #
 
 use strict;

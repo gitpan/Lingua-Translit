@@ -1,3 +1,8 @@
+0.21  -- 2014-10-24
+
+    * Added "Common ARA" Arabic transliteration. Thanks to Ahmed Elsheshtawy
+      for suggesting this transliteration and his help implementing it!
+
 0.20  -- 2014-05-22
 
     * lib/Lingua/Translit/Tables.pm: Added sub to handle Perl's

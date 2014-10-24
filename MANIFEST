@@ -19,6 +19,7 @@ xml/common_ces.xml
 xml/common_slv.xml
 xml/common_slk.xml
 xml/common_pol.xml
+xml/common_ara.xml
 xml/din_1460_bul.xml
 xml/din_1460_rus.xml
 xml/din_1460_ukr.xml
@@ -48,6 +49,7 @@ t/25_tr_GOST_RUS_OLD.t
 t/26_tr_GOST_RUS.t
 t/27_tr_GOST_UKR.t
 t/28_tr_ALA-LC_RUS.t
+t/29_tr_Common_ARA.t
 tools/substitute_tables.pl
 Changes
 README
