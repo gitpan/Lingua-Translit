@@ -4,7 +4,9 @@ package Lingua::Translit::Tables;
 # Copyright (C) 2007-2008 ...
 #   Alex Linke <alinke@lingua-systems.com>
 #   Rona Linke <rlinke@lingua-systems.com>
-# Copyright (C) 2009-2014 Lingua-Systems Software GmbH
+# Copyright (C) 2009-2016 Lingua-Systems Software GmbH
+# Copyright (C) 2016-2017 Netzum Sorglos, Lingua-Systems Software GmbH
+# Copyright (C) 2017-2022 Netzum Sorglos Software GmbH
 #
 
 use strict;
@@ -13,11 +15,13 @@ use utf8;
 
 require 5.008;
 
-our $VERSION = '0.10';
+our $VERSION = '0.28';
 
 use Carp;
 
 =pod
+
+=encoding utf8
 
 =head1 NAME
 
@@ -39,10 +43,10 @@ Lingua::Translit::Tables - provides transliteration tables
 =head1 DESCRIPTION
 
 This module is primary used to provide transliteration tables for
-L<Lingua::Translit> and therefore allows to separate data and algorithm.
+L<Lingua::Translit> and therefore allows one to separate data and algorithm.
 
 Beyond that, it provides routines to check if a given transliteration is
-supported and allows to print a simple list of supported transliterations
+supported and allows one to print a simple list of supported transliterations
 along with some meta information.
 
 =head1 EXPORTS
@@ -60,7 +64,7 @@ Import all routines.
 
 =item B<checks>
 
-Import all routines that allow to check if a given transliteration is
+Import all routines that allow one to check if a given transliteration is
 supported: translit_supported() and translit_reverse_supported().
 
 =item B<list>
@@ -153,8 +157,8 @@ sub translit_reverse_supported {
 
 =head2 B<translit_list_supported()>
 
-Prints a list of all supported transliterations to STDOUT, providing the
-following information:
+Prints a list of all supported transliterations to STDOUT (UTF-8 encoded),
+providing the following information:
 
   * Name
   * Reversibility
@@ -165,11 +169,15 @@ The same information is provided in this document as well:
 =cut
 
 sub translit_list_supported {
+    require Encode;
+
     foreach my $table ( sort keys %tables ) {
-        my $t = $tables{$table};
-        print "$t->{name}, ",
-          ( $t->{reverse} eq "false" ? "not " : "" ),
-          "reversible, $t->{desc}\n";
+        printf(
+            "%s, %sreversible, %s\n",
+            Encode::encode( 'utf8', $tables{$table}->{name} ),
+            ( $tables{$table}->{reverse} eq "false" ? 'not ' : '' ),
+            Encode::encode( 'utf8', $tables{$table}->{desc} )
+        );
     }
 }
 
@@ -182,6 +190,8 @@ sub translit_list_supported {
 I<ALA-LC RUS>, not reversible, ALA-LC:1997, Cyrillic to Latin, Russian
 
 I<ISO 9>, reversible, ISO 9:1995, Cyrillic to Latin
+
+I<ISO/R 9>, reversible, ISO 9:1954, Cyrillic to Latin
 
 I<DIN 1460 RUS>, reversible, DIN 1460:1982, Cyrillic to Latin, Russian
 
@@ -200,6 +210,12 @@ Latin with support for Old Russian (pre 1918), Russian
 
 I<GOST 7.79 UKR>, reversible, GOST 7.79:2000 (table B), Cyrillic to Latin,
 Ukrainian
+
+I<BGN/PCGN RUS Standard>, not reversible, BGN/PCGN:1947 (Standard Variant),
+Cyrillic to Latin, Russian
+
+I<BGN/PCGN RUS Strict>, not reversible, BGN/PCGN:1947 (Strict Variant),
+Cyrillic to Latin, Russian
 
 =item Greek
 
@@ -223,35 +239,41 @@ I<Common SLK>, not reversible, Slovak without diacritics
 
 I<Common SLV>, not reversible, Slovenian without diacritics
 
+I<ISO 8859-16 RON>, reversible, Romanian with appropriate diacritics
+
 =item Arabic
 
 I<Common ARA>, not reversible, Common Romanization of Arabic
+
+=item Sanskrit
+
+I<IAST Devanagari>, not reversible, IAST Romanization to Devanāgarī
+
+I<Devanagari IAST>, not reversible, Devanāgarī to IAST Romanization
 
 =back
 
 =head1 ADDING NEW TRANSLITERATIONS
 
 In case you want to add your own transliteration tables to
-L<Lingua::Translit>, have a look at the developer manual included in the
-distribution.
-An online version is available at
-L<http://www.lingua-systems.com/translit/downloads/>.
+L<Lingua::Translit>, have a look at the developer documentation at
+L<https://www.netzum-sorglos.de/software/lingua-translit/developer-documentation.html>.
 
 A template of a transliteration table is provided as well
 (F<xml/template.xml>) so you can easily start developing.
-
 
 =head1 BUGS
 
 None known.
 
-Please report bugs to perl@lingua-systems.com.
+Please report bugs using CPAN's request tracker at
+L<https://rt.cpan.org/Public/Dist/Display.html?Name=Lingua-Translit>.
 
 =head1 SEE ALSO
 
 L<Lingua::Translit>
 
-L<http://www.lingua-systems.com/translit/>
+L<http://www.netzum-sorglos.de/software/lingua-translit/>
 
 
 =head1 CREDITS
@@ -265,21 +287,35 @@ transliteration table.
 Thanks to Ahmed Elsheshtawy for his help implementing the "Common ARA" Arabic
 transliteration.
 
+Thanks to Dusan Vuckovic for contributing the "ISO/R 9" transliteration table.
+
+Thanks to Ștefan Suciu for contributing the "ISO 8859-16 RON" transliteration
+table.
+
+Thanks to Philip Kime for contributing the "IAST Devanagari" and "Devanagari
+IAST" transliteration tables.
+
+Thanks to Nikola Lečić for contributing the "BGN/PCGN RUS Standard" and
+"BGN/PCGN RUS Strict" transliteration tables.
+
 =head1 AUTHORS
 
-Alex Linke <alinke@lingua-systems.com>
+Alex Linke <alinke@netzum-sorglos.de>
 
-Rona Linke <rlinke@lingua-systems.com>
+Rona Linke <rlinke@netzum-sorglos.de>
 
 =head1 LICENSE AND COPYRIGHT
 
 Copyright (C) 2007-2008 Alex Linke and Rona Linke
 
-Copyright (C) 2009-2014 Lingua-Systems Software GmbH
+Copyright (C) 2009-2016 Lingua-Systems Software GmbH
 
-This module is free software. It may be used, redistributed
-and/or modified under the terms of either the GPL v2 or the
-Artistic license.
+Copyright (C) 2016-2017 Netzum Sorglos, Lingua-Systems Software GmbH
+
+Copyright (C) 2017-2022 Netzum Sorglos Software GmbH
+
+This module is free software; you can redistribute it and/or modify it under
+the same terms as Perl itself.
 
 =cut
 
@@ -301,4 +337,4 @@ sub _get_table_id {
 
 1;
 
-# vim: sts=4 sw=4 ts=4 ai et
+# vim: set ft=perl sts=4 sw=4 ts=4 ai et:

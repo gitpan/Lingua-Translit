@@ -6,7 +6,8 @@
   Basic document type definition for transliteration tables.
 
   Copyright (C) 2007-2008 Alex Linke <alinke@lingua-systems.com>
-  Copyright (C) 2009-2014 Lingua-Systems Software GmbH
+  Copyright (C) 2009-2016 Lingua-Systems Software GmbH
+  Copyright (C) 2016 Netzum Sorglos, Lingua-Systems Software GmbH
 
 -->
 
@@ -24,4 +25,4 @@
 <!ELEMENT after     (#PCDATA)>
 
 
-<!-- vim: set sts=4 ts=4 sw=4 ai et: -->
+<!-- vim: set ft=dtd sts=4 ts=4 sw=4 ai et: -->
