@@ -8,9 +8,10 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME            =>  "Lingua::Translit",
+    LICENSE         =>  "perl",
     VERSION_FROM    =>  "lib/Lingua/Translit.pm",
     ABSTRACT_FROM   =>  "lib/Lingua/Translit.pm",
-    AUTHOR          =>  'Alex Linke <alinke@lingua-systems.com>',
+    AUTHOR          =>  'Alex Linke <alinke@netzum-sorglos.de>',
     EXE_FILES       =>  [ qw/translit/ ],
     PL_FILES        =>  {
         'tools/substitute_tables.pl' => 'blib/lib/Lingua/Translit/Tables.pm'

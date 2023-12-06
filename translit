@@ -4,7 +4,9 @@
 # Copyright (C) 2007-2008 ...
 #   Alex Linke <alinke@lingua-systems.com>
 #   Rona Linke <rlinke@lingua-systems.com>
-# Copyright (C) 2009-2014 Lingua-Systems Software GmbH
+# Copyright (C) 2009-2016 Lingua-Systems Software GmbH
+# Copyright (C) 2016-2017 Netzum Sorglos, Lingua-Systems Software GmbH
+# Copyright (C) 2017-2022 Netzum Sorglos Software GmbH
 #
 
 use strict;
@@ -15,7 +17,7 @@ require 5.008;
 use Lingua::Translit;
 use Lingua::Translit::Tables qw/:all/;
 
-my $VERSION = '0.4';
+my $VERSION = '0.6';
 
 =pod
 
@@ -186,7 +188,7 @@ sub show_help {
     my $retval = shift();
 
     print "translit v$VERSION  --  ",
-      "(c) 2009-2014 Lingua-Systems Software GmbH\n\n",
+      "(c) 2007-2022 Netzum Sorglos Software GmbH\n\n",
       "usage: $0 -i FILE -o FILE -t NAME -r -l -v -h\n\n",
       "  --infile   -i  FILE       read input from FILE\n",
       "  --outfile  -o  FILE       write output to FILE\n",
@@ -217,7 +219,8 @@ The input has to be UTF-8 encoded.
 
 None known.
 
-Please report bugs to perl@lingua-systems.com.
+Please report bugs using CPAN's request tracker at
+L<https://rt.cpan.org/Public/Dist/Display.html?Name=Lingua-Translit>.
 
 =head1 SEE ALSO
 
@@ -225,20 +228,23 @@ L<Lingua::Translit>, L<Lingua::Translit::Tables>
 
 =head1 AUTHORS
 
-Alex Linke <alinke@lingua-systems.com>
+Alex Linke <alinke@netzum-sorglos.de>
 
-Rona Linke <rlinke@lingua-systems.com>
+Rona Linke <rlinke@netzum-sorglos.de>
 
 =head1 LICENSE AND COPYRIGHT
 
 Copyright (C) 2007-2008 Alex Linke and Rona Linke
 
-Copyright (C) 2009-2014 Lingua-Systems Software GmbH
+Copyright (C) 2009-2016 Lingua-Systems Software GmbH
 
-This program is free software. It may be used, redistributed
-and/or modified under the terms of either the GPL v2 or the
-Artistic license.
+Copyright (C) 2016-2017 Netzum Sorglos, Lingua-Systems Software GmbH
+
+Copyright (C) 2017-2022 Netzum Sorglos Software GmbH
+
+This module is free software; you can redistribute it and/or modify it under
+the same terms as Perl itself.
 
 =cut
 
-# vim: sts=4 sw=4 ts=4 ai et
+# vim: set ft=perl sts=4 sw=4 ts=4 ai et:

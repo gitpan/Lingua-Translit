@@ -2,7 +2,8 @@
 
 #
 # Copyright (C) 2007-2008 Alex Linke <alinke@lingua-systems.com>
-# Copyright (C) 2009-2014 Lingua-Systems Software GmbH
+# Copyright (C) 2009-2016 Lingua-Systems Software GmbH
+# Copyright (C) 2016 Netzum Sorglos, Lingua-Systems Software GmbH
 #
 
 use strict;
@@ -14,7 +15,7 @@ use XML::LibXML;
 use Data::Dumper;
 use Getopt::Long;
 
-my $VERSION = '0.5';
+my $VERSION = '0.6';
 
 my %tables;
 
@@ -168,4 +169,4 @@ sub show_help {
     exit($retval);
 }
 
-# vim: sw=4 sts=4 ts=4 ai et
+# vim: set ft=perl sw=4 sts=4 ts=4 ai et:

@@ -2,7 +2,9 @@
 
 #
 # Copyright (C) 2007-2008 Alex Linke <alinke@lingua-systems.com>
-# Copyright (C) 2009-2014 Lingua-Systems Software GmbH
+# Copyright (C) 2009-2016 Lingua-Systems Software GmbH
+# Copyright (C) 2016-2017 Netzum Sorglos, Lingua-Systems Software GmbH
+# Copyright (C) 2017-2022 Netzum Sorglos Software GmbH
 #
 
 use strict;
@@ -40,4 +42,4 @@ $fh->open("> $infile") or die "$infile: $!\n";
 print $fh $in_content;
 $fh->close();
 
-# vim: sts=4 sw=4 ts=4 ai et
+# vim: set ft=perl sts=4 sw=4 ts=4 ai et:
